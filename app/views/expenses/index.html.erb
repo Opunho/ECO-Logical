@@ -1,1 +1,6 @@
-<h1><%= @user["access_token"] %></h1>
+<% @transactions.parsed_response["data"].each do |trans| %>
+  <% if trans["amount"].negative? %>
+    <%= trans["amount"] %>
+    <%= trans["creditorId"] %>
+  <% end %>
+<% end %>
