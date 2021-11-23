@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :expenses #Matan testing purposes, delete later
 
-  resource :profile, [:show]
+  resource :profile, only: [:show]
 
   resources :accounts, only: [:new, :create] do
     resources :expenses, only: [:create]
