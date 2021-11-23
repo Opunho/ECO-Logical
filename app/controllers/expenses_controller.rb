@@ -12,4 +12,7 @@ class ExpensesController < ApplicationController
                           query: query,
                           headers: headers)
   end
+
+  def create
+  end
 end
