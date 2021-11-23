@@ -1,0 +1,2 @@
+class ImpactsController < ApplicationController
+end
