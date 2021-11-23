@@ -1,0 +1,60 @@
+.button-submit {
+  padding: 6.32079px 12.6416px;
+  width: 179px;
+  height: 42px;
+  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
+  border-radius: 11.8515px;
+  border-style: none;
+  transition-duration: 0.3s;
+  color: white;
+  font-style: normal;
+  font-size: 23.703px;
+  line-height: 29px;
+}
+
+.button-submit:hover {
+  background: #099D02;
+}
+
+.button-goback {
+  padding: 8px 16px;
+  width: 98px;
+  height: 24px;
+  background: #099D02;
+  border-radius: 15px;
+  border-style: none;
+  transition-duration: 0.3s;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-size: 12.6416px;
+  line-height: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.button-goback:hover {
+  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
+}
+
+.button-signup {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 8px 16px;
+width: 98px;
+height: 24px;
+background: #099D02;
+border-radius: 15px;
+border-style: none;
+color: white;
+font-style: normal;
+font-size: 12.6416px;
+line-height: 15px;
+transition-duration: 0.3s;
+}
+
+.button-signup:hover {
+  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
+}
