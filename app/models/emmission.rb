@@ -1,0 +1,2 @@
+class Emmission < ApplicationRecord
+end
