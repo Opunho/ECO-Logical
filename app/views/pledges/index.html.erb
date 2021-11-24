@@ -1,8 +1,7 @@
 <% @pledges.each do |pledge| %>
   <ul>
-    <li><%= pledge.recommendation.id %></li>
+    <li><%= pledge.completed %></li>
     <li><%= pledge.recommendation.title %></li>
-    <li><%= pledge.recommendation.category %></li>
     <li><%= pledge.recommendation.description %></li>
     <li><%= pledge.recommendation.link_to_article %></li>
   </ul>
