@@ -1,4 +1,5 @@
 require 'openssl'
+require 'faker'
 
 class ExpensesController < ApplicationController
   include HTTParty
@@ -33,10 +34,12 @@ class ExpensesController < ApplicationController
   end
 
   def create
+    id = Faker::Alphanumeric.alphanumeric(number: 32)
     @expense = Expense.new(expense_params)
+    @expense.external_id = id
     @expense.account = @account
     if @expense.save!
-      redirect_to root_path
+      redirect_to expenses_path
     else
       render :index
     end

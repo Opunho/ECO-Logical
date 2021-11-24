@@ -41,6 +41,8 @@ gem "oauth"
 
 gem "chartkick"
 
+gem 'faker'
+
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
