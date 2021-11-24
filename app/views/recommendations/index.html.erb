@@ -6,4 +6,5 @@
   <%= simple_form_for([recommendation, Pledge.new]) do |f| %>
     <%= f.submit %>
   <% end %>
+  <%= recommendation.destroy %>
 <% end %>

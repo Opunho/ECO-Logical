@@ -17,6 +17,12 @@ class PledgesController < ApplicationController
     end
   end
 
+  def destroy
+    @pledge = Pledge.find(params[:id])
+    @pledge.destroy
+    redirect_to profile_path
+  end
+
   def complete
   end
 end
