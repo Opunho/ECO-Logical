@@ -14,7 +14,9 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s0", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "My profile", profile_path, class: "dropdown-item" %>
             <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+            <%= link_to "Recommendations", recommendations_path, class: "dropdown-item" %>
             <%= link_to "My Pledges", pledges_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
