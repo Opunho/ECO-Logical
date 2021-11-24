@@ -1,7 +1,0 @@
-<% @transactions.parsed_response["data"].each do |trans| %>
-  <% if trans["amount"].negative? %>
-    <%= trans["creditorName"] %>
-    <%= trans["amount"] %>
-    <%= trans["creditorId"] %>
-  <% end %>
-<% end %>
