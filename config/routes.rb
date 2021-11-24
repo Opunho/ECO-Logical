@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
 
+  get "/calculate", to: "expenses#set_transactions", as: "fetch_expenses"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   if Rails.env.development?
     get '/kitchensink', to: 'pages#kitchensink'

@@ -1,7 +1,5 @@
-<% @transactions.parsed_response["data"].each do |trans| %>
-  <% if trans["amount"].negative? %>
-    <%= trans["creditorName"] %>
-    <%= trans["amount"] %>
-    <%= trans["creditorId"] %>
-  <% end %>
+<%= render "form" %>
+<%= link_to "Calculate", fetch_expenses_path%>
+<% @expenses.each do |expense| %>
+  <%= expense.amount %>
 <% end %>
