@@ -1,5 +1,4 @@
 require 'openssl'
-require 'oauth'
 
 class ExpensesController < ApplicationController
   include HTTParty
@@ -10,6 +9,7 @@ class ExpensesController < ApplicationController
   before_action :set_expenses
 
   def index
+    # require 'oauth'
     @expense = Expense.new
     @expenses = Expense.all
     # is = File.binread("/Users/mado/code/Opunho/ECO-Logical/EcoLogicalFinal-sandbox.p12")
