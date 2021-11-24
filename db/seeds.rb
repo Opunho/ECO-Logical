@@ -11,6 +11,7 @@ Calculation.destroy_all
 Expense.destroy_all
 Emmission.destroy_all
 Account.destroy_all
+Pledge.destroy_all
 User.destroy_all
 
 @user = User.create!(
