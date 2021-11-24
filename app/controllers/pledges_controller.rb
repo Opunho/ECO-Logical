@@ -17,6 +17,9 @@ class PledgesController < ApplicationController
     end
   end
 
+  def delete
+
+
   def complete
   end
 end
