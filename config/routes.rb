@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
 
+  get "/calculate", to: "expenses#set_transactions", as: "fetch_expenses"
+
   resource :chart, only: [:chartview]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
