@@ -1,0 +1,9 @@
+<% @recommendations.each do |recommendation| %>
+  <%= recommendation.title %>
+  <%= recommendation.description %>
+  <%= recommendation.link_to_article %>
+  <%= recommendation.category %>
+  <%= simple_form_for([recommendation, Pledge.new]) do |f| %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
