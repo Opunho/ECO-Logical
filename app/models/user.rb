@@ -8,4 +8,12 @@ class User < ApplicationRecord
   has_many :expenses, through: :accounts
   has_many :calculations, through: :expenses
   has_many :pledges
+
+  def total_emmissions
+    calculations.collect(&:total_emmissions).sum
+  end
+
+   def total_expenses
+    calculations.collect(&:total_expenses).sum
+  end
 end

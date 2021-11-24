@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Account.destroy_all
+Calculation.destroy_all
 Expense.destroy_all
 Emmission.destroy_all
-Calculation.destroy_all
+Account.destroy_all
+User.destroy_all
 
 puts "Creating User"
 @user = User.create!(
@@ -43,20 +43,20 @@ puts "Creating Expense"
       account_id: @account.id
     )
   i += 1
-end
+
 puts "Expense created"
 
 puts "Creating Emmission"
-3.times do
-  i = 0
+
+
   @emmission = Emmission.create!(
     main_category: ["Groceries", "Housing", "Leisure"].sample,
-    sub_category: ["Supermarket", "Entertainment", "Energy"],
-    co2_grams: [1000, 20, 340],
+    sub_category: ["Supermarket", "Entertainment", "Energy"].sample,
+    co2_grams: [1000, 20, 340].sample,
     mcc: "#{i}"
   )
-  i += 1
-end
+
+
 puts "Emmission created"
 
 puts "Creating Calculation"
@@ -66,4 +66,5 @@ puts "Creating Calculation"
   emmission_id: @emmission.id,
   expense_id: @expense.id
 )
+end
 puts "Calculation created"

@@ -12,9 +12,16 @@
 
 <br>
 
+<p>Total Expenses : <%= current_user.total_expenses %></p>
+<p>Total Emmissions: <%= current_user.total_emmissions %></p>
+
+
+<br>
+
 <div>
   <% @calculations.each do |calculation| %>
     <tr>
+      <p><%= calculation.emmission.main_category %></p>
       <p>Expense: <td><%= calculation.total_expenses %> <%#= calculation.currency %></td></p>
        <p>Emmissions: <td><%= calculation.total_emmissions %></td></p>
     </tr>
