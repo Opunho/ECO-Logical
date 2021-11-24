@@ -1,1 +1,5 @@
 <%= render "form" %>
+<%= link_to "Calculate", fetch_expenses_path%>
+<% @expenses.each do |expense| %>
+  <%= expense.amount %>
+<% end %>

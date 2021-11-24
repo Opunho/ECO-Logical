@@ -7,29 +7,28 @@ class ExpensesController < ApplicationController
   before_action :set_api_variables
   before_action :fetch_transactions
   before_action :set_account
-  before_action :set_transactions, only: [:index]
-
+  before_action :set_expenses
 
   def index
     @expense = Expense.new
-    create_transaction
+    @expenses = Expense.all
     # is = File.binread("/Users/mado/code/Opunho/ECO-Logical/EcoLogicalFinal-sandbox.p12")
     # signing_key = OpenSSL::PKCS12.new(is, 'keystorepassword').key
     # consumer_key = "4ZDFvkPJaoiqIImp2k7Jwl7MxlMVq6iBAoBPAVGY160d7cb1!ef7e26499fd7411caaaddb52e02d09940000000000000000"
     # uri = "https://sandbox.api.mastercard.com/service"
     # method = "POST"
-    # payload = "Hello world!"
+    # payload = {
+    #                "transactionId": "ee421c25-f928-4bf6-b884-3600b76b860d",
+    #                "mcc": 3997,
+    #                "amount": {
+    #                            "value": 100,
+    #                             "currencyCode": "USD"
+    #                          }
+    #            }
     # @auth_header = OAuth.get_authorization_header(uri, method, payload, consumer_key, signing_key)
 
     # @emission = HTTParty.post(@carbon_url,
-    #                           body: {
-    #                                   "transactionId": "ee421c25-f928-4bf6-b884-3600b76b860d",
-    #                                   "mcc": 3997,
-    #                                   "amount": {
-    #                                               "value": 100,
-    #                                               "currencyCode": "USD"
-    #                                             }
-    #                                 }
+    #                           body:
     #                            )
   end
 
@@ -41,6 +40,22 @@ class ExpensesController < ApplicationController
     else
       render :index
     end
+  end
+
+  def set_transactions
+    @transactions.parsed_response["data"].each do |transaction|
+      @duplicate_chekcker = Expense.find_by(external_id: transaction["externalId"])
+      if transaction["amount"].negative? && @duplicate_checker == nil
+        @expense = Expense.new(
+          amount: -transaction["amount"], creditor_id: transaction["creditorId"],
+          creditor_name: transaction["creditorName"], date: transaction["booking_date"],
+          external_id: transaction["externalId"], currency: transaction["currency"]
+        )
+        @expense.account = @account
+        @expense.save!
+      end
+    end
+    redirect_to expenses_path
   end
 
   private
@@ -88,29 +103,7 @@ class ExpensesController < ApplicationController
     @transactions = HTTParty.get("#{@customer_url}#{customer_id}/transactions", headers: @headers)
   end
 
-  def set_transactions
-    @transactions.parsed_response["data"].each do |transaction|
-      if transaction["amount"].negative?
-        @expense = Expense.new(
-          amount: -transaction["amount"], creditor_id: transaction["creditorId"],
-          creditor_name: transaction["creditorName"], date: transaction["booking_date"],
-          external_id: transaction["externalId"], currency: transaction["currency"]
-        )
-        @expense.account = @account
-        @expense.save!
-        # if @expense.save?
-
-        # else
-        #   redirect :index
-        # end
-      end
-    end
-  end
-
-  def calculate_emission_api
-  end
-
-  def create_transaction
-
+  def set_expenses
+    @expenses = Expense.all
   end
 end
