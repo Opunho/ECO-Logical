@@ -12,9 +12,16 @@
 
 <br>
 
-<p>Total Expenses : <%= current_user.total_expenses %> EUR </p>
-<p>Total Emmissions: <%= current_user.total_emmissions %></p>
+<p>Total Expenses : <%= current_user.user_total_expenses %> EUR </p>
+<p>Total Emmissions: <%= current_user.user_total_emmissions %></p>
 
+<p>-----------------------</p>
+
+<% current_user.total_per_category.each do |key, value| %>
+  <p><%= "#{key} - #{value} CO2 grams" %></p>
+<% end %>
+
+<p>-----------------------</p>
 
 <br>
 

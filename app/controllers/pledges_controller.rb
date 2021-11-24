@@ -1,7 +1,10 @@
 class PledgesController < ApplicationController
 
+  def show
+  end
 
   def index
+    @pledges = Pledge.all
   end
 
   def create
