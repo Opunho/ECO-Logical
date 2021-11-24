@@ -12,10 +12,7 @@ Emmission.destroy_all
 Account.destroy_all
 User.destroy_all
 
-<<<<<<< HEAD
 puts "Creating User"
-=======
->>>>>>> master
 @user = User.create!(
   email: 'user@user.com',
   password: 'password',
