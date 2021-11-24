@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'charts/chartview'
+  get 'chart/chartview'
+  get 'home/chartview'
   devise_for :users
   root to: 'pages#home'
   resources :expenses #Matan testing purposes, delete later
@@ -16,6 +19,8 @@ Rails.application.routes.draw do
   resources :pledges, only: [:index, :complete]
 
   resource :dashboard, only: [:show]
+
+  resource :chart, only: [:chartview]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   if Rails.env.development?
