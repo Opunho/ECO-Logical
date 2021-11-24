@@ -14,6 +14,7 @@ Account.destroy_all
 Pledge.destroy_all
 User.destroy_all
 
+puts "Creating user"
 @user = User.create!(
   email: 'user@user.com',
   password: 'password',
