@@ -5,15 +5,74 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Calculation.destroy_all
+Expense.destroy_all
+Emmission.destroy_all
+Account.destroy_all
 User.destroy_all
 
+<<<<<<< HEAD
+puts "Creating User"
+=======
+>>>>>>> master
 @user = User.create!(
   email: 'user@user.com',
   password: 'password',
   first_name: 'user',
   last_name: 'user'
 )
+puts "User created"
 
+puts "Creating Account"
+@account = Account.create!(
+  name: "ING",
+  account_number: "NL03 INGX 8976 9485 99",
+  user_id: @user.id
+)
+puts "Account created"
+
+puts "Creating Expense"
+3.times do
+  i = 0
+    @expense = Expense.create!(
+      category: ["Groceries", "Housing", "Leisure"].sample,
+      creditor_name: ["AH", "Vattenfall", "Netflix"].sample,
+      amount: [250, 8, 100].sample,
+      currency:"EUR",
+      date: "",
+      external_id: "#{i}",
+      creditor_id: "#{i}",
+      account_id: @account.id
+    )
+  i += 1
+
+puts "Expense created"
+
+puts "Creating Emmission"
+
+
+  @emmission = Emmission.create!(
+    main_category: ["Groceries", "Housing", "Leisure"].sample,
+    sub_category: ["Supermarket", "Entertainment", "Energy"].sample,
+    co2_grams: [1000, 20, 340].sample,
+    mcc: "#{i}"
+  )
+
+
+puts "Emmission created"
+
+puts "Creating Calculation"
+@calculation = Calculation.create!(
+  total_expenses: @expense.amount,
+  total_emmissions: @emmission.co2_grams,
+  emmission_id: @emmission.id,
+  expense_id: @expense.id
+)
+end
+puts "Calculation created"
+
+puts "Creating Recommendations"
 5.times do
   @recommendation = Recommendation.create!(
     category: ["grocery", "household", "transportation", "food delivery", "fashion", "leiusure"].sample,
@@ -22,6 +81,9 @@ User.destroy_all
     link_to_article: ["https://homeguides.sfgate.com/ecofriendly-mean-78718.html","https://www.britishecologicalsociety.org/publications/journals/ecological-solutions-evidence/","https://www.conserve-energy-future.com/15-easy-ways-to-become-environmentally-friendly.php"].sample
   )
 end
+<<<<<<< HEAD
+puts "Recommendation created"
+=======
 
 5.times do
   user_id = @user.id
@@ -32,3 +94,4 @@ end
     recommendation_id: recommendation_id
   )
 end
+>>>>>>> master
