@@ -39,6 +39,8 @@ gem 'httparty'
 gem 'mastercard_oauth1_signer', '~> 1.1', '>= 1.1.2'
 gem "oauth"
 
+gem "chartkick"
+
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

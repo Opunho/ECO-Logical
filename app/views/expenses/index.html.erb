@@ -9,3 +9,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= pie_chart Expense.group(:creditor_name).count %>
