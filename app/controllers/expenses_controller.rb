@@ -5,18 +5,21 @@ class ExpensesController < ApplicationController
   include HTTParty
   # skip_before_action :authenticate_user!
   before_action :set_api_variables
-  before_action :set_account, only: [:index]
+  before_action :fetch_transactions
+  before_action :set_account
   before_action :set_transactions, only: [:index]
 
 
   def index
-    is = File.binread("/Users/mado/code/Opunho/ECO-Logical/EcoLogicalFinal-sandbox.p12")
-    signing_key = OpenSSL::PKCS12.new(is, 'keystorepassword').key
-    consumer_key = "4ZDFvkPJaoiqIImp2k7Jwl7MxlMVq6iBAoBPAVGY160d7cb1!ef7e26499fd7411caaaddb52e02d09940000000000000000"
-    uri = "https://sandbox.api.mastercard.com/service"
-    method = "POST"
-    payload = "Hello world!"
-    @auth_header = OAuth.get_authorization_header(uri, method, payload, consumer_key, signing_key)
+    @expense = Expense.new
+    create_transaction
+    # is = File.binread("/Users/mado/code/Opunho/ECO-Logical/EcoLogicalFinal-sandbox.p12")
+    # signing_key = OpenSSL::PKCS12.new(is, 'keystorepassword').key
+    # consumer_key = "4ZDFvkPJaoiqIImp2k7Jwl7MxlMVq6iBAoBPAVGY160d7cb1!ef7e26499fd7411caaaddb52e02d09940000000000000000"
+    # uri = "https://sandbox.api.mastercard.com/service"
+    # method = "POST"
+    # payload = "Hello world!"
+    # @auth_header = OAuth.get_authorization_header(uri, method, payload, consumer_key, signing_key)
 
     # @emission = HTTParty.post(@carbon_url,
     #                           body: {
@@ -31,9 +34,20 @@ class ExpensesController < ApplicationController
   end
 
   def create
+    @expense = Expense.new(expense_params)
+    @expense.account = @account
+    if @expense.save!
+      redirect_to root_path
+    else
+      render :index
+    end
   end
 
   private
+
+  def expense_params
+    params.require(:expense).permit(:creditor_name, :amount, :currency, :date)
+  end
 
   def access_token
     auth_url = "https://api.mockbank.io/oauth/token"
@@ -57,6 +71,7 @@ class ExpensesController < ApplicationController
   def set_api_variables
     @customer_url = "https://api.mockbank.io/customers/"
     @headers = { "content-type" => "application/json",
+                 "accept" => "application/json",
                  "authorization" => "Bearer #{access_token}" }
     @carbon_url = "https://sandbox.api.mastercard.com/carbon/transaction-footprints/"
   end
@@ -69,8 +84,11 @@ class ExpensesController < ApplicationController
     @account.save!
   end
 
-  def set_transactions
+  def fetch_transactions
     @transactions = HTTParty.get("#{@customer_url}#{customer_id}/transactions", headers: @headers)
+  end
+
+  def set_transactions
     @transactions.parsed_response["data"].each do |transaction|
       if transaction["amount"].negative?
         @expense = Expense.new(
@@ -90,6 +108,9 @@ class ExpensesController < ApplicationController
   end
 
   def calculate_emission_api
+  end
+
+  def create_transaction
 
   end
 end
