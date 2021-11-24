@@ -12,10 +12,6 @@ Emmission.destroy_all
 Account.destroy_all
 User.destroy_all
 
-<<<<<<< HEAD
-puts "Creating User"
-=======
->>>>>>> master
 @user = User.create!(
   email: 'user@user.com',
   password: 'password',
@@ -80,18 +76,11 @@ puts "Creating Recommendations"
     description: ["We would like to improv e your green life by also helping our planet", "Becoming the green person that you always want to be, helping people around you getting more eco-friendly", "Its better to bike and its healty for you and its saving our planet","Green life is also good life, feel more free to help the planet" ].sample,
     link_to_article: ["https://homeguides.sfgate.com/ecofriendly-mean-78718.html","https://www.britishecologicalsociety.org/publications/journals/ecological-solutions-evidence/","https://www.conserve-energy-future.com/15-easy-ways-to-become-environmentally-friendly.php"].sample
   )
-end
-<<<<<<< HEAD
-puts "Recommendation created"
-=======
-
-5.times do
-  user_id = @user.id
-  recommendation_id = rand(1..5)
+  user = @user
   @pledge = Pledge.create!(
     completed: false,
-    user_id: user_id,
-    recommendation_id: recommendation_id
+    user: user,
+    recommendation_id: recommendation
   )
+
 end
->>>>>>> master
