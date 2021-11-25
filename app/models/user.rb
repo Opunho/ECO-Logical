@@ -13,22 +13,25 @@ class User < ApplicationRecord
     emmissions.collect(&:co2_grams).sum(&:to_i)
   end
 
-   def user_total_expenses
+  def user_total_expenses
     expenses.collect(&:amount).sum
-   end
+  end
 
   def unique_category
     emmissions.collect(&:main_category).uniq
   end
 
+  def unique_account
+    accounts.collect(&:account_number).uniq
+  end
+
   def total_emmissions_per_category(cat)
-     Emmission.where(main_category: cat).collect(&:co2_grams).sum(&:to_i)
+    Emmission.where(main_category: cat).collect(&:co2_grams).sum(&:to_i)
   end
 
-    def total_expenses_per_category(cat)
-     Emmission.where(main_category: cat).map do |emmission|
-        emmission.expense.amount
-     end.sum
+  def total_expenses_per_category(cat)
+    Emmission.where(main_category: cat).map do |emmission|
+      emmission.expense.amount
+    end.sum
   end
-
 end

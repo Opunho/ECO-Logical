@@ -49,14 +49,16 @@ class ExpensesController < ApplicationController
   def create_emmission
     @emmission = Emmission.new(mcc: @expense.creditor_id.to_i)
     @emmission.expense = @expense
-    if @emmission.save!
-      @emmission.calculator.each do |object|
-        if @emmission.mcc == object[:mcc]
-          @emmission.co2_grams = object[:carbon]
-          @emmission.main_category = object[:category][:mainCategory]
-          @emmission.sub_category = object[:category][:subCategory]
-          @emmission.save
-        end
+    populate_emmission if @emmission.save!
+  end
+
+  def populate_emmission
+    @emmission.calculator.each do |object|
+      if @emmission.mcc == object[:mcc]
+        @emmission.co2_grams = object[:carbon]
+        @emmission.main_category = object[:category][:mainCategory]
+        @emmission.sub_category = object[:category][:subCategory]
+        @emmission.save
       end
     end
   end
