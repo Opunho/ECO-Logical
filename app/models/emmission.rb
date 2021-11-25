@@ -69,7 +69,7 @@ class Emmission < ApplicationRecord
       },
       {
         carbon: 141.72,
-        mcc: "5697",
+        mcc: 5697,
         category: {
           mainCategory: "Shopping",
           subCategory: "Clothes & Fashion",
@@ -128,6 +128,15 @@ class Emmission < ApplicationRecord
           mainCategory: "Shopping",
           subCategory: "Department Store",
           sector: "Specialty Retail & Services"
+        }
+      },
+      {
+        carbonEmissionInGrams: 253.40,
+        mcc: "3640",
+        category: {
+          mainCategory: "Lesure & Entertainment",
+          subCategory: "Hotels & Vacation ",
+          sector: "Hotels, Motels & Resorts",
         }
       }
   ]
