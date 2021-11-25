@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.homepage-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.home-page-text{
+  text-align: center;
+  margin-top: 30px;
+  color: black;
+  background-position: center;
+  background-size: cover;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.homepage-background{
+  background-image: url("https://images.pexels.com/photos/1654255/pexels-photo-1654255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 812px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  margin-top: -50px;
+
+}
