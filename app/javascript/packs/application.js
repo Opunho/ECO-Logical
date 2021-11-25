@@ -18,22 +18,6 @@ ActiveStorage.start()
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-const FusionCharts = require("src/fusioncharts/fusioncharts");
-
-// Require charts from fusioncharts
-const Charts = require("src/fusioncharts/fusioncharts.charts");
-
-// Require export module from fusioncharts
-const ExcelExport = require("src/fusioncharts/fusioncharts.excelexport");
-
-// Require theme from fusioncharts
-const FusionTheme = require("src/fusioncharts/themes/fusioncharts.theme.fusion");
-
-// Add charts and themes and export module as dependency
-Charts(FusionCharts);
-FusionTheme(FusionCharts);
-ExcelExport(FusionCharts);
-
 // External imports
 import "bootstrap";
 import "chartkick/chart.js";

@@ -1,8 +1,28 @@
+<h1>Your pledges</h1>
 <% @pledges.each do |pledge| %>
   <ul>
-    <li><%= pledge.completed %></li>
+    <% pledge.completed %>
     <li><%= pledge.recommendation.title %></li>
     <li><%= pledge.recommendation.description %></li>
     <li><%= pledge.recommendation.link_to_article %></li>
+    <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
+    <% unless pledge.completed %>
+    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Completed pledges</h2>
+  <%= @total_co2_achieved %>
+
+<% @completed_pledges.each do |pledge| %>
+  <ul>
+    <li><%= pledge.recommendation.title %></li>
+    <li><%= pledge.recommendation.description %></li>
+    <li><%= pledge.recommendation.link_to_article %></li>
+    <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
+    <% unless pledge.completed %>
+    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+    <% end %>
   </ul>
 <% end %>
