@@ -4,7 +4,8 @@ class PledgesController < ApplicationController
   end
 
   def index
-    @pledges = Pledge.all
+    @pledges = Pledge.where(completed: false)
+    @completed_pledges = Pledge.where(completed: true)
   end
 
   def create
