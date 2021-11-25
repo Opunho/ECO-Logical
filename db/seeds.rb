@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Calculation.destroy_all
 Expense.destroy_all
 Emmission.destroy_all
 Account.destroy_all
@@ -49,27 +48,16 @@ puts "Creating Expense"
 puts "Expense created"
 
 puts "Creating Emmission"
-
-
   @emmission = Emmission.create!(
     main_category: ["Groceries", "Housing", "Leisure"].sample,
     sub_category: ["Supermarket", "Entertainment", "Energy"].sample,
     co2_grams: [1000, 20, 340].sample,
-    mcc: "#{i}"
+    mcc: "#{i}",
+    expense: @expense
   )
-
+end
 
 puts "Emmission created"
-
-puts "Creating Calculation"
-@calculation = Calculation.create!(
-  total_expenses: @expense.amount,
-  total_emmissions: @emmission.co2_grams,
-  emmission_id: @emmission.id,
-  expense_id: @expense.id
-)
-end
-puts "Calculation created"
 
 puts "Creating Recommendations"
 5.times do

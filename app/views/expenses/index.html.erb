@@ -1,7 +1,13 @@
-<% @transactions.parsed_response["data"].each do |trans| %>
-  <% if trans["amount"].negative? %>
-    <%= trans["creditorName"] %>
-    <%= trans["amount"] %>
-    <%= trans["creditorId"] %>
+<%= render "form" %>
+<%= link_to "Calculate", fetch_expenses_path%>
+<ul>
+  <% @expenses.each do |expense| %>
+    <li>
+      <%= expense.external_id %>
+      <%= expense.amount %>
+      <%= expense.creditor_name %>
+    </li>
   <% end %>
-<% end %>
+</ul>
+
+<%= pie_chart Expense.group(:creditor_id).count %>
