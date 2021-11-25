@@ -6,6 +6,7 @@ class PledgesController < ApplicationController
   def index
     @pledges = Pledge.where(completed: false)
     @completed_pledges = Pledge.where(completed: true)
+    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum
   end
 
   def create
