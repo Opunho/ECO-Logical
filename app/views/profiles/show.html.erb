@@ -1,32 +1,32 @@
+<h1 class="your-pledges d-flex justify-content-center">Your pledges</h1>
 <div class="container-all-pledges">
-  <h1>Your pledges</h1>
-  <% @pledges.first(3).each do |pledge| %>
-    <ul>
-      <% if pledge.completed == false %>
-      <li><%= pledge.recommendation.title %></li>
-      <li><%= pledge.recommendation.description %></li>
-      <li><%= pledge.recommendation.link_to_article %></li>
-      <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
-      <% unless pledge.completed %>
-      <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
-      <% end %>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <h1>Completed pledges</h1>
-  <%= @total_co2_achieved %>
-
-  <% @completed_pledges.first(3).each do |pledge| %>
-    <ul>
-      <% pledge.completed %>
-      <li><%= pledge.recommendation.title %></li>
-      <li><%= pledge.recommendation.description %></li>
-      <li><%= pledge.recommendation.link_to_article %></li>
-      <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
-      <% unless pledge.completed %>
-      <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
-      <% end %>
-    </ul>
-  <% end %>
+    <div class="card-container">
+        <% @pledges.first(3).each do |pledge| %>
+            <% if pledge.completed == false %>
+            <%= pledge.recommendation.title %>
+            <%= pledge.recommendation.description %>
+            <%= pledge.recommendation.link_to_article %>
+            <%= pledge.recommendation.co2_grams %> CO2 kg
+            <% unless pledge.completed %>
+            <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+            <% end %>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+<h1 class="comp-pledges d-flex justify-content-center">Completed pledges</h1>
+<p class="total-co2 d-flex justify-content-center">You've helped reduce <%= @total_co2_achieved %> kg of CO2!</p>
+<div class="container-all-pledges">
+  <div class="card-container">
+    <% @completed_pledges.first(3).each do |pledge| %>
+        <% pledge.completed %>
+        <%= pledge.recommendation.title %>
+        <%= pledge.recommendation.description %>
+        <%= pledge.recommendation.link_to_article %>
+        <%= pledge.recommendation.co2_grams %> CO2 kg
+        <% unless pledge.completed %>
+        <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+        <% end %>
+    <% end %>
+  </div>
 </div>
