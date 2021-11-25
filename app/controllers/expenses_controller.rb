@@ -10,27 +10,8 @@ class ExpensesController < ApplicationController
   before_action :set_expenses
 
   def index
-    # require 'oauth'
     @expense = Expense.new
     @expenses = Expense.all
-    # is = File.binread("/Users/mado/code/Opunho/ECO-Logical/EcoLogicalFinal-sandbox.p12")
-    # signing_key = OpenSSL::PKCS12.new(is, 'keystorepassword').key
-    # consumer_key = "4ZDFvkPJaoiqIImp2k7Jwl7MxlMVq6iBAoBPAVGY160d7cb1!ef7e26499fd7411caaaddb52e02d09940000000000000000"
-    # uri = "https://sandbox.api.mastercard.com/service"
-    # method = "POST"
-    # payload = {
-    #                "transactionId": "ee421c25-f928-4bf6-b884-3600b76b860d",
-    #                "mcc": 3997,
-    #                "amount": {
-    #                            "value": 100,
-    #                             "currencyCode": "USD"
-    #                          }
-    #            }
-    # @auth_header = OAuth.get_authorization_header(uri, method, payload, consumer_key, signing_key)
-
-    # @emission = HTTParty.post(@carbon_url,
-    #                           body:
-    #                            )
   end
 
   def create
@@ -55,13 +36,30 @@ class ExpensesController < ApplicationController
           external_id: transaction["externalId"], currency: transaction["currency"]
         )
         @expense.account = @account
-        @expense.save!
+        if @expense.save!
+          create_emmission
+        end
       end
     end
     redirect_to expenses_path
   end
 
   private
+
+  def create_emmission
+    @emmission = Emmission.new(mcc: @expense.creditor_id.to_i)
+    @emmission.expense = @expense
+    if @emmission.save!
+      @emmission.calculator.each do |object|
+        if @emmission.mcc == object[:mcc]
+          @emmission.co2_grams = object[:carbon]
+          @emmission.main_category = object[:category][:mainCategory]
+          @emmission.sub_category = object[:category][:subCategory]
+          @emmission.save
+        end
+      end
+    end
+  end
 
   def expense_params
     params.require(:expense).permit(:creditor_name, :amount, :currency, :date)
