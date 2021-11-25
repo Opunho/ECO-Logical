@@ -35,8 +35,8 @@ class ExpensesController < ApplicationController
       if transaction["amount"].negative? && duplicate_checker == nil
         @expense = Expense.new(
           amount: -transaction["amount"], creditor_id: transaction["creditorId"],
-          creditor_name: transaction["creditorName"], date: transaction["booking_date"],
-          external_id: transaction["externalId"], currency: transaction["currency"]
+          creditor_name: transaction["creditorName"], date: transaction["bookingDate"],
+          external_id: transaction["externalId"], currency: transaction["currency"],
         )
         @expense.account = @account
         if @expense.save!
