@@ -57,19 +57,27 @@ end
 
 puts "Emmission created"
 
+# 5.times do
+#   @recommendation = Recommendation.create!(
+#     category: ["grocery", "household", "transportation", "food delivery", "fashion", "leiusure"].sample,
+#     title: ["Buy greener", "Its greener to be!","Save the Earth", "We love it green", "Why should be green","Dress to impres greener"].sample,
+#     description: ["We would like to improv e your green life by also helping our planet", "Becoming the green person that you always want to be, helping people around you getting more eco-friendly", "Its better to bike and its healty for you and its saving our planet","Green life is also good life, feel more free to help the planet" ].sample,
+#     link_to_article: ["https://homeguides.sfgate.com/ecofriendly-mean-78718.html","https://www.britishecologicalsociety.org/publications/journals/ecological-solutions-evidence/","https://www.conserve-energy-future.com/15-easy-ways-to-become-environmentally-friendly.php"].sample
+#   )
+#     puts "created"
+#     user = @user
+#     @pledge = Pledge.create!(
+#       completed: false,
+#       user: user,
+#       recommendation: @recommendation
+#     )
+# end
+
 puts "Creating Recommendations"
-5.times do
-  @recommendation = Recommendation.create!(
-    category: ["grocery", "household", "transportation", "food delivery", "fashion", "leiusure"].sample,
-    title: ["Buy greener", "Its greener to be!","Save the Earth", "We love it green", "Why should be green","Dress to impres greener"].sample,
-    description: ["We would like to improv e your green life by also helping our planet", "Becoming the green person that you always want to be, helping people around you getting more eco-friendly", "Its better to bike and its healty for you and its saving our planet","Green life is also good life, feel more free to help the planet" ].sample,
-    link_to_article: ["https://homeguides.sfgate.com/ecofriendly-mean-78718.html","https://www.britishecologicalsociety.org/publications/journals/ecological-solutions-evidence/","https://www.conserve-energy-future.com/15-easy-ways-to-become-environmentally-friendly.php"].sample
-  )
-    puts "created"
-    user = @user
-    @pledge = Pledge.create!(
-      completed: false,
-      user: user,
-      recommendation: @recommendation
-    )
-end
+Recommendation.create!(
+  category: "Transportation",
+  title: "Go carless for a week",
+  description: "Going carless for a year could save about 2.6 tons of carbon dioxide, according to 2017 study from researchers at Lund University and the University of British Columbia — that’s a little more than a roundtrip transatlantic flight. How can you stop using a car? Try taking a train, bus or better yet, ride a bike.",
+  link_to_article: "https://www.nytimes.com/guides/year-of-living-better/how-to-reduce-your-carbon-footprint",
+  co2_grams: 50
+)

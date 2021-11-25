@@ -12,5 +12,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @pledges = Pledge.all
+    @completed_pledges = Pledge.where(completed: true)
   end
 end

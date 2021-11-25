@@ -1,5 +1,30 @@
-<%# <div class="pledged-impact">Pledged Impact</div>
-<div class="this-will-save">This will save x trees, and help reduce x tonnes of CO2</div>
-<div class="to-be-completed">To be completed</div>
-<div class="completed-pledge">Completed Pledges</div>
-<div class="completed">Completed</div> %>
+<h1>Your pledges</h1>
+
+<% @pledges.first(3).each do |pledge| %>
+  <ul>
+    <% if pledge.completed == false %>
+    <li><%= pledge.recommendation.title %></li>
+    <li><%= pledge.recommendation.description %></li>
+    <li><%= pledge.recommendation.link_to_article %></li>
+    <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
+    <% unless pledge.completed %>
+    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+    <% end %>
+     <% end %>
+  </ul>
+<% end %>
+
+<h1>Completed pledges</h1>
+
+<% @completed_pledges.first(3).each do |pledge| %>
+  <ul>
+    <% pledge.completed %>
+    <li><%= pledge.recommendation.title %></li>
+    <li><%= pledge.recommendation.description %></li>
+    <li><%= pledge.recommendation.link_to_article %></li>
+    <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
+    <% unless pledge.completed %>
+    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+    <% end %>
+  </ul>
+<% end %>
