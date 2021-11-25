@@ -1,4 +1,4 @@
 class Expense < ApplicationRecord
   belongs_to :account
-  has_many :calculations
+  has_one :emmission
 end
