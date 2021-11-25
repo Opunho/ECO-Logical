@@ -1,3 +1,4 @@
 class Emmission < ApplicationRecord
-  has_many :calculations
+  belongs_to :expense
+  has_many :impacts
 end

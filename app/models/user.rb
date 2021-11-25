@@ -6,33 +6,29 @@ class User < ApplicationRecord
 
   has_many :accounts
   has_many :expenses, through: :accounts
-  has_many :calculations, through: :expenses
+  has_many :emmissions, through: :expenses
   has_many :pledges
 
   def user_total_emmissions
-    calculations.collect(&:total_emmissions).sum
+    emmissions.collect(&:co2_grams).sum
   end
 
    def user_total_expenses
-    calculations.collect(&:total_expenses).sum
+    expenses.collect(&:amount).sum
   end
 
   def unique_category
-    calculations.collect(&:emmission).collect(&:main_category).uniq
+    emmissions.collect(&:main_category).uniq
   end
 
-  def total_per_category
-    total = {}
-    unique_category.each do |cat|
-      emmission_group_per_category = Emmission.where(main_category: cat)
-      sum = 0
-      emmission_group_per_category.each do |emmission|
-        sum += emmission.co2_grams
-        total.merge!("#{cat}" => sum)
-      end
-    end
-    total
+  def total_emmissions_per_category(cat)
+     Emmission.where(main_category: cat).collect(&:co2_grams).sum
   end
 
+    def total_expenses_per_category(cat)
+     Emmission.where(main_category: cat).map do |emmission|
+        emmission.expense.amount
+     end.sum
+  end
 
 end
