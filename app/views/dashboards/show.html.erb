@@ -1,5 +1,8 @@
 <h1>This is the Dashboard Show...</h1>
 
+<%= pie_chart Emmission.pie_chart2, donut: true, legend: "left" %>
+<%= pie_chart Expense.chart_legend, donut: true, legend: "right" %>
+
 <%= link_to "Create new transaction", new_expense_path %>
 
 <h1>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h1>

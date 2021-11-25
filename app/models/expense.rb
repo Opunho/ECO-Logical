@@ -5,6 +5,7 @@ class Expense < ApplicationRecord
   scope :last_thirty_days, -> { where(date: 31.days.ago..Date.today) }
   scope :last_six_months, -> { where(date: 6.months.ago..Date.today) }
   scope :last_three_months, -> { where(date: 3.months.afo..Date.today) }
+  scope :pie_chart, -> { group(:creditor_id).count }
 
   def sub_category
     sub_cat = []
@@ -13,6 +14,10 @@ class Expense < ApplicationRecord
       sub_cat << element[:category][:subCategory]
     end
     sub_cat.uniq
+  end
+
+  def self.chart_legend
+    Expense.joins(:emmission).group("emmissions.sub_category").sum("amount")
   end
 
   def emmission_data(sub_category)

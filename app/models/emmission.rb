@@ -2,6 +2,8 @@ class Emmission < ApplicationRecord
   belongs_to :expense
   has_many :impacts
 
+  scope :pie_chart2, -> { group(:sub_category).sum(:co2_grams) }
+
   def calculator
     [
       {
