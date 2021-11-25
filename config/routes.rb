@@ -13,7 +13,12 @@ Rails.application.routes.draw do
     resources :pledges, only: [:create]
   end
 
-  resources :pledges, only: [:index, :complete]
+  resources :pledges, only: [:index] do
+    member do
+      patch :complete
+    end
+  end
+
 
   resource :dashboard, only: [:show]
 
