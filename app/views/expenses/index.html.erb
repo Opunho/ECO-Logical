@@ -1,5 +1,13 @@
 <%= render "form" %>
 <%= link_to "Calculate", fetch_expenses_path%>
-<% @expenses.each do |expense| %>
-  <%= expense.amount %>
-<% end %>
+<ul>
+  <% @expenses.each do |expense| %>
+    <li>
+      <%= expense.external_id %>
+      <%= expense.amount %>
+      <%= expense.creditor_name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= pie_chart Expense.group(:creditor_id).count %>

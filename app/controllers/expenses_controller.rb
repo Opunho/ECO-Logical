@@ -1,5 +1,5 @@
 require 'openssl'
-require 'oauth'
+require 'faker'
 
 class ExpensesController < ApplicationController
   include HTTParty
@@ -10,6 +10,7 @@ class ExpensesController < ApplicationController
   before_action :set_expenses
 
   def index
+    # require 'oauth'
     @expense = Expense.new
     @expenses = Expense.all
     # is = File.binread("/Users/mado/code/Opunho/ECO-Logical/EcoLogicalFinal-sandbox.p12")
@@ -33,10 +34,12 @@ class ExpensesController < ApplicationController
   end
 
   def create
+    id = Faker::Alphanumeric.alphanumeric(number: 32)
     @expense = Expense.new(expense_params)
+    @expense.external_id = id
     @expense.account = @account
     if @expense.save!
-      redirect_to root_path
+      redirect_to expenses_path
     else
       render :index
     end
