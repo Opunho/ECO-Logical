@@ -1,11 +1,11 @@
+<h1>Offset recommendations</h1>
 <% @recommendations.each do |recommendation| %>
   <p><%= recommendation.title %></p>
   <p><%= recommendation.description %></p>
   <p><%= recommendation.link_to_article %></p>
   <p><%= recommendation.category %></p>
+  <p><%=recommendation.co2_grams %> CO2 kg</p>
   <%= simple_form_for([recommendation, Pledge.new]) do |f| %>
     <%= f.submit %>
   <% end %>
 <% end %>
-
-<%# <button class="make-recommendation">Recommendation New</button> %>
