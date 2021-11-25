@@ -24,5 +24,5 @@ Recommendation.create!(
   title: "Go carless for a week",
   description: "Going carless for a year could save about 2.6 tons of carbon dioxide, according to 2017 study from researchers at Lund University and the University of British Columbia — that’s a little more than a roundtrip transatlantic flight. How can you stop using a car? Try taking a train, bus or better yet, ride a bike.",
   link_to_article: "https://www.nytimes.com/guides/year-of-living-better/how-to-reduce-your-carbon-footprint",
-  co2_grams: 50
+  co2_grams: 50000
 )
