@@ -10,8 +10,11 @@ class ExpensesController < ApplicationController
   before_action :set_expenses
 
   def index
-    @expense = Expense.new
     @expenses = Expense.all
+  end
+
+  def new
+    @expense = Expense.new
     @sub_categories = @expense.sub_category
   end
 
@@ -31,12 +34,12 @@ class ExpensesController < ApplicationController
 
   def set_transactions
     @transactions.parsed_response["data"].each do |transaction|
-      @duplicate_chekcker = Expense.find_by(external_id: transaction["externalId"])
-      if transaction["amount"].negative? && @duplicate_checker == nil
+      duplicate_checker = Expense.find_by(external_id: transaction["externalId"])
+      if transaction["amount"].negative? && duplicate_checker == nil
         @expense = Expense.new(
           amount: -transaction["amount"], creditor_id: transaction["creditorId"],
-          creditor_name: transaction["creditorName"], date: transaction["booking_date"],
-          external_id: transaction["externalId"], currency: transaction["currency"]
+          creditor_name: transaction["creditorName"], date: transaction["bookingDate"],
+          external_id: transaction["externalId"], currency: transaction["currency"],
         )
         @expense.account = @account
         if @expense.save!

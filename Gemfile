@@ -36,12 +36,11 @@ gem 'simple_form'
 
 gem 'httparty'
 
-gem 'mastercard_oauth1_signer', '~> 1.1', '>= 1.1.2'
-gem "oauth"
-
 gem "chartkick"
 
 gem 'faker'
+
+gem 'pg_search', '~> 2.3.0'
 
 
 group :development, :test do  gem 'pry-byebug'
