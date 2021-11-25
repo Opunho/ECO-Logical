@@ -10,8 +10,11 @@ class ExpensesController < ApplicationController
   before_action :set_expenses
 
   def index
-    @expense = Expense.new
     @expenses = Expense.all
+  end
+
+  def new
+    @expense = Expense.new
     @sub_categories = @expense.sub_category
   end
 
