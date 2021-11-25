@@ -9,5 +9,3 @@
     </li>
   <% end %>
 </ul>
-
-<%= pie_chart Expense.group(:creditor_id).count, donut: true, legend: "left" %>
