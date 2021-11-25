@@ -27,6 +27,7 @@
   <p><%= current_user.total_expenses_per_category(cat) %> EUR</p>
     <% percentage = current_user.total_expenses_per_category(cat) / current_user.user_total_expenses * 100 %> <!-- Need to find how to round up-->
     <p><%= percentage.to_i %>%</p>
+    <%= bar_chart percentage.to_i %>
 <!-- Taking total emmissions and percentages on total of the expenses -->
   <p><%= current_user.total_emmissions_per_category(cat) %> CO2 grams</p>
     <% percentage = current_user.total_emmissions_per_category(cat) / current_user.user_total_emmissions * 100 %>
