@@ -52,7 +52,9 @@ class ExpensesController < ApplicationController
   def create_emmission
     @emmission = Emmission.new(mcc: @expense.creditor_id.to_i)
     @emmission.expense = @expense
-    populate_emmission if @emmission.save!
+    if @emmission.save!
+      populate_emmission
+    end
   end
 
   def populate_emmission

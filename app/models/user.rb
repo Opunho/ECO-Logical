@@ -10,11 +10,11 @@ class User < ApplicationRecord
   has_many :pledges
 
   def user_total_emmissions
-    emmissions.collect(&:co2_grams).sum(&:to_i)
+    emmissions.collect(&:co2_grams).sum(&:to_f)
   end
 
   def user_total_expenses
-    expenses.collect(&:amount).sum
+    expenses.collect(&:amount).sum(&:to_f)
   end
 
   def unique_category
