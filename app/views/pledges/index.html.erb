@@ -1,6 +1,21 @@
+<h1>Your pledges</h1>
+
 <% @pledges.each do |pledge| %>
   <ul>
     <% pledge.completed %>
+    <li><%= pledge.recommendation.title %></li>
+    <li><%= pledge.recommendation.description %></li>
+    <li><%= pledge.recommendation.link_to_article %></li>
+    <% unless pledge.completed %>
+    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Completed pledges</h2>
+
+<% @completed_pledges.each do |pledge| %>
+  <ul>
     <li><%= pledge.recommendation.title %></li>
     <li><%= pledge.recommendation.description %></li>
     <li><%= pledge.recommendation.link_to_article %></li>
