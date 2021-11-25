@@ -4,4 +4,8 @@ class DashboardsController < ApplicationController
     @accounts = current_user.accounts
     @emmissions = current_user.emmissions
   end
+
+  def calculate_emmission
+
+  end
 end

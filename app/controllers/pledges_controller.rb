@@ -27,5 +27,10 @@ class PledgesController < ApplicationController
   end
 
   def complete
+    @pledge = Pledge.find(params[:id])
+    @pledge.completed = true
+    if @pledge.save
+      redirect_to pledges_path
+    end
   end
 end
