@@ -12,6 +12,7 @@ class ExpensesController < ApplicationController
   def index
     @expense = Expense.new
     @expenses = Expense.all
+    @sub_categories = @expense.sub_category
   end
 
   def create
@@ -19,7 +20,9 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.external_id = id
     @expense.account = @account
+    @expense.creditor_id = @expense.emmission_data(params[:expense][:sub_category])
     if @expense.save!
+      create_emmission
       redirect_to expenses_path
     else
       render :index
@@ -49,7 +52,9 @@ class ExpensesController < ApplicationController
   def create_emmission
     @emmission = Emmission.new(mcc: @expense.creditor_id.to_i)
     @emmission.expense = @expense
-    populate_emmission if @emmission.save!
+    if @emmission.save!
+      populate_emmission
+    end
   end
 
   def populate_emmission
