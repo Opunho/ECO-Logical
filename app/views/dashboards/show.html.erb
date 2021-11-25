@@ -22,7 +22,7 @@
 
 <!-- Taking each unique category -->
 <% current_user.unique_category.each do |cat| %>
-  <h3><strong><%= cat %></strong></h3>
+  <h2><strong><%= cat %></strong></h2>
 <!-- Taking total expenses and percentages on total of the expenses -->
   <p><%= current_user.total_expenses_per_category(cat) %> EUR</p>
     <% percentage = current_user.total_expenses_per_category(cat) / current_user.user_total_expenses * 100 %> <!-- Need to find how to round up-->
@@ -35,14 +35,14 @@
 <!-- Per category then having the breakdown -->
 
 <p>====================================</p>
-  <h4><%= "Breakdown of #{cat}" %></h4>
-  <br>
-  <% @emmissions.where(main_category: cat).each do |emmission| %>
-    <h5><em><%= emmission.sub_category %></em></h5>
-    <p><%= emmission.expense.amount %> EUR</p>
-    <% calc_result =  emmission.co2_grams.to_f * emmission.expense.amount.to_f %>
-    <p><%= calc_result.ceil(2) %></p>
-  <% end %>
+    <h4><%= "Breakdown of #{cat}" %></h4>
+    <br>
+    <% @emmissions.where(main_category: cat).each do |emmission| %>
+      <h5><em><%= emmission.sub_category %></em></h5>
+      <p><%= emmission.expense.amount %> EUR</p>
+      <% calc_result =  emmission.co2_grams.to_f * emmission.expense.amount.to_f %>
+      <p><%= calc_result.ceil(2) %></p>
+    <% end %>
 <p>====================================</p>
 <% end %>
 
