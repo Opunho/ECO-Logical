@@ -19,6 +19,7 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // External imports
+import "controllers"
 import "bootstrap";
 import "chartkick/chart.js";
 
@@ -32,5 +33,3 @@ document.addEventListener('turbolinks:load', () => {
   // [...]
   loadDynamicBannerText();
 });
-
-import "controllers"
