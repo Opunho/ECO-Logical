@@ -16,6 +16,17 @@ class Emmission < ApplicationRecord
     joins(:expense).where(main_category: category).where(expense: { date: 3.months.ago..Date.today })
   end
 
+  def self.last_thirty_days
+    joins(:expense).where(expense: { date: 31.days.ago..Date.today })
+  end
+
+  def self.last_six_months
+    joins(:expense).where(expense: { date: 6.months.ago..Date.today })
+  end
+
+  def self.last_three_months
+    joins(:expense).where(expense: { date: 3.months.ago..Date.today })
+  end
   def calculator
     [
       {
@@ -24,7 +35,7 @@ class Emmission < ApplicationRecord
         category: {
           mainCategory: "Transportation",
           subCategory: "Motorvehicle",
-          sector: "Service Stations",
+          sector: "Service Stations"
         }
       },
       {
