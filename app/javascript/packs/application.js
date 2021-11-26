@@ -19,6 +19,7 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // External imports
+import "controllers"
 import "bootstrap";
 import "chartkick/chart.js";
 

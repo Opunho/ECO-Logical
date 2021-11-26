@@ -30,10 +30,25 @@ class User < ApplicationRecord
     Emmission.where(main_category: cat).collect(&:co2_grams).sum(&:to_i)
   end
 
-  def total_expenses_per_category(cat)
-    Emmission.where(main_category: cat).map do |emmission|
-      emmission.expense.amount
-    end.sum
+  def total_expenses_per_category(array)
+    case array[1]
+    when "month"
+      Emmission.joins(:expense).last_thirty_days_by_category(array[0]).map do |emmission|
+        emmission.expense.amount
+      end.sum
+    when "all"
+      Emmission.where(main_category: array[0]).map do |emmission|
+        emmission.expense.amount
+      end.sum
+    when "six_months"
+      Emmission.joins(:expense).last_six_months_by_category(array[0]).map do |emmission|
+        emmission.expense.amount
+      end.sum
+    when "three_months"
+      Emmission.joins(:expense).last_three_months_by_category(array[0]).map do |emmission|
+        emmission.expense.amount
+      end.sum
+    end
   end
 
   def pledge_impact

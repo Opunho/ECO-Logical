@@ -4,7 +4,7 @@ class Expense < ApplicationRecord
 
   scope :last_thirty_days, -> { where(date: 31.days.ago..Date.today) }
   scope :last_six_months, -> { where(date: 6.months.ago..Date.today) }
-  scope :last_three_months, -> { where(date: 3.months.afo..Date.today) }
+  scope :last_three_months, -> { where(date: 3.months.ago..Date.today) }
 
   def sub_category
     sub_cat = []
