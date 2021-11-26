@@ -7,8 +7,8 @@
    <p>-----------------------</p>
    <%= link_to "Create new transaction", new_expense_path %>
    <!-- Taking each unique category -->
-   <% current_user.unique_category.each do |cat| %>
-    <%= render "accordion", cat: cat %>
+   <% @categories.each do |cat| %>
+    <%= render "accordion", cat: cat, time: time %>
    <!-- Taking total expenses and percentages on total of the expenses -->
    <!-- Per category then having the breakdown -->
    <% end %>

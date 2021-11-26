@@ -1,18 +1,29 @@
 class DashboardsController < ApplicationController
 
+  def self.calculate
+    current_user.unique_category.each do |cat|
+
+    end
+  end
+
   def show
+    @categories = current_user.unique_category
     @accounts = current_user.accounts
     @emmissions = current_user.emmissions
     @expense = Expense.new
     @total_expenses = current_user.user_total_expenses
+    @time = "all"
     @total_emmissions = (current_user.user_total_emmissions.to_f * current_user.user_total_expenses.to_f) / 1000
     if params[:month_query].present?
+      @time = "month"
       @total_expenses = user_total_expenses_month
       @total_emmissions = total_emmissions_month
     elsif params[:half_year].present?
+      @time = "six_months"
       @total_expenses = user_total_expenses_half_year
       @total_emmissions = total_emmissions_half_year
     elsif params[:three_months].present?
+      @time = "three_months"
       @total_expenses = user_total_expenses_three_months
       @total_emmissions = total_emmissions_three_months
     end

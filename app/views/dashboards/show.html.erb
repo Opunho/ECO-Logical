@@ -45,6 +45,6 @@
       <%= pie_chart Expense.chart_legend, donut: true, legend: "right" %>
     </div>
     <br>
-       <%= render 'description' %>
+       <%= render 'description', time: @time %>
   </div>
 </div>
