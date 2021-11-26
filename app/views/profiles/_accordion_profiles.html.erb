@@ -1,0 +1,21 @@
+<div class="accordion" id="accordionExample">
+  <div class="card">
+      <div class="card-header" id="headingOne">
+        <p class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-<%= pledge.id %>" aria-expanded="true" aria-controls="collapseOne">
+              <p><strong><%= pledge.recommendation.title %></strong> = <%= pledge.recommendation.co2_grams %> CO2 grams</p>
+          </button>
+        </p>
+      </div>
+
+      <div id="collapse-<%= pledge.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <ul>
+            <li><%= pledge.recommendation.description %></li>
+            <br>
+            <li><%= link_to "Link to article", pledge.recommendation.link_to_article %></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,31 +1,32 @@
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-<%= cat %>" aria-expanded="true" aria-controls="collapseOne">
-            <h2><strong><%= cat %></strong></h2>
-        </button>
-      </h2>
-        <p><%= current_user.total_expenses_per_category(cat) %> EUR</p>
-        <% percentage = current_user.total_expenses_per_category(cat) / current_user.user_total_expenses * 100 %>
-        <p><%= percentage.to_i %>%</p>
-        <!-- Taking total emmissions and percentages on total of the expenses -->
-        <% final_calc = current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category(cat).to_f %>
-        <p><%= final_calc.ceil(2) %> CO2 grams</p>
-        <% percentage = current_user.total_emmissions_per_category(cat) / current_user.user_total_emmissions * 100 %>
-        <p><%= percentage.to_i %>%</p>
-    </div>
 
-    <div id="collapse-<%= cat %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-          <strong><h4><%= "Breakdown of #{cat}" %></h4></strong>
-            <% @emmissions.where(main_category: cat).each do |emmission| %>
-            <h5><em><%= emmission.sub_category %></em></h5>
-            <p><%= emmission.expense.amount %> EUR</p>
-            <% calc_result =  emmission.co2_grams.to_f * emmission.expense.amount.to_f %>
-            <p><%= calc_result.ceil(2) %></p>
-            <% end %>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-<%= cat.split.first %>" aria-expanded="true" aria-controls="collapseOne">
+              <h2><strong><%= cat %></strong></h2>
+          </button>
+        </h2>
+          <p><%= current_user.total_expenses_per_category(cat) %> EUR</p>
+          <% percentage = current_user.total_expenses_per_category(cat) / current_user.user_total_expenses * 100 %>
+          <p><%= percentage.to_i %>%</p>
+          <!-- Taking total emmissions and percentages on total of the expenses -->
+          <% final_calc = current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category(cat).to_f %>
+          <p><%= final_calc.ceil(2) %> CO2 grams</p>
+          <% percentage = current_user.total_emmissions_per_category(cat) / current_user.user_total_emmissions * 100 %>
+          <p><%= percentage.to_i %>%</p>
+      </div>
+
+      <div id="collapse-<%= cat.split.first %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+            <strong><h4><%= "Breakdown of #{cat}" %></h4></strong>
+              <% @emmissions.where(main_category: cat).each do |emmission| %>
+              <h5><em><%= emmission.sub_category %></em></h5>
+              <p><%= emmission.expense.amount %> EUR</p>
+              <% calc_result =  emmission.co2_grams.to_f * emmission.expense.amount.to_f %>
+              <p><%= calc_result.ceil(2) %></p>
+              <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>

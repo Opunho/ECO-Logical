@@ -1,12 +1,13 @@
-<h1 class="your-pledges d-flex justify-content-center">Your pledges</h1>
+<div>
+  <span class="typed d-flex justify-content-center " id="banner-typed-text"></span>
+</div>
+<br><br>
+<h1 class="your-pledges d-flex justify-content-center position-">Your pledges</h1>
 <div class="container-all-pledges">
     <div class="card-container">
-        <% @pledges.first(3).each do |pledge| %>
+        <% @pledges.last(3).each do |pledge| %>
             <% if pledge.completed == false %>
-            <%= pledge.recommendation.title %>
-            <%= pledge.recommendation.description %>
-            <%= pledge.recommendation.link_to_article %>
-            <%= pledge.recommendation.co2_grams %> CO2 kg
+            <%= render "accordion_profiles", pledge: pledge %>
             <% unless pledge.completed %>
             <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
             <% end %>
@@ -20,13 +21,10 @@
   <div class="card-container">
     <% @completed_pledges.first(3).each do |pledge| %>
         <% pledge.completed %>
-        <%= pledge.recommendation.title %>
-        <%= pledge.recommendation.description %>
-        <%= pledge.recommendation.link_to_article %>
-        <%= pledge.recommendation.co2_grams %> CO2 kg
+        <%= render "accordion_profiles", pledge: pledge %>
         <% unless pledge.completed %>
         <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
-        <% end %>
+      <% end %>
     <% end %>
-  </div>
+   </div>
 </div>
