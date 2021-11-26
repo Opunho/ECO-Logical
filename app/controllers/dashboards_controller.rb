@@ -1,11 +1,4 @@
 class DashboardsController < ApplicationController
-
-  def self.calculate
-    current_user.unique_category.each do |cat|
-
-    end
-  end
-
   def show
     @categories = current_user.unique_category
     @accounts = current_user.accounts

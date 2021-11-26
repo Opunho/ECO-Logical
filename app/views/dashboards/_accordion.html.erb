@@ -2,7 +2,8 @@
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-<%= cat %>" aria-expanded="true" aria-controls="collapseOne">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                data-target="#collapse-<%= cat %>" aria-expanded="true" aria-controls="collapseOne">
             <h2><strong><%= cat %></strong></h2>
         </button>
       </h2>
@@ -10,9 +11,9 @@
         <% percentage = current_user.total_expenses_per_category([cat, time]) / current_user.user_total_expenses * 100 %>
         <p><%= percentage.to_i %>%</p>
         <!-- Taking total emmissions and percentages on total of the expenses -->
-        <% final_calc = current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category([cat, time]).to_f %>
+        <% final_calc = current_user.total_emmissions_per_category([cat, time]).to_f * current_user.total_expenses_per_category([cat, time]).to_f %>
         <p><%= final_calc.ceil(2) %> CO2 grams</p>
-        <% percentage = current_user.total_emmissions_per_category(cat) / current_user.user_total_emmissions * 100 %>
+        <% percentage = current_user.total_emmissions_per_category([cat, time]) / current_user.user_total_emmissions * 100 %>
         <p><%= percentage.to_i %>%</p>
     </div>
 
