@@ -47,7 +47,7 @@ class ExpensesController < ApplicationController
         end
       end
     end
-    redirect_to expenses_path
+    redirect_to dashboard_path
   end
 
   private

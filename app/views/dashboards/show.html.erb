@@ -4,6 +4,14 @@
 <%= pie_chart Expense.chart_legend, donut: true, legend: "right" %>
 
 <%= link_to "Create new transaction", new_expense_path %>
+<%= link_to "Update Transactions", fetch_expenses_path%>
+
+<div class="d-flex justify-content-center align-item-center">
+  <button class="btn btn-primary">30 Days</button>
+  <button class="btn btn-primary">6 Months</button>
+  <button class="btn btn-primary">3 Months</button>
+</div>
+
 
 <h1>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h1>
 
