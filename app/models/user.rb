@@ -18,7 +18,8 @@ class User < ApplicationRecord
   end
 
   def unique_category
-    emmissions.collect(&:main_category).uniq
+    categories = emmissions.collect(&:main_category).uniq
+    categories.reject { |item| item.nil? }
   end
 
   def unique_account

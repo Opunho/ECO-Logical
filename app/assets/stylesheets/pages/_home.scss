@@ -6,6 +6,7 @@
   width: 350px;
   text-align: center;
   margin: 0 auto;
+  color: white;
 }
 
 .home-page-text{
@@ -28,4 +29,18 @@
   background-size: cover;
   margin-top: -50px;
 
+}
+
+#circle {
+  background: $eco-green;
+  border-radius: 50%;
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+  color: white;
+  text-shadow: black;
+}
+
+#h2center {
+  margin-top: 5px;
 }

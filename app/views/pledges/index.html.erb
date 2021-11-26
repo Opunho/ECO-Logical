@@ -1,28 +1,23 @@
 <h1>Your pledges</h1>
+
+
+<i class="fas fa-backspace"></i><%= link_to " Back to recommendations", recommendations_path %>
+
+<br><br>
+
 <% @pledges.each do |pledge| %>
-  <ul>
     <% pledge.completed %>
-    <li><%= pledge.recommendation.title %></li>
-    <li><%= pledge.recommendation.description %></li>
-    <li><%= pledge.recommendation.link_to_article %></li>
-    <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
+    <%= render "accordion_pledges", pledge: pledge %>
     <% unless pledge.completed %>
-    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+    <button><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button>
     <% end %>
-  </ul>
 <% end %>
 
-<h2>Completed pledges</h2>
-  <%= @total_co2_achieved %>
-
+<h2>Latest Completed pledges</h2>
+<%= "You offset #{@total_co2_achieved} and counting" %><span class="typed" id="pledge-co2"></span>
 <% @completed_pledges.each do |pledge| %>
-  <ul>
-    <li><%= pledge.recommendation.title %></li>
-    <li><%= pledge.recommendation.description %></li>
-    <li><%= pledge.recommendation.link_to_article %></li>
-    <li><%= pledge.recommendation.co2_grams %> CO2 kg</li>
+    <%= render "accordion_pledges", pledge: pledge %>
     <% unless pledge.completed %>
     <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
     <% end %>
-  </ul>
 <% end %>

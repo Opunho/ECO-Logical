@@ -1,12 +1,14 @@
-<h1 class="your-pledges d-flex justify-content-center">Your pledges</h1>
+<div>
+  <span class="typed d-flex justify-content-center " id="banner-typed-text"></span>
+</div>
+<br><br>
+  <h1 class="your-pledges d-flex justify-content-center position-">Your latest pledges</h1>
+  <i class="fas fa-seedling"></i><%= link_to " See all your pledges", pledges_path  %>
 <div class="container-all-pledges">
     <div class="card-container">
-        <% @pledges.first(3).each do |pledge| %>
+        <% @pledges.last(3).each do |pledge| %>
             <% if pledge.completed == false %>
-            <%= pledge.recommendation.title %>
-            <%= pledge.recommendation.description %>
-            <%= pledge.recommendation.link_to_article %>
-            <%= pledge.recommendation.co2_grams %> CO2 kg
+            <%= render "accordion_profiles", pledge: pledge %>
             <% unless pledge.completed %>
             <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
             <% end %>
@@ -14,19 +16,16 @@
         <% end %>
     </div>
 </div>
-<h1 class="comp-pledges d-flex justify-content-center">Completed pledges</h1>
+<h1 class="comp-pledges d-flex justify-content-center">Latest completed pledges</h1>
 <p class="total-co2 d-flex justify-content-center">You've helped reduce <%= @total_co2_achieved %> kg of CO2!</p>
 <div class="container-all-pledges">
   <div class="card-container">
     <% @completed_pledges.first(3).each do |pledge| %>
         <% pledge.completed %>
-        <%= pledge.recommendation.title %>
-        <%= pledge.recommendation.description %>
-        <%= pledge.recommendation.link_to_article %>
-        <%= pledge.recommendation.co2_grams %> CO2 kg
+        <%= render "accordion_profiles", pledge: pledge %>
         <% unless pledge.completed %>
         <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
-        <% end %>
+      <% end %>
     <% end %>
-  </div>
+   </div>
 </div>
