@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   def show
+    @emmission_chart = Emmission.pie_chart2
     @categories = current_user.unique_category
     @accounts = current_user.accounts
     @emmissions = current_user.emmissions
@@ -12,16 +13,19 @@ class DashboardsController < ApplicationController
       @total_expenses = user_total_expenses_month
       @total_emmissions = total_emmissions_month
       @emmissions = current_user.emmissions.last_thirty_days
+      @emmission_chart = Emmission.last_thirty_days_chart
     elsif params[:half_year].present?
       @time = "six_months"
       @total_expenses = user_total_expenses_half_year
       @total_emmissions = total_emmissions_half_year
       @emmissions = current_user.emmissions.last_six_months
+      @emmission_chart = Emmission.six_months_chart
     elsif params[:three_months].present?
       @time = "three_months"
       @total_expenses = user_total_expenses_three_months
       @total_emmissions = total_emmissions_three_months
       @emmissions = current_user.emmissions.last_three_months
+      @emmission_chart = Emmission.three_months_chart
     end
 
     respond_to do |format|

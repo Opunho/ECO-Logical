@@ -4,6 +4,18 @@ class Emmission < ApplicationRecord
 
   scope :pie_chart2, -> { group(:sub_category).sum(:co2_grams) }
 
+  def self.last_thirty_days_chart
+    joins(:expense).group(:sub_category).where(expense: { date: 31.days.ago..Date.today }).sum(:co2_grams)
+  end
+
+  def self.six_months_chart
+    joins(:expense).group(:sub_category).where(expense: { date: 6.months.ago..Date.today }).sum(:co2_grams)
+  end
+
+  def self.three_months_chart
+    joins(:expense).group(:sub_category).where(expense: { date: 3.months.ago..Date.today }).sum(:co2_grams)
+  end
+
   def self.last_thirty_days_by_category(category)
     joins(:expense).where(main_category: category).where(expense: { date: 31.days.ago..Date.today  })
   end
