@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_151039) do
+ActiveRecord::Schema.define(version: 2021_11_25_133840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,24 +24,15 @@ ActiveRecord::Schema.define(version: 2021_11_23_151039) do
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
-  create_table "calculations", force: :cascade do |t|
-    t.float "total_expenses"
-    t.float "total_emmissions"
-    t.bigint "emmission_id", null: false
-    t.bigint "expense_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["emmission_id"], name: "index_calculations_on_emmission_id"
-    t.index ["expense_id"], name: "index_calculations_on_expense_id"
-  end
-
   create_table "emmissions", force: :cascade do |t|
     t.string "main_category"
     t.string "sub_category"
     t.float "co2_grams"
     t.integer "mcc"
+    t.bigint "expense_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["expense_id"], name: "index_emmissions_on_expense_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -59,11 +50,11 @@ ActiveRecord::Schema.define(version: 2021_11_23_151039) do
   end
 
   create_table "impacts", force: :cascade do |t|
-    t.bigint "calculation_id", null: false
+    t.bigint "emmission_id", null: false
     t.bigint "recommendation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["calculation_id"], name: "index_impacts_on_calculation_id"
+    t.index ["emmission_id"], name: "index_impacts_on_emmission_id"
     t.index ["recommendation_id"], name: "index_impacts_on_recommendation_id"
   end
 
@@ -84,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_151039) do
     t.string "link_to_article"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "co2_grams"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,10 +93,9 @@ ActiveRecord::Schema.define(version: 2021_11_23_151039) do
   end
 
   add_foreign_key "accounts", "users"
-  add_foreign_key "calculations", "emmissions"
-  add_foreign_key "calculations", "expenses"
+  add_foreign_key "emmissions", "expenses"
   add_foreign_key "expenses", "accounts"
-  add_foreign_key "impacts", "calculations"
+  add_foreign_key "impacts", "emmissions"
   add_foreign_key "impacts", "recommendations"
   add_foreign_key "pledges", "recommendations"
   add_foreign_key "pledges", "users"

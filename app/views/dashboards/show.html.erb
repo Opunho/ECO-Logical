@@ -1,30 +1,41 @@
 <h1>This is the Dashboard Show...</h1>
 
+<%= pie_chart Emmission.pie_chart2, donut: true, legend: "left" %>
+<%= pie_chart Expense.chart_legend, donut: true, legend: "right" %>
+
+<%= link_to "Create new transaction", new_expense_path %>
+
 <h1>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h1>
 
 <br>
 
 <div>
-  <% @accounts.each do |account| %>
-    <%= account.account_number %>
-  <% end %>
+  <p>Account Number: <%= current_user.unique_account[0] %></p>
 </div>
 
 <br>
 
-<p>Total Expenses : <%= current_user.total_expenses %> EUR </p>
-<p>Total Emmissions: <%= current_user.total_emmissions %></p>
-
+<p>Total Expenses : <%= current_user.user_total_expenses %> EUR </p>
+<% total = (current_user.user_total_emmissions.to_f * current_user.user_total_expenses.to_f) / 1000 %>
+<p>Total Emmissions: <%= total.ceil(2) %> CO2 grams</p>
+<p>Pledges Completed: <%= current_user.pledge_impact %> CO2 grams Offset</p>
+<p>Net Emmissions: <%= total.ceil(2) - current_user.pledge_impact  %></p>
 
 <br>
 
-<div>
-  <% @calculations.each do |calculation| %>
-    <tr>
-      <p><%= calculation.emmission.main_category %></p>
-      <p>Expense: <td><%= calculation.total_expenses %> <%= calculation.expense.currency %></td></p>
-      <p>Emmissions: <td><%= calculation.total_emmissions %></td></p>
+<p>-----------------------</p>
 
-    </tr>
-  <% end %>
-</div>
+<!-- Taking each unique category -->
+<% current_user.unique_category.each do |cat| %>
+  <%= render "accordion", cat: cat %>
+
+<!-- Taking total expenses and percentages on total of the expenses -->
+
+<!-- Per category then having the breakdown -->
+
+
+<% end %>
+
+<p>-----------------------</p>
+
+<br>

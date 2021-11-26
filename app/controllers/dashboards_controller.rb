@@ -2,6 +2,10 @@ class DashboardsController < ApplicationController
 
   def show
     @accounts = current_user.accounts
-    @calculations = current_user.calculations
+    @emmissions = current_user.emmissions
+    @expense = Expense.new
+  end
+
+  def calculate_emmission
   end
 end

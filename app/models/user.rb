@@ -6,14 +6,37 @@ class User < ApplicationRecord
 
   has_many :accounts
   has_many :expenses, through: :accounts
-  has_many :calculations, through: :expenses
+  has_many :emmissions, through: :expenses
   has_many :pledges
 
-  def total_emmissions
-    calculations.collect(&:total_emmissions).sum
+  def user_total_emmissions
+    emmissions.collect(&:co2_grams).sum(&:to_f)
   end
 
-   def total_expenses
-    calculations.collect(&:total_expenses).sum
+  def user_total_expenses
+    expenses.collect(&:amount).sum(&:to_f)
+  end
+
+  def unique_category
+    emmissions.collect(&:main_category).uniq
+  end
+
+  def unique_account
+    accounts.collect(&:account_number).uniq
+  end
+
+  def total_emmissions_per_category(cat)
+    Emmission.where(main_category: cat).collect(&:co2_grams).sum(&:to_i)
+  end
+
+  def total_expenses_per_category(cat)
+    Emmission.where(main_category: cat).map do |emmission|
+      emmission.expense.amount
+    end.sum
+  end
+
+  def pledge_impact
+    @completed_pledges = Pledge.where(completed: true)
+    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum.to_f
   end
 end

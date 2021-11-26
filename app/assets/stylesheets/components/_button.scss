@@ -38,23 +38,18 @@
   background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
 }
 
-.button-signup {
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 8px 16px;
-width: 98px;
-height: 24px;
-background: #099D02;
-border-radius: 15px;
-border-style: none;
-color: white;
-font-style: normal;
-font-size: 12.6416px;
-line-height: 15px;
-transition-duration: 0.3s;
-}
-
-.button-signup:hover {
-  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
+.button-main {
+  padding: 8px 16px;
+  background-color: $eco-green;
+  border-style: none;
+  color: white;
+  font-style: normal;
+  font-size: 25px;
+  transition-duration: 0.3s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 15px;
+  border-radius: 25px;
 }
