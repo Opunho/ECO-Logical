@@ -4,7 +4,6 @@ class DashboardsController < ApplicationController
     @accounts = current_user.accounts
     @emmissions = current_user.emmissions
     @expense = Expense.new
-    raise
   end
 
   def calculate_emmission
