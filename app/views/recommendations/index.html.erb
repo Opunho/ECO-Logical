@@ -1,11 +1,15 @@
 <h1>Offset recommendations</h1>
+
+<%= link_to "Go to pleges ", pledges_path %><i class="fab fa-google-play"></i>
+
+<br><br>
+
 <% @recommendations.each do |recommendation| %>
-  <p><%= recommendation.title %></p>
-  <p><%= recommendation.description %></p>
-  <p><%= recommendation.link_to_article %></p>
-  <p><%= recommendation.category %></p>
-  <p><%=recommendation.co2_grams %> CO2 kg</p>
+  <h3><%= recommendation.category %></h3>
+  <br>
+  <%= render "accordion_recommendations", recommendation: recommendation %>
   <%= simple_form_for([recommendation, Pledge.new]) do |f| %>
     <%= f.submit %>
   <% end %>
+  <br>
 <% end %>

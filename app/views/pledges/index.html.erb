@@ -1,4 +1,9 @@
 <h1>Your pledges</h1>
+
+<i class="fas fa-backspace"></i><%= link_to " Back to recommendations", recommendations_path %>
+
+<br><br>
+
 <% @pledges.each do |pledge| %>
     <% pledge.completed %>
     <%= render "accordion_pledges", pledge: pledge %>
