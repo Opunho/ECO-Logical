@@ -42,7 +42,7 @@
   <div class="container">
     <div class="chart">
       <%= pie_chart @emmission_chart, donut: true, legend: "left" %>
-      <%#= pie_chart Expense.chart_legend, donut: true, legend: "right" %>
+      <%= pie_chart @expenses_chart, donut: true, legend: "right" %>
     </div>
     <br>
        <%= render 'description', time: @time %>

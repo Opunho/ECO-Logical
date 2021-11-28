@@ -1,8 +1,8 @@
 class Expense < ApplicationRecord
   belongs_to :account
   has_one :emmission
-  scope :many_months_ago, ->(time) { where(expense: { date: time.months.ago..Date.today }) }
-  scope :one_month_ago, ->(time) { where(expense: { date: time.month.ago..Date.today }) }
+  scope :many_months_ago, ->(time) { where(date: time.months.ago..Date.today) }
+  scope :one_month_ago, ->(time) { where(date: time.month.ago..Date.today) }
   scope :date_filter, ->(time) { where(date: time.months.ago..Date.today)
                                  .or(where(date: time.month.ago..Date.today)) }
 

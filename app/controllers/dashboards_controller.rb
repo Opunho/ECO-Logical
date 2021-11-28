@@ -3,8 +3,8 @@ class DashboardsController < ApplicationController
     @expense = Expense.new
     @categories = current_user.unique_category
     @accounts = current_user.accounts
-    @expenses_chart = Expense.populate_chart(@time)
     params[:scope].present? ? @time = params[:scope].to_i : @time = "all"
+    @expenses_chart = Expense.populate_chart(@time)
     @total_expenses = user_total_expenses(@time)
     @total_emmissions = user_total_emmissions(@time)
     @emmissions = current_user.emmissions.date_filtered_emmissions(@time, current_user)
