@@ -4,16 +4,15 @@ class Emmission < ApplicationRecord
 
   scope :pie_chart2, -> { group(:sub_category).sum(:co2_grams) }
 
-  def self.last_thirty_days_chart
-    joins(:expense).group(:sub_category).where(expense: { date: 31.days.ago..Date.today }).sum(:co2_grams)
-  end
-
-  def self.six_months_chart
-    joins(:expense).group(:sub_category).where(expense: { date: 6.months.ago..Date.today }).sum(:co2_grams)
-  end
-
-  def self.three_months_chart
-    joins(:expense).group(:sub_category).where(expense: { date: 3.months.ago..Date.today }).sum(:co2_grams)
+  def self.populate_chart(time)
+    case time
+    when "month"
+      joins(:expense).group(:sub_category).where(expense: { date: 31.days.ago..Date.today }).sum(:co2_grams)
+    when "three_months"
+      joins(:expense).group(:sub_category).where(expense: { date: 3.months.ago..Date.today }).sum(:co2_grams)
+    when "six_months"
+      joins(:expense).group(:sub_category).where(expense: { date: 6.months.ago..Date.today }).sum(:co2_grams)
+    end
   end
 
   def self.last_thirty_days_by_category(category)
@@ -28,17 +27,19 @@ class Emmission < ApplicationRecord
     joins(:expense).where(main_category: category).where(expense: { date: 3.months.ago..Date.today })
   end
 
-  def self.last_thirty_days
-    joins(:expense).where(expense: { date: 31.days.ago..Date.today })
+  def self.date_filtered_emmissions(*args)
+    case args[0]
+    when "all"
+      args[1].emmissions
+    when "month"
+      joins(:expense).where(expense: { date: 31.days.ago..Date.today })
+    when "three_months"
+      joins(:expense).where(expense: { date: 3.months.ago..Date.today })
+    when "six_months"
+      joins(:expense).where(expense: { date: 6.months.ago..Date.today })
+    end
   end
 
-  def self.last_six_months
-    joins(:expense).where(expense: { date: 6.months.ago..Date.today })
-  end
-
-  def self.last_three_months
-    joins(:expense).where(expense: { date: 3.months.ago..Date.today })
-  end
   def calculator
     [
       {

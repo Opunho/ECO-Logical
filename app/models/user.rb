@@ -53,6 +53,6 @@ class User < ApplicationRecord
 
   def pledge_impact
     @completed_pledges = Pledge.where(completed: true)
-    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum.to_f
+    @total_co2_achieved = @completed_pledges.map{ |pledge| pledge.recommendation.co2_grams }.sum.to_f
   end
 end
