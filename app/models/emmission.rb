@@ -27,10 +27,10 @@ class Emmission < ApplicationRecord
     joins(:expense).where(main_category: category).where(expense: { date: 3.months.ago..Date.today })
   end
 
-  def self.date_filtered_emmissions(*args)
-    case args[0]
+  def self.date_filtered_emmissions(time, current_user)
+    case time
     when "all"
-      args[1].emmissions
+      current_user.emmissions
     when "month"
       joins(:expense).where(expense: { date: 31.days.ago..Date.today })
     when "three_months"
