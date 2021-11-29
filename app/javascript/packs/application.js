@@ -30,6 +30,8 @@ import { counterUp } from "../components/counterup";
 import { initCarousel } from "../components/carousel";
 import { initForm } from "../components/form";
 
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
