@@ -1,4 +1,40 @@
 // Specific CSS for your home-page
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#join-button {
+  color: white;
+}
+
+.viewport-header {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-footer {
+  margin-bottom: 150vh;
+}
+
+.viewport-footer {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .homepage-container{
   display: flex;
   flex-direction: column;

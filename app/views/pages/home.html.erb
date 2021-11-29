@@ -1,46 +1,16 @@
-<div class="sign-card">
-  <div class= "homepage-container">
-          <br>
-          <br><br><br>
-      <div>
-        <h1  >ECO-Logical</h1><br>
-      </div>
-      <br><h3>Be <em>LOGICAL</em> about <strong>your</strong> economy, and <strong>our</strong> ecology</h3>
-      <br><br>
-    <%= link_to "Become Green", profile_path	, class: "mgtj" %><br>
-      <br>
-
-  <br><br>
-
-      <h5 style="text-align: left;">Why you should go green?</h5>
-
-      <div class="card-green">
-        <p> Helping you become more environmentally friendly and making our planet greener</p>
-      </div>
-      <%= image_tag "https://www.cloverly.com/hubfs/Cloverly_January_2021/images/hiw-icon-3.svg", id: "homepage-solar" %>
-      <br>
-      <h5>Start your green journey:</h5>
-      <br>
-      <div class="card-container-left">
-        <div class="card-green-left d-flex">
-          <h5 style="padding-right: 15px;">Make your account</h5>
-          <%= image_tag "https://www.cloverly.com/hubfs/Cloverly_January_2021/images/supply-chain.svg", id: "homepage-1" %>
-        </div>
-      </div>
-      <br>
-      <div class="card-container-right">
-        <div class="card-green-right d-flex ">
-          <%= image_tag "https://www.cloverly.com/hubfs/Cloverly_January_2021/images/supply-chain.svg", id: "homepage-2" %>
-          <h5 style="padding-right: 15px;">Track your daily CO2 </h5>
-        </div>
-      </div>
-      <br>
-      <div class="card-container-left">
-        <div class="card-green-left d-flex">
-          <h5 style="padding-right: 15px;">Make planet greener</h5>
-          <%= image_tag "https://www.cloverly.com/hubfs/Cloverly_January_2021/images/ecommerce.svg", id: "homepage-1" %>
-        </div>
-      </div>
-
-  </div>
+<div class=" d-flex justify-content-center align-items-center">
+  <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4",id: "cover-video", autoplay: true, loop: true, width: "480vw") %>
 </div>
+<header class="viewport-header">
+  <h1>
+    <%= link_to "Join The Cause", new_user_registration_path, id: "join-button" %>
+  </h1>
+</header>
+<footer class="viewport-footer">
+  <div class="video-footer">
+    <p>
+      already a member?
+    </p>
+    <%= link_to "Sign In", new_account_path if user_signed_in?  %>
+  </div>
+</footer>
