@@ -2,21 +2,23 @@
   overflow:hidden;
   visibility: hidden;
   position: relative;
-  width: 95vw;
+  width: auto;
 }
 .swipe-wrap {
   overflow: hidden;
   position: relative;
+  align-items:center;
 }
-.swipe-wrap > div {
+.swipe-wrap > .swipe-container {
   float: left;
   position: relative;
+  border: 5px solid red;
+}
+.swipe-image{
+  height: 40vh;
   background-size: cover;
   background-position: center;
-  height: 40vh;
   border-radius: 10px;
   opacity: 1;
-  margin: 3px;
-  padding: 0 10px;
-  width: 60%;
+  width:auto;
 }
