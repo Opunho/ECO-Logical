@@ -12,6 +12,7 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "stimulus": "^3.0.1",
+    "swipejs": "^2.3.1",
     "turbolinks": "^5.2.0",
     "typed.js": "^2.0.12",
     "webpack": "^4.46.0",
