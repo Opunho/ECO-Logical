@@ -13,8 +13,8 @@ puts "Creating user"
 @user = User.create!(
   email: 'user@user.com',
   password: 'password',
-  first_name: 'user',
-  last_name: 'user'
+  first_name: 'Tjeerd',
+  last_name: 'van de Geld'
 )
 puts "User created"
 

@@ -56,3 +56,25 @@
   height: 3rem;
 
 }
+
+.seedling-button {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.seedling-button a {
+  color: black;
+}
+
+.seedling-button:visited {
+  text-decoration: none;
+}
+
+.seedling-container {
+  display: flex;
+  justify-content: center;
+}
