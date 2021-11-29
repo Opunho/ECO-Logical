@@ -28,10 +28,6 @@ class Expense < ApplicationRecord
     sub_cat.uniq
   end
 
-  # def self.chart_legend
-  #   Expense.joins(:emmission).group("emmissions.sub_category").sum("amount")
-  # end
-
   def emmission_data(sub_category)
     emmission = Emmission.new
     emmission.calculator.each do |element|
