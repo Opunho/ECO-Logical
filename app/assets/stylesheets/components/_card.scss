@@ -25,6 +25,11 @@
   width: 100%;
 }
 
+// .card p:visited {
+//   text-decoration: none;
+//   color: black;
+// }
+
 .btn {
   font-size: 17px;
   color: black;
@@ -39,4 +44,14 @@
 .card-body {
  font-size: 15px;
  text-align: left;
+}
+
+.card-body a {
+  color: black;
+  text-decoration: none;
+}
+
+.card-body a:visited {
+  color: black;
+  text-decoration: none;
 }
