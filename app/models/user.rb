@@ -32,20 +32,12 @@ class User < ApplicationRecord
 
   def total_expenses_per_category(array)
     case array[1]
-    when "month"
-      Emmission.joins(:expense).last_thirty_days_by_category(array[0]).map do |emmission|
-        emmission.expense.amount
-      end.sum
     when "all"
       Emmission.where(main_category: array[0]).map do |emmission|
         emmission.expense.amount
       end.sum
-    when "six_months"
-      Emmission.joins(:expense).last_six_months_by_category(array[0]).map do |emmission|
-        emmission.expense.amount
-      end.sum
-    when "three_months"
-      Emmission.joins(:expense).last_three_months_by_category(array[0]).map do |emmission|
+    else
+      Emmission.filter_by_category(array[1], array[0]).map do |emmission|
         emmission.expense.amount
       end.sum
     end
@@ -53,6 +45,6 @@ class User < ApplicationRecord
 
   def pledge_impact
     @completed_pledges = Pledge.where(completed: true)
-    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum.to_f
+    @total_co2_achieved = @completed_pledges.map{ |pledge| pledge.recommendation.co2_grams }.sum.to_f
   end
 end

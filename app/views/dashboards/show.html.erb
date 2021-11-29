@@ -9,8 +9,9 @@
 <div data-controller="update-list">
   <div class="d-flex justify-content-center align-item-center">
     <div class="d-inline-flex justify-content-between w-50">
-       <%= form_with url: dashboard_path, method: :get, html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :month_query, "true" %>
+       <%= form_with url: dashboard_path, method: :get,
+           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
+       <%= hidden_field_tag :scope, 1 %>
        <%= f.button "Show Last 30 Days",
                      class: "btn btn-primary",
                      data: {
@@ -18,8 +19,9 @@
                       action: "click->update-list#update"
                      } %>
        <% end %>
-       <%= form_with url: dashboard_path, method: :get, html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :half_year, "true" %>
+       <%= form_with url: dashboard_path, method: :get,
+           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
+       <%= hidden_field_tag :scope, 6 %>
        <%= f.button "Show last 6 months",
                      class: "btn btn-primary",
                      data: {
@@ -27,8 +29,9 @@
                       action: "click->update-list#update"
                      } %>
        <% end %>
-       <%= form_with url: dashboard_path, method: :get, html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :three_months, "true" %>
+       <%= form_with url: dashboard_path, method: :get,
+           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
+       <%= hidden_field_tag :scope, 3 %>
        <%= f.button "Show last 3 months",
                      class: "btn btn-primary",
                      data: {
@@ -41,8 +44,8 @@
 
   <div class="container">
     <div class="chart">
-      <%= pie_chart Emmission.pie_chart2, donut: true, legend: "left" %>
-      <%= pie_chart Expense.chart_legend, donut: true, legend: "right" %>
+      <%= pie_chart @emmission_chart, donut: true, legend: "left" %>
+      <%= pie_chart @expenses_chart, donut: true, legend: "right" %>
     </div>
     <br>
        <%= render 'description', time: @time %>
