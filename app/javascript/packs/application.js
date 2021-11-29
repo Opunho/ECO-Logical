@@ -28,10 +28,12 @@ import "chartkick/chart.js";
 
 import { loadDynamicBannerText } from '../components/banner';
 import { counterUp } from "../components/counterup"
+import { switchChart } from "../components/switchchart";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
   counterUp();
+  switchChart();
 });

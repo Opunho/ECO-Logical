@@ -10,3 +10,59 @@
   align-items: center;
   text-align: center;
 }
+
+.dashboard-h1 {
+  background: rgb(255,255,255);
+  background: linear-gradient(341deg, rgba(255,255,255,1) 0%, rgba(76,24,197,1) 23%);  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 20px;
+  padding: 15px;
+  color: white;
+
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.dashboard-h2{
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+}
+
+.hb32 {
+  justify-content: space-between;
+}
+
+.dashboard-h3{
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.dash-card-1{
+/* From https://css.glass */
+  background: rgba(255, 255, 255, 0.43);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.3px);
+  -webkit-backdrop-filter: blur(8.3px);
+  border: 1px solid rgba(255, 255, 255, 1);
+
+}
