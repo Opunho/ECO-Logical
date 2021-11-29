@@ -28,12 +28,20 @@ import "chartkick/chart.js";
 
 import { loadDynamicBannerText } from '../components/banner';
 import { counterUp } from "../components/counterup"
+<<<<<<< HEAD
 import { initForm } from "../components/form"
+=======
+import { initCarousel } from "../components/carousel"
+>>>>>>> master
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
   counterUp();
+<<<<<<< HEAD
   initForm();
+=======
+  initCarousel();
+>>>>>>> master
 });
