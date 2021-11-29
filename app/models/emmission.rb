@@ -1,19 +1,33 @@
 class Emmission < ApplicationRecord
   belongs_to :expense
   has_many :impacts
+  scope :many_months_ago, ->(time) { where(expense: { date: time.months.ago..Date.today }) }
+  scope :one_month_ago, ->(time) { where(expense: { date: time.month.ago..Date.today }) }
 
-  scope :pie_chart2, -> { group(:sub_category).sum(:co2_grams) }
-
-  def self.last_thirty_days_by_category(category)
-    joins(:expense).where(main_category: category).where(expense: { date: 31.days.ago..Date.today  })
+  def self.populate_chart(time)
+    case time
+    when "all"
+      group(:sub_category).sum(:co2_grams)
+    when 1
+      joins(:expense).group(:sub_category).one_month_ago(time).sum(:co2_grams)
+    else
+      joins(:expense).group(:sub_category).many_months_ago(time).sum(:co2_grams)
+    end
   end
 
-  def self.last_six_months_by_category(category)
-    joins(:expense).where(main_category: category).where(expense: { date: 6.months.ago..Date.today })
+  def self.filter_by_category(time, category)
+    joins(:expense).where(main_category: category).many_months_ago(time)
+                   .or(joins(:expense).where(main_category: category).one_month_ago(time))
   end
 
-  def self.last_three_months_by_category(category)
-    joins(:expense).where(main_category: category).where(expense: { date: 3.months.ago..Date.today })
+  def self.date_filtered_emmissions(time, current_user)
+    case time
+    when "all"
+      current_user.emmissions
+    else
+      joins(:expense).many_months_ago(time)
+                     .or(joins(:expense).one_month_ago(time))
+    end
   end
 
   def calculator
@@ -24,7 +38,7 @@ class Emmission < ApplicationRecord
         category: {
           mainCategory: "Transportation",
           subCategory: "Motorvehicle",
-          sector: "Service Stations",
+          sector: "Service Stations"
         }
       },
       {

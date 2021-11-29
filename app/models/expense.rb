@@ -1,10 +1,23 @@
 class Expense < ApplicationRecord
   belongs_to :account
   has_one :emmission
+  scope :many_months_ago, ->(time) { where(date: time.months.ago..Date.today) }
+  scope :one_month_ago, ->(time) { where(date: time.month.ago..Date.today) }
+  scope :date_filter, ->(time) { where(date: time.months.ago..Date.today)
+                                 .or(where(date: time.month.ago..Date.today)) }
 
-  scope :last_thirty_days, -> { where(date: 31.days.ago..Date.today) }
-  scope :last_six_months, -> { where(date: 6.months.ago..Date.today) }
-  scope :last_three_months, -> { where(date: 3.months.ago..Date.today) }
+  def self.populate_chart(time)
+    case time
+    when "all"
+      Expense.joins(:emmission).group("emmissions.sub_category").sum(:amount)
+    when 1
+      Expense.joins(:emmission).group("emmissions.sub_category")
+             .one_month_ago(time).sum(:amount)
+    else
+      Expense.joins(:emmission).group("emmissions.sub_category")
+             .many_months_ago(time).sum(:amount)
+    end
+  end
 
   def sub_category
     sub_cat = []
@@ -15,9 +28,9 @@ class Expense < ApplicationRecord
     sub_cat.uniq
   end
 
-  def self.chart_legend
-    Expense.joins(:emmission).group("emmissions.sub_category").sum("amount")
-  end
+  # def self.chart_legend
+  #   Expense.joins(:emmission).group("emmissions.sub_category").sum("amount")
+  # end
 
   def emmission_data(sub_category)
     emmission = Emmission.new
