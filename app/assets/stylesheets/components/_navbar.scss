@@ -1,8 +1,15 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background-color:#C5D893;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  justify-content: space-around;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 
@@ -15,18 +22,4 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-
-
-
-.navbar-light .navbar-nav .nav-link {
-    color: white !important;
-}
-
-::marker{
-  display: none !important;
-}
-li{
-  list-style: none;
 }
