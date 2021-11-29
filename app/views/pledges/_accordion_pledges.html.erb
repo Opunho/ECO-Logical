@@ -10,11 +10,9 @@
 
       <div id="collapse-<%= pledge.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-          <ul>
-            <li><%= pledge.recommendation.description %></li>
+            <%= pledge.recommendation.description %>
             <br>
-            <li><%= link_to "Link to article", pledge.recommendation.link_to_article %></li>
-          </ul>
+            <%= link_to "Link to article", pledge.recommendation.link_to_article %>
         </div>
       </div>
   </div>
