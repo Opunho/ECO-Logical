@@ -3,7 +3,9 @@
 </div>
 <br><br>
   <h1 class="your-pledges d-flex justify-content-center position-">Your latest pledges</h1>
-  <i class="fas fa-seedling"></i><%= link_to " See all your pledges", pledges_path  %>
+  <div class="seedling-container">
+    <button class="seedling-button"><i id="seedling" class="fas fa-seedling"></i><%= link_to " Pledges", pledges_path  %></button>
+  </div>
 <div class="container-all-pledges">
     <div class="card-container">
         <% @pledges.last(3).each do |pledge| %>
