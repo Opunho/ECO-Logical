@@ -29,9 +29,9 @@ class Emmission < ApplicationRecord
     when "all"
       current_user.emmissions
     when 1
-      joins(:expense).many_months_ago(time)
-    else
       joins(:expense).one_month_ago(time)
+    else
+      joins(:expense).many_months_ago(time)
     end
   end
 

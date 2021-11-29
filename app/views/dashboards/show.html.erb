@@ -10,7 +10,7 @@
   <div class="d-flex justify-content-center align-item-center">
     <div class="d-inline-flex justify-content-between w-50">
        <%= form_with url: dashboard_path, method: :get,
-       html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
+           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
        <%= hidden_field_tag :scope, 1 %>
        <%= f.button "Show Last 30 Days",
                      class: "btn btn-primary",
@@ -20,7 +20,7 @@
                      } %>
        <% end %>
        <%= form_with url: dashboard_path, method: :get,
-       html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
+           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
        <%= hidden_field_tag :scope, 6 %>
        <%= f.button "Show last 6 months",
                      class: "btn btn-primary",
@@ -30,7 +30,7 @@
                      } %>
        <% end %>
        <%= form_with url: dashboard_path, method: :get,
-       html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
+           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
        <%= hidden_field_tag :scope, 3 %>
        <%= f.button "Show last 3 months",
                      class: "btn btn-primary",
