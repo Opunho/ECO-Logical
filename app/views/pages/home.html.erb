@@ -1,3 +1,16 @@
 <div class=" d-flex justify-content-center align-items-center">
-  <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4", autoplay: true, loop: true, width: "480vw") %>
+  <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4",id: "cover-video", autoplay: true, loop: true, width: "480vw") %>
 </div>
+<header class="viewport-header">
+  <h1>
+    <%= link_to "Join The Cause", new_user_registration_path, id: "join-button" %>
+  </h1>
+</header>
+<footer class="viewport-footer">
+  <div class="video-footer">
+    <p>
+      already a member?
+    </p>
+    <%= link_to "Sign In", new_account_path if user_signed_in?  %>
+  </div>
+</footer>
