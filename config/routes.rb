@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :expenses, only: [:create]
   end
 
-  resources :recommendations, only: [:index] do
+  resources :recommendations, only: [:index, :show] do
     resources :pledges, only: [:create]
   end
 
