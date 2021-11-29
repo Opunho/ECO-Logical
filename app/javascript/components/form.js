@@ -1,12 +1,8 @@
 const initForm = () => {
-  const firstButton = document.querySelector(".first");
-
-
-  firstButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    console.log(event)
-  })
-
+  const firstButton = document.getElementById("first");
+  firstButton.addEventListener("click", event => {
+    console.log("i dont know JS");
+  });
 }
 
 export { initForm }
