@@ -30,14 +30,21 @@ class User < ApplicationRecord
     Emmission.where(main_category: cat).collect(&:co2_grams).sum(&:to_i)
   end
 
-  def total_expenses_per_category(cat)
-    Emmission.where(main_category: cat).map do |emmission|
-      emmission.expense.amount
-    end.sum
+  def total_expenses_per_category(array)
+    case array[1]
+    when "all"
+      Emmission.where(main_category: array[0]).map do |emmission|
+        emmission.expense.amount
+      end.sum
+    else
+      Emmission.filter_by_category(array[1], array[0]).map do |emmission|
+        emmission.expense.amount
+      end.sum
+    end
   end
 
   def pledge_impact
     @completed_pledges = Pledge.where(completed: true)
-    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum.to_f
+    @total_co2_achieved = @completed_pledges.map{ |pledge| pledge.recommendation.co2_grams }.sum.to_f
   end
 end
