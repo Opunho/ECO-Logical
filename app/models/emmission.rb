@@ -16,17 +16,22 @@ class Emmission < ApplicationRecord
   end
 
   def self.filter_by_category(time, category)
-    joins(:expense).where(main_category: category).many_months_ago(time)
-                   .or(joins(:expense).where(main_category: category).one_month_ago(time))
+    case time
+    when 1
+      joins(:expense).where(main_category: category).one_month_ago(time)
+    else
+      joins(:expense).where(main_category: category).many_months_ago(time)
+    end
   end
 
   def self.date_filtered_emmissions(time, current_user)
     case time
     when "all"
       current_user.emmissions
-    else
+    when 1
       joins(:expense).many_months_ago(time)
-                     .or(joins(:expense).one_month_ago(time))
+    else
+      joins(:expense).one_month_ago(time)
     end
   end
 
