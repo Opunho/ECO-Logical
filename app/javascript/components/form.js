@@ -6,6 +6,7 @@ const initForm = () => {
   const yourBank = document.querySelector(".your-bank")
   const accountNumber = document.querySelector(".account-number-p")
 
+  if (firstButton) {
   firstButton.addEventListener("click", event => {
     event.preventDefault();
     container.classList.add("center");
@@ -13,6 +14,7 @@ const initForm = () => {
     container.classList.remove("full");
     container.classList.remove("slider-one-active")
   })
+
 
   secondButton.addEventListener("click", event => {
     event.preventDefault();
@@ -28,7 +30,9 @@ const initForm = () => {
     console.log(accountNumber)
     console.log(yourBank)
 
-  })
+    })
+  }
 }
+
 
 export { initForm }
