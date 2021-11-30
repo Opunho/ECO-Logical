@@ -5,20 +5,20 @@
 </div>
 
 <div class="pledges-page-pledges">
-<% @pledges.each do |pledge| %>
-    <% pledge.completed %>
-    <%= render "accordion_pledges", pledge: pledge %>
-    <% unless pledge.completed %>
-    <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
-    <% end %>
-<% end %>
+  <% @pledges.each do |pledge| %>
+      <% pledge.completed %>
+      <%= render "accordion_pledges", pledge: pledge %>
+      <% unless pledge.completed %>
+      <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
+      <% end %>
+  <% end %>
 
-<h2 class="latest-completed-pledges">Latest Completed pledges</h2>
-<div class="typed-container"><%= "You offset #{@total_co2_achieved} and counting" %><span class="typed" id="pledge-co2"></span></div>
-<% @completed_pledges.each do |pledge| %>
-    <%= render "accordion_pledges", pledge: pledge %>
-    <% unless pledge.completed %>
-    <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
-    <% end %>
-<% end %>
+  <h2 class="latest-completed-pledges">Latest Completed pledges</h2>
+  <div class="typed-container"><%= "You offset #{@total_co2_achieved} and counting" %><span class="typed" id="pledge-co2"></span></div>
+  <% @completed_pledges.each do |pledge| %>
+      <%= render "accordion_pledges", pledge: pledge %>
+      <% unless pledge.completed %>
+      <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
+      <% end %>
+  <% end %>
 </div>
