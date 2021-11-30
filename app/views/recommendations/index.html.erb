@@ -9,7 +9,7 @@
     <!--first card-->
       <div class="swipe-container">
        <h5><%= @recommendations.first.category %></h5>
-        <div style="background-image: url('https://images.unsplash.com/photo-1606224547099-b15c94ca5ef2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=766&q=80');" class="swipe-image"></div>
+        <div style="background-image: url(<%= image_path @recommendations.first.photo  %>);" class="swipe-image"></div>
          <div>
            <div class="swipe-btn-container">
              <p><strong><%= @recommendations.first.title %></strong></p>
