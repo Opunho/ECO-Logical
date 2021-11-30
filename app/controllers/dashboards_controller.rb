@@ -12,6 +12,7 @@ class DashboardsController < ApplicationController
     respond_to do |format|
       format.html
       format.text { render partial: 'description.html' }
+    @dash_selected = true
     end
   end
 

@@ -7,6 +7,7 @@ class PledgesController < ApplicationController
     @pledges = Pledge.where(completed: false)
     @completed_pledges = Pledge.where(completed: true)
     @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum
+    @pledge_selected = true
   end
 
   def create
@@ -20,12 +21,14 @@ class PledgesController < ApplicationController
     else
       render "recommendations/index"
     end
+    @pledge_selected = true
   end
 
   def destroy
     @pledge = Pledge.find(params[:id])
     @pledge.destroy
     redirect_to profile_path
+    @pledge_selected = true
   end
 
   def complete
@@ -34,5 +37,6 @@ class PledgesController < ApplicationController
     if @pledge.save
       redirect_to pledges_path
     end
+    @pledge_selected = true
   end
 end

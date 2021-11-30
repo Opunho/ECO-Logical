@@ -111,10 +111,10 @@ color: #000000;
 }
 
 .offset-recommendations {
-    text-align: center;
-  margin-bottom: 40px;
-	font-size: 40px;
-	font-weight: bolder;
+  text-align: center;
+  margin-bottom: 15px;
+	font-size: 70px;
+	font-weight: bold;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
@@ -123,6 +123,19 @@ color: #000000;
   margin-top: 25px;
   margin-left: 20px;
   margin-right: 20px;
+  line-height: 0.8;
+}
+
+.offset-recommendations-subheader {
+  text-align: center;
+	font-size: 25px;
+	font-weight: bolder;
+	color: #115300;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+  line-height: 0.8;
 }
 
 .offset-recommendations-show {
