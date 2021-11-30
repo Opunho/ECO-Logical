@@ -1,16 +1,7 @@
 .card-container {
   text-align: center;
   width: 320px;
-}
-
-.card-container a {
-  color: black;
-  text-decoration: none;
-}
-
-.card-container:visited {
-  color: black;
-  text-decoration: none;
+  background-color: black;
 }
 
 .container-all-pledges {
@@ -66,46 +57,12 @@
 }
 
 .dash-card-1{
+/* From https://css.glass */
   background: rgba(255, 255, 255, 0.43);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.3px);
   -webkit-backdrop-filter: blur(8.3px);
   border: 1px solid rgba(255, 255, 255, 1);
-}
-.card {
-  border-radius: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-}
 
-// .card p:visited {
-//   text-decoration: none;
-//   color: black;
-// }
-
-.btn {
-  font-size: 17px;
-  color: black;
-  text-decoration: none;
-}
-
-.btn:visited {
-  text-decoration: none;
-  color: black;
-}
-
-.card-body {
- font-size: 15px;
- text-align: left;
-}
-
-.card-body a {
-  color: black;
-  text-decoration: none;
-}
-
-.card-body a:visited {
-  color: black;
-  text-decoration: none;
 }
