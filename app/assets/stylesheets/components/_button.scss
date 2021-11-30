@@ -88,6 +88,27 @@ input[type=submit] {
   z-index: 150;
 }
 
+.btn-dash {
+  width: fit-content;
+  background-color: #25cf7a;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.btnd2{
+  justify-content: space-around;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 .reccomendations-button-container {
   display: flex;
   justify-content: center;
@@ -149,18 +170,19 @@ input[type=submit] {
 }
 
 .go-to-pledges {
-    font-size: 20px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
   background-color: #25cf7a;
   border-style: none;
   border-radius: 20px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: -10px;
+  margin-top: -5px;
 }
 
 .go-to-pledges a{
@@ -173,19 +195,31 @@ input[type=submit] {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .go-to-pledges-show {
   font-size: 20px;
+=======
+.button-dash-1 {
+>>>>>>> master
   color: white;
   text-decoration: none;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   margin-bottom: 25px;
+=======
+>>>>>>> master
   background-color: #25cf7a;
   border-style: none;
   border-radius: 20px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+<<<<<<< HEAD
   margin-bottom: 100px;
   text-decoration: none;
+=======
+  margin-bottom: -10px;
+  margin-top: -5px;
+>>>>>>> master
 }
