@@ -2,7 +2,8 @@
   justify-content: space-around;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.37);
-  border-radius: 16px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.6px);
   -webkit-backdrop-filter: blur(8.6px);
@@ -22,6 +23,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+
 }
 
 .navbar-icon-green{
