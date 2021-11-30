@@ -1,20 +1,18 @@
 <div class=" d-flex justify-content-center align-items-center">
   <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4",id: "cover-video", autoplay: true, loop: true, width: "480vw") %>
 </div>
-<header class="viewport-header">
- <div>
-  <span class="typed d-flex justify-content-center " id="banner-typed-text"></span>
-</div>
 
-  <h1>
-    <%= link_to "Join The Cause", new_user_registration_path, id: "join-button" %>
-  </h1>
-</header>
-<footer class="viewport-footer">
-  <div class="video-footer">
-    <p>
-      Already a member?
-    </p>
-    <%= link_to "Sign In", new_account_path if user_signed_in?  %>
+<div class="homepage-container-container">
+  <span class="typed-home d-flex justify-content-center " id="banner-typed-text"></span>
+    <div class="homepage-container">
+        <div class="button-container-homepage">
+          <h1 class="join-the-cause">
+            <%= link_to "Join the cause", new_user_registration_path, id: "join-button" %>
+          </h1>
+            <p class="already-a-member">
+              Already a member?
+            </p>
+        <div><div class="sign-in-homepage"><%= link_to "Sign In", new_account_path if user_signed_in?  %></div></div>
+    </div>
   </div>
-</footer>
+</div>
