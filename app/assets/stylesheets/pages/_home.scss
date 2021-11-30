@@ -10,22 +10,22 @@ video {
 }
 
 #join-button {
-  font-size: 20px;
+  font-size: 27px;
   color: white;
   text-decoration: none;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-color: #25cf7a;
   border-style: none;
   border-radius: 20px;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .join-the-cause {
-  margin-top: -92px;
+  margin-top: -66px;
 }
 
 .viewport-header {
@@ -92,9 +92,9 @@ video {
   background-color: white;
   position: absolute;
   width: 330px;
-  height: 365px;
+  height: 183px;
   align-items: center;
-  margin-top: 142px;
+  margin-top: 459px;
   display: flex;
   justify-content: center;
   border-radius: 20px;
@@ -121,39 +121,43 @@ video {
 }
 
 .already-a-member {
-  margin-top: 40px;
+  margin-top: 125px;
   font-size: 20px;
   color: white;
   text-decoration: none;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  background-image: url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  // transform: scale(1.2);
-  background-size: 75%;
-  border-style: none;
   border-radius: 20px;
-  padding: 10px;
+  padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  height: 40px;
 }
 
 .sign-in-homepage {
-  margin-top: 40px;
-  font-size: 20px;
+  margin-top: 44px;
+  font-size: 15px;
   color: white;
   text-decoration: none;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  background-image: url('https://images.pexels.com/photos/2382325/pexels-photo-2382325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  background-size: 100%;
-  border-style: none;
+  border-style: solid;
   border-radius: 20px;
-  padding: 10px;
+  padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
+  border-color: white;
+  border-width: 1px;
+  width: 185px;
+  height: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .sign-in-homepage a{
@@ -162,4 +166,22 @@ video {
 
 .button-container-homepage {
   height: 0vh;
+}
+
+.homepage-title {
+  z-index: 10;
+  font-size: 86px;
+  color: white;
+  text-align: center;
+  margin-top: 77px;
+  font-family: Caveat, sans-serif;
+}
+
+.about-container {
+  z-index: 10;
+  margin-top: 20px;
+  color: black;
+  background-color: white;
+  height: 200px;
+  width: 100%;
 }

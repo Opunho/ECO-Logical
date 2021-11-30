@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   # before_action :redirect_if_signed_in
 
   def home
+    @disable_nav = true
   end
 
   def kitchensink
