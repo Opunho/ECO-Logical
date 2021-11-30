@@ -4,16 +4,16 @@ const switchChart = () => {
   const btn = document.getElementById('btn')
   if (chartOne) {
     btn.addEventListener('click', event => {
-      if (chartOne.classList.contains('show')) {
-        chartOne.classList.remove('show')
-        chartOne.classList.add('hide')
-        chartTwo.classList.remove('hide')
-        chartTwo.classList.add('show')
+      if (chartOne.classList.contains('show1')) {
+        chartOne.classList.remove('show1')
+        chartOne.classList.add('hide1')
+        chartTwo.classList.remove('hide1')
+        chartTwo.classList.add('show1')
       } else {
-        chartTwo.classList.remove('show')
-        chartTwo.classList.add('hide')
-        chartOne.classList.remove('hide')
-        chartOne.classList.add('show')
+        chartTwo.classList.remove('show1')
+        chartTwo.classList.add('hide1')
+        chartOne.classList.remove('hide1')
+        chartOne.classList.add('show1')
       }
     })
 
