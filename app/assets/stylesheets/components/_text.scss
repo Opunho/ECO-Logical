@@ -96,9 +96,9 @@ color: #000000;
 }
 
 .latest-completed-pledges {
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
-	font-size: 40px;
+	font-size: 35px;
 	font-weight: bolder;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -121,6 +121,21 @@ color: #000000;
 	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   text-align: center;
   margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.offset-recommendations-show {
+  text-align: center;
+  margin-bottom: 10px;
+	font-size: 32px;
+	font-weight: bolder;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  text-align: center;
+  margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
 }

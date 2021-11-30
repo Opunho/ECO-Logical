@@ -1,75 +1,32 @@
-<h3 class="offset-recommendations">Offset recommendations</h3>
-
-<div class="go-to-pledges-container">
-  <div class="go-to-pledges"><%= link_to "Go to pleges  ", pledges_path %><i class="fab fa-google-play"></i></div>
-</div>
-
-<br><br>
-
+<h3 class="offset-recommendations">Offset Actions</h3>
   <div id="mySwipe" class="swipe">
     <div class="swipe-wrap">
     <!--first card-->
+    <% @recommendations.each do |recommendation| %>
       <div class="swipe-container">
-       <h5><%= @recommendations.first.category %></h5>
-        <div style="background-image: url(<%= image_path @recommendations.first.photo  %>);" class="swipe-image"></div>
+       <h5><%= recommendation.category %></h5>
+        <div style="background-image: url(<%= recommendation.photo %>);" class="swipe-image"></div>
          <div>
            <div class="swipe-btn-container">
-             <p><strong><%= @recommendations.first.title %></strong></p>
+             <p><strong><%= recommendation.title %></strong></p>
              <div class="swipe-btn-container">
               <p>Offset: </p>
-              <p class="counterUp" akhi=<%= @recommendations.first.co2_grams %>>0</p>
+              <p class="counterUp" akhi=<%= recommendation.co2_grams %>>0</p>
               <p> CO2 grams</p>
              </div>
            </div>
             <div class="swipe-btn-container">
-              <%= link_to "More Info", recommendation_path(@recommendations.first.id), class:"button-know-more" %>
-              <%= simple_form_for([@recommendations.first, Pledge.new]) do |f| %>
+              <%= link_to "More Info", recommendation_path(recommendation.id), class:"button-know-more" %>
+              <%= simple_form_for([recommendation, Pledge.new]) do |f| %>
                 <%= f.submit %>
               <% end %>
             </div>
           </div>
         </div>
-    <!--second card-->
-      <div class="swipe-container">
-       <h5><%= @recommendations.second.category %></h5>
-        <div style="background-image: url('https://images.unsplash.com/photo-1572803090936-72796aef96a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');" class="swipe-image"></div>
-         <div>
-           <div class="swipe-btn-container">
-             <p><strong><%= @recommendations.second.title %></strong></p>
-             <div class="swipe-btn-container">
-              <p>Offset: </p>
-              <p class="counterUp" akhi=<%= @recommendations.second.co2_grams %>>0</p>
-              <p> CO2 grams</p>
-             </div>
-           </div>
-            <div class="swipe-btn-container">
-              <%= link_to "More Info", recommendation_path(@recommendations.second.id), class:"button-know-more" %>
-              <%= simple_form_for([@recommendations.second, Pledge.new]) do |f| %>
-                <%= f.submit %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <!--third card-->
-      <div class="swipe-container">
-       <h5><%= @recommendations.third.category %></h5>
-        <div style="background-image: url('https://media.istockphoto.com/photos/young-girl-choosing-clothes-in-a-second-hand-market-in-summer-zero-picture-id1159428209?b=1&k=20&m=1159428209&s=170667a&w=0&h=urlbDUnC-QUwtkj2O6vgjNsVf9SnzTGdUVHDNdmJnBI=');" class="swipe-image"></div>
-         <div>
-           <div class="swipe-btn-container">
-             <p><strong><%= @recommendations.third.title %></strong></p>
-             <div class="swipe-btn-container">
-              <p>Offset: </p>
-              <p class="counterUp" akhi=<%= @recommendations.third.co2_grams %>>0</p>
-              <p> CO2 grams</p>
-             </div>
-           </div>
-            <div class="swipe-btn-container">
-              <%= link_to "More Info", recommendation_path(@recommendations.third.id), class:"button-know-more" %>
-              <%= simple_form_for([@recommendations.third, Pledge.new]) do |f| %>
-                <%= f.submit %>
-              <% end %>
-            </div>
-          </div>
-        </div>
+    <% end %>
     </div> <!--end of swipe-wrap-->
   </div> <!--end of div-->
+
+<div class="go-to-pledges-container">
+  <div class="go-to-pledges"><%= link_to "Go to pledges  ", pledges_path %><i class="fab fa-google-play"></i></div>
+</div>
