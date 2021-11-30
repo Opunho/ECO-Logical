@@ -1,15 +1,19 @@
 
-<div class="accordion" id="accordionExample">
+<div class="accordion " id="accordionExample">
   <div class="">
     <div class="" id="headingOne">
       <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+        <!--<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                 data-target="#collapse-<%= cat.split.first %>" aria-expanded="true" aria-controls="collapseOne">
             <h2><strong><%= cat %></strong></h2>
+        </button>-->
+        <button type="button" class="btn btn-link btn-block text-left" data-toggle="modal" data-target="#exampleModalLong-<%= cat.split.first %>">
+           <h2><strong><%= cat %></strong></h2>
         </button>
+
        </h2>
-       <div class="d-flex">
-       <div class="greendash1">
+       <div class="d-flex dprop">
+       <div class="greendash1money">
         <i class="fas fa-money-bill-wave"></i>
         <p><%= current_user.total_expenses_per_category([cat, time]).ceil(2) %> EUR</p>
        </div>
@@ -26,7 +30,7 @@
         </div>
     </div>
 
-      <div id="collapse-<%= cat.split.first %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <!--<div id="collapse-<%= cat.split.first %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="">
             <strong><h4><%= "Breakdown of #{cat}" %></h4></strong>
               <% @emmissions.where(main_category: cat).each do |emmission| %>
@@ -36,6 +40,6 @@
               <p><%= calc_result.ceil(2) %></p>
               <% end %>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
