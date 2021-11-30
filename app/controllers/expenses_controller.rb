@@ -26,7 +26,7 @@ class ExpensesController < ApplicationController
     @expense.creditor_id = @expense.emmission_data(params[:expense][:sub_category])
     if @expense.save!
       create_emmission
-      redirect_to expenses_path
+      redirect_to dashboard_path
     else
       render :index
     end

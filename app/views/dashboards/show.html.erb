@@ -9,36 +9,9 @@
 <div data-controller="update-list">
   <div class="d-flex justify-content-center align-item-center">
     <div class="d-inline-flex justify-content-between w-50">
-       <%= form_with url: dashboard_path, method: :get,
-           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :scope, 1 %>
-       <%= f.button "Show Last 30 Days",
-                     class: "btn btn-primary",
-                     data: {
-                      update_list_target: 'button',
-                      action: "click->update-list#update"
-                     } %>
-       <% end %>
-       <%= form_with url: dashboard_path, method: :get,
-           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :scope, 6 %>
-       <%= f.button "Show last 6 months",
-                     class: "btn btn-primary",
-                     data: {
-                      update_list_target: 'button',
-                      action: "click->update-list#update"
-                     } %>
-       <% end %>
-       <%= form_with url: dashboard_path, method: :get,
-           html: { class: 'btn btn-primary', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :scope, 3 %>
-       <%= f.button "Show last 3 months",
-                     class: "btn btn-primary",
-                     data: {
-                      update_list_target: 'button',
-                      action: "click->update-list#update"
-                     } %>
-       <% end %>
+      <%= link_to "30 Days", dashboard_path(scope: 1) %>
+      <%= link_to "3 Months", dashboard_path(scope: 3) %>
+      <%= link_to "6 Months", dashboard_path(scope: 6) %>
     </div>
   </div>
 
