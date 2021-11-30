@@ -1,0 +1,9 @@
+<%= simple_form_for @expense do |f| %>
+<%= f.input :creditor_name, label: false, placeholder: "Paid to" %>
+<%= f.input :sub_category, label: false, placeholder: "choose category",
+              collection: @sub_categories %>
+<%= f.input :amount %>
+<%= f.input :currency, label: false, placeholder: "3 letters for currency" %>
+<%= f.input :date %>
+<%= f.button :submit %>
+<% end %>

@@ -14,7 +14,10 @@
 	font-size: 16px;
 }
 
+
+
 input:focus,
+select:focus,
 button:focus {
 	outline: none;
 }
@@ -285,6 +288,22 @@ label.radio {
 	position: relative;
 	border-radius: 50%;
 	cursor: pointer
+}
+
+.select,
+.mx-1{
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc;
+}
+.select,
+.max-1{
+  width:250px;
+  height:40px;
+  border:0px;
+  outline:none;
 }
 
 label.radio input {

@@ -20,7 +20,7 @@ class ExpensesController < ApplicationController
 
   def create
     id = Faker::Alphanumeric.alphanumeric(number: 32)
-    @expense = Expense.new(expense_params)
+    @expense = Expense.new(amount, creditor_id, creditor_name, booking_date, external_id, currency)
     @expense.external_id = id
     @expense.account = @account
     @expense.creditor_id = @expense.emmission_data(params[:expense][:sub_category])
@@ -71,9 +71,9 @@ class ExpensesController < ApplicationController
     end
   end
 
-  def expense_params
-    params.require(:expense).permit(:creditor_name, :amount, :currency, :date)
-  end
+  # def expense_params
+  #   params.require(:expense).permit(:creditor_name, :amount, :currency, :date)
+  # end
 
   def access_token
     auth_url = "https://api.mockbank.io/oauth/token"

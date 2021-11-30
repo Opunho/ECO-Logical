@@ -1,12 +1,10 @@
 const initForm = () => {
 
-  const firstButton = document.querySelector(".first")
-  const container = document.querySelector(".container")
+  const firstButton = document.querySelector(".first-expense")
+  const container = document.querySelector(".container-expense")
   const secondButton = document.querySelector(".second")
   const yourBank = document.querySelector(".your-bank")
   const accountNumber = document.querySelector(".account-number-p")
-  const firstForm = document.querySelector(".form-1")
-  const secondForm = document.querySelector(".form-2")
 
   if (firstButton) {
   firstButton.addEventListener("click", event => {
@@ -20,21 +18,13 @@ const initForm = () => {
 
   secondButton.addEventListener("click", event => {
     event.preventDefault();
-    let name = "";
-    let number = "";
     container.classList.add("full");
     container.classList.add("slider-three-active");
     container.classList.remove("center");
     container.classList.remove("slider-two-active")
     container.classList.remove("slider-one-active")
-    if (secondButton.parentElement === firstForm) {
-      name = document.querySelector(".name").value
-      number = document.querySelector(".number").value
-    }
-    else if (secondButton.parentElement === secondForm) {
-
-
-            };
+    const name = document.querySelector(".name").value
+    const number = document.querySelector(".number").value
     yourBank.innerHTML=`Bank: ${name}`;
     accountNumber.innerHTML=`Account Number: ${number}`;
     console.log(accountNumber)
@@ -45,4 +35,4 @@ const initForm = () => {
 }
 
 
-export { initForm }
+export { initExpenseForm }
