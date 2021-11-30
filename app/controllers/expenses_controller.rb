@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
   # skip_before_action :authenticate_user!
   before_action :set_api_variables
   before_action :fetch_transactions
-  before_action :set_account
+  # before_action :set_account
   before_action :set_expenses
 
   def index
@@ -33,6 +33,7 @@ class ExpensesController < ApplicationController
   end
 
   def set_transactions
+    set_account unless current_user.accounts.first == @account
     @transactions.parsed_response["data"].each do |transaction|
       duplicate_checker = Expense.find_by(external_id: transaction["externalId"])
       if transaction["amount"].negative? && duplicate_checker == nil

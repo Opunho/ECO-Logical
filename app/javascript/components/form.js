@@ -48,6 +48,16 @@ const initForm = () => {
       pickDate = document.querySelector(".date-pick").value;
       amount = document.querySelector(".amount").value;
       currency = document.querySelector(".currency").value;
+      const paidTo = document.getElementById("paid-to")
+      const showSubCategory = document.getElementById("sub-category-show")
+      const showAmount = document.getElementById("amount-show")
+      // const showCurrency = document.getElementById("currency-show")
+      const transactionDate = document.getElementById("transaction-date")
+      paidTo.innerHTML = `Paid To: ${creditorName}`
+      showSubCategory.innerHTML = `For: ${subCategory}`
+      showAmount.innerHTML = `Amount: ${amount} ${currency}`
+      transactionDate.innerHTML = `In: ${transactionDate}`
+      console.log(showSubCategory)
     };
     const data = {
       amount: amount,
@@ -57,10 +67,11 @@ const initForm = () => {
       date: pickDate,
       currency: currency
     }
+    const currentUser = document.getElementById("current-user").value
     thirdButton.addEventListener("click", event => {
-      console.log(JSON.stringify(data))
+      console.log(currentUser)
       event.preventDefault();
-      fetch('/accounts/1/expenses', {
+      fetch(`/accounts/${currentUser}/expenses`, {
         method: 'POST',
         headers: {
           'X-CSRF-Token': token,

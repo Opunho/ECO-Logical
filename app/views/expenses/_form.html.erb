@@ -50,8 +50,16 @@
            </label>
         </div>
         <button class="second next">Next Step</button>
+        <%= hidden_field_tag "current-user", current_user.id %>
       </form>
       <div class="slider-form slider-three">
+        <h2>New Transaction Review</h2>
+        <h4>Account: <%= current_user.accounts.first.account_number %></h4>
+        <h5 id="paid-to"></h5>
+        <h5 id="sub-category-show"></h5>
+        <h5 id="amount-show"></h5>
+        <h5 id="currency-show"></h5>
+        <h5 id="transaction-date"></h5>
         <button class="third">Create Transaction</button>
       </div>
     </div>
