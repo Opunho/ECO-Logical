@@ -88,6 +88,26 @@ input[type=submit] {
   z-index: 150;
 }
 
+.btn-dash {
+  width: fit-content;
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+}
+
+.btnd2{
+  justify-content: space-around;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 .reccomendations-button-container {
   display: flex;
   justify-content: center;
