@@ -94,7 +94,7 @@ input[type=submit] {
 }
 
 .reccomendations-button a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -103,17 +103,28 @@ input[type=submit] {
 }
 
 .reccomendations-button {
-  margin-bottom: 20px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: #25cf7a;
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .green-me-up a{
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
 .green-me-up a:visited {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .green-me-up-container {
@@ -122,5 +133,43 @@ input[type=submit] {
 }
 
 .green-me-up {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: #25cf7a;
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-bottom: 20px;
+}
+
+.go-to-pledges {
+    font-size: 20px;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: #25cf7a;
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.go-to-pledges a{
+  color: white;
+  text-decoration: none;
+}
+
+.go-to-pledges-container {
+  display: flex;
+  justify-content: center;
 }

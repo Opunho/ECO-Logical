@@ -42,6 +42,14 @@ color: #000000;
   margin-top: 10px;
   margin-bottom: -20px;
   height: 1rem;
+
+}
+
+.typed-container {
+  margin-bottom: 30px;
+  color: #115300;
+  font-size: large;
+  margin-left: 42px;
 }
 
 .card-container h1 {
@@ -53,9 +61,17 @@ color: #000000;
 }
 
 .your-pledges-page {
-  text-align: center;
-  margin-top: 30px;
   margin-bottom: 40px;
+	font-size: 50px;
+	font-weight: bolder;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .comp-pledges {
@@ -66,6 +82,12 @@ color: #000000;
 
 .your-pledges {
   margin-bottom: 40px;
+	font-size: 70px;
+	font-weight: bolder;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
 
 .total-co2 {
@@ -75,6 +97,30 @@ color: #000000;
 
 .latest-completed-pledges {
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: 40px;
+	font-size: 40px;
+	font-weight: bolder;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.offset-recommendations {
+    text-align: center;
+  margin-bottom: 40px;
+	font-size: 40px;
+	font-weight: bolder;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
