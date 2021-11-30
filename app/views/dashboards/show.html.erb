@@ -1,56 +1,28 @@
 <div class="container ">
   <div class=" text-center dashboard-h1 ">
     <h3>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h3><br>
-    <div class="d-flex">
-    <div class="dash-card-1">
+
     <p> <%= current_user.unique_account[0] %></p>
-    </div>
-    <div><%= link_to "Update Transactions", fetch_expenses_path, class:"btn btn-dash"%></div>
-    </div>
+
+   <%= link_to "Update Transactions", fetch_expenses_path, class:""%>
   </div>
+
 </div><br>
 <div class="dashboard-h2">
   <div data-update-list-target="description">
     <h3 style="text-align:center">Your green account  </h3>
-   <p>Total Expenses : <%= @total_expenses %> EUR </p>
-   <p>Total Emmissions: <%= @total_emmissions.ceil(2) %> CO2 grams</p>
-   <p>Pledges Completed: <%= current_user.pledge_impact %> CO2 grams Offset</p>
-   <p>Net Emmissions: <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
+   <p><i class="fas fa-money-bill-wave"></i>  Expenses : <%= @total_expenses %> EUR </p>
+   <p><i class="fas fa-burn"></i> Emmissions: <%= @total_emmissions.ceil(2) %> CO2 grams</p>
+   <p> <i class="fas fa-leaf"></i> Offset: <%= current_user.pledge_impact %> CO2 grams</p>
+   <p> <i class="fas fa-globe-europe"></i> Net Emmissions: <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
   </div>
 
   <div data-controller="update-list ">
-    <div class=" d-flex hb32">
-       <%= form_with url: dashboard_path, method: :get,
-           html: { class: 'btn btn-dash', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :scope, 1 %>
-       <%= f.button " 30 Days",
-                     class: "btn btn-dash",
-                     data: {
-                      update_list_target: 'button',
-                      action: "click->update-list#update"
-                     } %>
-       <% end %>
-       <%= form_with url: dashboard_path, method: :get,
-           html: { class: 'btn btn-dash', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :scope, 6 %>
-       <%= f.button "6 months",
-                     class: "btn btn-dash",
-                     data: {
-                      update_list_target: 'button',
-                      action: "click->update-list#update"
-                     } %>
-       <% end %>
-       <%= form_with url: dashboard_path, method: :get,
-           html: { class: 'btn btn-dash', data: { update_list_target: 'form' } } do |f| %>
-       <%= hidden_field_tag :scope, 3 %>
-       <%= f.button "3 months",
-                     class: "btn btn-dash",
-                     data: {
-                      update_list_target: 'button',
-                      action: "click->update-list#update"
-                     } %>
-       <% end %>
-      </div>
+    <div class=" d-flex hb32 months-dash ">
+      <%= link_to "30 Days", dashboard_path(scope: 1) %>
+      <%= link_to "3 Months", dashboard_path(scope: 3) %>
+      <%= link_to "6 Months", dashboard_path(scope: 6) %>
+    </div>
   </div>
   <div class="container  ">
     <div class="chart">
@@ -62,14 +34,13 @@
       </div>
 
     <%#= link_to "Switch", "#", class:"btn btn-dash", id="SwitchChart"%>
-    <p id="btn" class="btn btn-dash"><i>Switch chart</i></p>
+    <p id="btn" class="green-me-up"><i>Switch to green</i></p>
     </div>
   </div>
 </div>
   <div class="container ">
-
-   <p>-----------------------</p>
-   <%= link_to "Create new transaction", new_expense_path, class:"btn btn-dash"%>
+    <br>
+   <%= link_to "Create new transaction", new_expense_path, class:"btn-dash"%>
    <% @categories.each do |cat| %>
     <div class="dashboard-h3">
     <%= render "accordion", cat: cat, time: @time %>
