@@ -90,9 +90,10 @@ input[type=submit] {
 
 .btn-dash {
   width: fit-content;
-  background-color: blue;
+  background-color: #25cf7a;
   color: white;
   border-radius: 15px;
+  padding: 10px;
 }
 
 .btnd2{
@@ -169,7 +170,7 @@ input[type=submit] {
 }
 
 .go-to-pledges {
-    font-size: 20px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
   align-items: center;
@@ -192,4 +193,19 @@ input[type=submit] {
 .go-to-pledges-container {
   display: flex;
   justify-content: center;
+}
+
+.button-dash-1 {
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #25cf7a;
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: -10px;
+  margin-top: -5px;
 }

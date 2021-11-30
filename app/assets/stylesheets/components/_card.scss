@@ -13,7 +13,7 @@
 
 .dashboard-h1 {
   background: rgb(255,255,255);
-  background: linear-gradient(341deg, rgba(255,255,255,1) 0%, rgba(76,24,197,1) 23%);  border-radius: 16px;
+  background: linear-gradient(341deg, rgba(255,255,255,1) 0%, rgba(37,207,122,1) 52%);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.6px);
   -webkit-backdrop-filter: blur(8.6px);
@@ -21,6 +21,7 @@
   margin: 20px;
   padding: 15px;
   color: white;
+  border-radius: 15px;
 
 }
 .show {
@@ -102,4 +103,41 @@
 .card-body a:visited {
   color: black;
   text-decoration: none;
+}
+
+.months-dash  a{
+  color: black;
+}
+
+.months-dash  {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.57);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  padding: 10px;
+}
+
+.dashboard-h1 a{
+  color: white;
+}
+
+.greendash{
+  background-color: #25cf7a;
+  color: white;
+  font-weight: bold;
+  height: full;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.greendash1 {
+  background-color: #25cf7a;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
 }
