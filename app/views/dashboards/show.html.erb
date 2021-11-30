@@ -17,14 +17,8 @@
    <p> <i class="fas fa-globe-europe"></i> Net Emmissions: <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
   </div>
 
-<<<<<<< HEAD
-<div data-controller="update-list">
-  <div class="d-flex justify-content-center align-item-center">
-    <div class="d-inline-flex justify-content-between w-50">
-=======
   <div data-controller="update-list ">
     <div class=" d-flex hb32 months-dash ">
->>>>>>> master
       <%= link_to "30 Days", dashboard_path(scope: 1) %>
       <%= link_to "3 Months", dashboard_path(scope: 3) %>
       <%= link_to "6 Months", dashboard_path(scope: 6) %>
@@ -44,10 +38,6 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-
-<%= csrf_meta_tag %>
-=======
   <div class="container ">
     <br>
    <%= link_to "Create new transaction", new_expense_path, class:"btn-dash"%>
@@ -84,4 +74,3 @@
    <p>-----------------------</p>
    <br>
  </div>
->>>>>>> master
