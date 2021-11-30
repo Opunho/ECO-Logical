@@ -53,9 +53,12 @@ const initForm = () => {
       amount: amount,
       sub_category: subCategory,
       creditor_name: creditorName,
-      token: token
+      token: token,
+      date: pickDate,
+      currency: currency
     }
     thirdButton.addEventListener("click", event => {
+      console.log(JSON.stringify(data))
       event.preventDefault();
       fetch('/accounts/1/expenses', {
         method: 'POST',
@@ -63,7 +66,7 @@ const initForm = () => {
           'X-CSRF-Token': token,
           'Content-type': 'application/json' },
         body: JSON.stringify(data),
-        success: window.location = "/dashboard"
+        // success: window.location = "/dashboard"
       })
     })
   })

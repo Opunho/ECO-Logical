@@ -23,8 +23,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.external_id = id
     @expense.account = @account
-    @expense.creditor_id = @expense.emmission_data(args[:sub_category])
-    raise
+    @expense.creditor_id = @expense.emmission_data(params[:sub_category])
     if @expense.save!
       create_emmission
       redirect_to dashboard_path
