@@ -1,20 +1,65 @@
-<h1 class="your-pledges-page">Your pledges</h1>
+<h1 class="latest-completed-pledges">Pledged Actions</h1>
 
-<div class="pledges-page-pledges">
-  <% @pledges.each do |pledge| %>
-      <% pledge.completed %>
-      <%= render "accordion_pledges", pledge: pledge %>
-      <% unless pledge.completed %>
-      <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
-      <% end %>
-  <% end %>
 
-  <h2 class="latest-completed-pledges">Latest Completed pledges</h2>
-  <div class="typed-container"><%= "You offset #{@total_co2_achieved} and counting" %><span class="typed" id="pledge-co2"></span></div>
-  <% @completed_pledges.each do |pledge| %>
-      <%= render "accordion_pledges", pledge: pledge %>
-      <% unless pledge.completed %>
-      <%= link_to "complete", complete_pledge_path(pledge), method: :patch %>
-      <% end %>
-  <% end %>
-</div>
+<div id="mySwipe" class="swipe">
+    <div class="swipe-wrap">
+    <!--first card-->
+    <% @pledges.each do |pledge| %>
+    <% if pledge.nil? %>
+      <div class="swipe-container">
+       <h5><%= pledge.recommendation.category %></h5>
+        <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image"></div>
+         <div>
+           <div class="swipe-btn-container">
+             <p><strong><%= pledge.recommendation.title %></strong></p>
+             <div class="swipe-btn-container">
+              <p>Offset: </p>
+              <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams %>>0</p>
+              <p> CO2 grams</p>
+             </div>
+           </div>
+            <div class="swipe-btn-container">
+              <% unless pledge.completed %>
+                <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
+              <% end %>
+            </div>
+            <%= render "accordion_pledges", pledge: pledge %>
+          </div>
+          <% else %>
+           <%= "No pledges at the moment..." %>
+          <% end %>
+        </div>
+    <% end %>
+    </div> <!--end of swipe-wrap-->
+  </div> <!--end of div-->
+
+<h2 class="latest-completed-pledges">Completed Actions</h2>
+<div class="typed-container"><%= "You offset #{@total_co2_achieved} and counting" %><span class="typed" id="pledge-co2"></span></div>
+
+<div id="otherSwipe" class="swipe">
+    <div class="swipe-wrap">
+    <!--first card-->
+    <% @completed_pledges.each do |pledge| %>
+      <div class="swipe-container">
+       <h5><%= pledge.recommendation.category %></h5>
+        <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image"></div>
+         <div>
+           <div class="swipe-btn-container">
+             <p><strong><%= pledge.recommendation.title %></strong></p>
+             <div class="swipe-btn-container">
+              <p>Offset: </p>
+              <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams %>>0</p>
+              <p> CO2 grams</p>
+             </div>
+           </div>
+            <div class="swipe-btn-container">
+              <% unless pledge.completed %>
+                <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
+              <% end %>
+            </div>
+            <%= render "accordion_pledges", pledge: pledge %>
+          </div>
+        </div>
+    <% end %>
+    </div> <!--end of swipe-wrap-->
+  </div> <!--end of div-->
