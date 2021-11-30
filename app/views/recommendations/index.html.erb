@@ -1,20 +1,21 @@
-<h3 class="offset-recommendations">Offset Actions</h3>
+<h1 class="offset-recommendations">Offset Actions</h1>
+<br>
+<h3 class="offset-recommendations-subheader">Swipe to start <strong>YOUR</strong> green revolution</h3>
+
 
 <div id="mySwipe" class="swipe">
   <div class="swipe-wrap"> <!--start of swipe-wrap-->
     <% @recommendations.each do |recommendation| %>
       <div class="swipe-container">
-        <div></div>
           <div style="background-image: url(<%= recommendation.photo %>);" class="swipe-image">
-          <h5><%= recommendation.category %></h5>
+          <h5 class="reco-index-title"><%= recommendation.category %></h5>
             <div>
-              <div class="swipe-btn-container">
-                <p><strong><%= recommendation.title %></strong></p>
-                <div class="swipe-btn-container">
-                <p>Offset: </p>
-                <p class="counterUp" akhi=<%= recommendation.co2_grams/1000 %>>0</p>
-                <p> CO2 KGs</p>
-                </div>
+              <p class="swipe-title-container"><strong><%= recommendation.title %></strong></p>
+            </div>
+              <div class="swipe-grams-container">
+                  <p class="space-words"><%= "Offset:" %></p>
+                  <p class="counterUp space-words" akhi=<%= recommendation.co2_grams/1000 %>>0</p>
+                  <p class="space-words"><%= " CO2 KGs" %></p>
               </div>
               <div class="swipe-btn-container">
                 <%= link_to "More Info", recommendation_path(recommendation.id), class:"button-know-more" %>
