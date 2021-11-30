@@ -38,7 +38,7 @@ input[type=submit] {
   padding: 6.32079px 12.6416px;
   width: 179px;
   height: 42px;
-  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
+  background: #25cf7a;
   border-radius: 11.8515px;
   border-style: none;
   transition-duration: 0.3s;
@@ -197,17 +197,23 @@ input[type=submit] {
   justify-content: center;
 }
 
+.go-to-pledges-show {
+  font-size: 20px;
+}
 .button-dash-1 {
   color: white;
   text-decoration: none;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
   background-color: #25cf7a;
   border-style: none;
   border-radius: 20px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 100px;
+  text-decoration: none;
   margin-bottom: -10px;
   margin-top: -5px;
 }

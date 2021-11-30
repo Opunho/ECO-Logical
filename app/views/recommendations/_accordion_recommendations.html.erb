@@ -13,11 +13,9 @@
 
       <div id="collapse-<%= recommendation.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-          <ul>
-            <li><%= recommendation.description %></li>
+            <p><%= recommendation.description %></p>
             <br>
-            <li><%= link_to "Link to article", recommendation.link_to_article %></li>
-          </ul>
+            <p><i class="fas fa-link"></i> <%= link_to "Link to article", recommendation.link_to_article %></p>
         </div>
       </div>
   </div>
