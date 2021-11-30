@@ -1,9 +1,5 @@
 <h1 class="your-pledges-page">Your pledges</h1>
 
-<div class="reccomendations-button-container">
-  <button class="reccomendations-button"><i class="fas fa-backspace"></i><%= link_to " Recommendations", recommendations_path %></button>
-</div>
-
 <div class="pledges-page-pledges">
   <% @pledges.each do |pledge| %>
       <% pledge.completed %>
