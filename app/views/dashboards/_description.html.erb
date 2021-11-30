@@ -5,7 +5,7 @@
    <p>Net Emmissions: <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
    <br>
    <p>-----------------------</p>
-   <%= link_to "Create new transaction", new_expense_path %>
+   <%= link_to "Create new transaction", new_expense_path, class:"btn btn-dash"%>
    <% @categories.each do |cat| %>
     <%= render "accordion", cat: cat, time: time %>
    <% end %>

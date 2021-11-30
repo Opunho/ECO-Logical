@@ -1,28 +1,87 @@
-<div class="container d-flex justify-content-center">
-  <div class="container text-center">
-    <h1>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h1><br>
-    <p>Account Number: <%= current_user.unique_account[0] %></p>
-    <%= link_to "Update Transactions", fetch_expenses_path%>
+<div class="container ">
+
+  <div class=" text-center dashboard-h1 ">
+    <h3>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h3><br>
+
+    <p> <%= current_user.unique_account[0] %></p>
+
+   <%= link_to "Update Transactions", fetch_expenses_path, class:""%>
   </div>
 </div><br>
+<div class="dashboard-h2">
+  <div data-update-list-target="description">
+    <h3 style="text-align:center">Your green account  </h3>
+   <p><i class="fas fa-money-bill-wave"></i>  Expenses : <%= @total_expenses.ceil(2) %> EUR </p>
+   <p><i class="fas fa-burn"></i> Emmissions: <%= ((@total_emmissions)/1000).ceil(2) %> CO2 kg</p>
+   <p> <i class="fas fa-leaf"></i> Offset: <%= (current_user.pledge_impact)/1000 %> CO2 Kg</p>
+   <p> <i class="fas fa-globe-europe"></i> Net Emmissions: <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
+  </div>
 
+<<<<<<< HEAD
 <div data-controller="update-list">
   <div class="d-flex justify-content-center align-item-center">
     <div class="d-inline-flex justify-content-between w-50">
+=======
+  <div data-controller="update-list ">
+    <div class=" d-flex hb32 months-dash ">
+>>>>>>> master
       <%= link_to "30 Days", dashboard_path(scope: 1) %>
       <%= link_to "3 Months", dashboard_path(scope: 3) %>
       <%= link_to "6 Months", dashboard_path(scope: 6) %>
     </div>
   </div>
-
-  <div class="container">
+  <div class="container  ">
     <div class="chart">
-      <%= pie_chart @emmission_chart, donut: true, legend: "left" %>
-      <%= pie_chart @expenses_chart, donut: true, legend: "right" %>
+      <div class="show1" id="chartOne">
+        <%= pie_chart @emmission_chart, donut: true, legend: "left" %>
+      </div>
+      <div class="hide1" id="chartTwo">
+        <%= pie_chart @expenses_chart, donut: true, legend: "right" %>
+      </div>
+
+    <%#= link_to "Switch", "#", class:"btn btn-dash", id="SwitchChart"%>
+    <p id="btn" class="green-me-up"><i>Switch to green</i></p>
     </div>
-    <br>
-       <%= render 'description', time: @time %>
   </div>
 </div>
+<<<<<<< HEAD
 
 <%= csrf_meta_tag %>
+=======
+  <div class="container ">
+    <br>
+   <%= link_to "Create new transaction", new_expense_path, class:"btn-dash"%>
+   <% @categories.each do |cat| %>
+    <div class="dashboard-h3 ">
+    <%= render "accordion", cat: cat, time: @time %>
+    </div>
+      <div class=" modal fade" id="exampleModalLong-<%= cat.split.first %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="  modal-dialog" role="document">
+          <div class=" modal13 modal-content">
+            <div class="modal-header">
+              <strong><h4><%= "Breakdown of #{cat}" %></h4></strong>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <% @emmissions.where(main_category: cat).each do |emmission| %>
+              <h5><em><%= emmission.sub_category %></em></h5>
+              <p><%= emmission.expense.amount %> EUR</p>
+              <% calc_result =  emmission.co2_grams.to_f * emmission.expense.amount.to_f %>
+              <p><%= calc_result.ceil(2) %></p>
+              <p>-----------------------</p>
+
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class=" btn-dash" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+   <% end %>
+   <p>-----------------------</p>
+   <br>
+ </div>
+>>>>>>> master

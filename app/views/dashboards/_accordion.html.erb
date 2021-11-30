@@ -1,25 +1,37 @@
 
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
+<div class="accordion " id="accordionExample">
+  <div class="">
+    <div class="" id="headingOne">
       <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+        <!--<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                 data-target="#collapse-<%= cat.split.first %>" aria-expanded="true" aria-controls="collapseOne">
             <h2><strong><%= cat %></strong></h2>
+        </button>-->
+        <button type="button" class="btn btn-link btn-block text-left" data-toggle="modal" data-target="#exampleModalLong-<%= cat.split.first %>">
+           <h2><strong><%= cat %></strong></h2>
         </button>
-      </h2>
-        <p><%= current_user.total_expenses_per_category([cat, time]) %> EUR</p>
-        <% percentage = current_user.total_expenses_per_category([cat, time]) / current_user.user_total_expenses * 100 %>
+
+       </h2>
+       <div class="d-flex dprop">
+       <div class="greendash1money">
+        <i class="fas fa-money-bill-wave"></i>
+        <p><%= current_user.total_expenses_per_category([cat, time]).ceil(2) %> EUR</p>
+       </div>
+        <!--<% percentage = current_user.total_expenses_per_category([cat, time]) / current_user.user_total_expenses * 100 %>
         <p><%= percentage.to_i %>%</p>
-        <!-- Taking total emmissions and percentages on total of the expenses -->
-        <% final_calc = current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category([cat, time]).to_f %>
-        <p><%= final_calc.ceil(2) %> CO2 grams</p>
-        <% percentage = current_user.total_emmissions_per_category(cat) / current_user.user_total_emmissions * 100 %>
-        <p><%= percentage.to_i %>%</p>
+        Taking total emmissions and percentages on total of the expenses -->
+        <div class="greendash1">
+        <% final_calc = (current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category([cat, time]).to_f)/1000 %>
+        <i class="fas fa-burn"></i>
+        <p><%= final_calc.ceil(2) %> CO2 Kg</p>
+        </div>
+        <!--<% percentage = current_user.total_emmissions_per_category(cat) / current_user.user_total_emmissions * 100 %>
+        <p><%= percentage.to_i %>%</p>-->
+        </div>
     </div>
 
-      <div id="collapse-<%= cat.split.first %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
+      <!--<div id="collapse-<%= cat.split.first %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="">
             <strong><h4><%= "Breakdown of #{cat}" %></h4></strong>
               <% @emmissions.where(main_category: cat).each do |emmission| %>
               <h5><em><%= emmission.sub_category %></em></h5>
@@ -28,6 +40,6 @@
               <p><%= calc_result.ceil(2) %></p>
               <% end %>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
