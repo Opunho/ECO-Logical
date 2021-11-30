@@ -1,0 +1,11 @@
+<div class="accordion-container">
+  <h5><%= "How you can offset: #{@recommendation.category}" %></h5>
+  <%= image_tag "https://images.unsplash.com/photo-1572803090936-72796aef96a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", class:"recommendation-show" %>
+  <%= render "accordion_recommendations", recommendation: @recommendation %>
+  <div class = "swipe-btn-container">
+    <%= link_to "Back to Actions", recommendations_path, class:"button-know-more" %>
+    <%= simple_form_for([@recommendation, Pledge.new]) do |f| %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
