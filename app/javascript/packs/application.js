@@ -26,7 +26,8 @@ import "chartkick/chart.js";
 // Internal imports, e.g:
 
 import { loadDynamicBannerText } from '../components/banner';
-import { counterUp } from "../components/counterup";
+import { counterUp } from "../components/counterup"
+import { switchChart } from "../components/switchchart";
 import { initCarousel } from "../components/carousel";
 import { initForm } from "../components/form";
 
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // [...]
   loadDynamicBannerText();
   counterUp();
+  switchChart();
   initCarousel();
   initForm();
 });
