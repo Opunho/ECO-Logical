@@ -11,8 +11,8 @@ class DashboardsController < ApplicationController
     @emmission_chart = Emmission.populate_chart(@time)
     respond_to do |format|
       format.html
-      format.text { render partial: 'description.html' }
-    @dash_selected = true
+      format.text { render partial: 'dashboards/dashboard_info', locals: {}, formats: [:html] }
+      @dash_selected = true
     end
   end
 

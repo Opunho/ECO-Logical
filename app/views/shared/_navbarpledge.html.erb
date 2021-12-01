@@ -16,7 +16,7 @@
 
   <%= link_to pledges_path, class: "navbar-brand" do %>
       <i class="fas fa-user navbar-icon-green"></i>
-      <%= Pledge.all.where(completed:false).count %>
+      <span class="pledge-count23"><%= Pledge.all.where(completed:false).count%></span>
     <%#= image_tag "app/assets/images/logo.png" %>
 
     <%#= cl_image_tag "qflbyl0yz7z8cw4wwnej" %>

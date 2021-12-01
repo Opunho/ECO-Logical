@@ -51,7 +51,6 @@ const initForm = () => {
       const paidTo = document.getElementById("paid-to")
       const showSubCategory = document.getElementById("sub-category-show")
       const showAmount = document.getElementById("amount-show")
-      // const showCurrency = document.getElementById("currency-show")
       const transactionDate = document.getElementById("transaction-date")
       paidTo.innerHTML = `Paid To: ${creditorName}`
       showSubCategory.innerHTML = `For: ${subCategory}`
@@ -69,7 +68,6 @@ const initForm = () => {
     }
     const currentUser = document.getElementById("current-user").value
     thirdButton.addEventListener("click", event => {
-      console.log(currentUser)
       event.preventDefault();
       fetch(`/accounts/${currentUser}/expenses`, {
         method: 'POST',
@@ -77,7 +75,7 @@ const initForm = () => {
           'X-CSRF-Token': token,
           'Content-type': 'application/json' },
         body: JSON.stringify(data),
-        // success: window.location = "/dashboard"
+        success: window.location = "/dashboard"
       })
     })
   })

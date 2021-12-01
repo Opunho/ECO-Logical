@@ -1,0 +1,46 @@
+   <div data-update-list-target="description">
+    <div class="dashboard-h2">
+      <div>
+        <h3 style="text-align:center">Your green account </h3>
+        <p><i class="fas fa-money-bill-wave"></i> Expenses : <%= @total_expenses.ceil(2) %> EUR </p>
+        <p><i class="fas fa-burn"></i> Emmissions: <%= ((@total_emmissions)/1000).ceil(2) %> CO2 kg</p>
+        <p> <i class="fas fa-leaf"></i> Offset: <%= (current_user.pledge_impact)/1000 %> CO2 Kg</p>
+        <p> <i class="fas fa-globe-europe"></i> Net Emmissions:
+          <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
+      </div>
+
+      <div>
+        <div class=" d-flex hb32 months-dash ">
+          <%= link_to "30 Days", dashboard_path(scope: 1), "data-update-list-target": "filter",
+                      "data-action": "click->update-list#update" %>
+          <%= link_to "3 Months", dashboard_path(scope: 3), "data-update-list-target": "three",
+                      "data-action": "click->update-list#update" %>
+          <%= link_to "6 Months", dashboard_path(scope: 6), "data-update-list-target": "six",
+                      "data-action": "click->update-list#update" %>
+        </div>
+      </div>
+      <div class="container" data-update-list-target="charts">
+        <div class="chart">
+          <div class="show1" id="chartOne">
+            <%= pie_chart @emmission_chart, donut: true, legend: "left" %>
+          </div>
+          <div class="hide1" id="chartTwo">
+            <%= pie_chart @expenses_chart, donut: true, legend: "right" %>
+          </div>
+          <p id="btn" class="green-me-up"><i>Switch to green</i></p>
+        </div>
+      </div>
+    </div>
+    <div class="container ">
+      <br>
+      <%= link_to "Create new transaction", new_expense_path, class:"btn-dash"%>
+      <% @categories.each do |cat| %>
+        <div class="dashboard-h3 ">
+          <%= render "accordion", cat: cat, time: @time %>
+        </div>
+        <%= render "modals", cat: cat%>
+      <% end %>
+      <p>-----------------------</p>
+      <br>
+    </div>
+   </div>
