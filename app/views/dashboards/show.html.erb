@@ -1,11 +1,2 @@
-<div class="dashboard-h2">
-  <div data-update-list-target="description">
-  <div class=" text-center ">
-    <h3 style="font-family:Caveat, sans-serif">Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h3><br>
-    <p> <%= current_user.unique_account[0] %></p>
 
-  </div>
-</div><br>
-<div data-controller="update-list ">
- <%= render "dashboard_info" %>
-</div>
+<%= render "dashboard_info" %>
