@@ -13,7 +13,12 @@
         <div class="greendash1">
           <% final_calc = (current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category([cat, time]).to_f)/1000 %>
           <i class="fas fa-burn"></i>
-          <p><%= final_calc.ceil(2) %> CO2 Kg</p>
+          <% if final_calc > 1000 %>
+            <% final_calc /= 1000 %>
+            <p><%= final_calc.ceil(2) %> CO2 TON</p>
+          <% else %>
+            <p><%= final_calc.ceil(2) %> CO2 Kg</p>
+          <% end %>
         </div>
       </div>
   </div>
