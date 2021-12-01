@@ -15,27 +15,58 @@
   position: relative;
   box-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.3);
   border-radius: 10px;
-  width: 70vw;
-  padding: 10px 30px;
-  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  width: auto;
   align-items: center;
+  padding-top: 50px;
 }
 .swipe-image{
-  height: 40vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
   opacity: 1;
   width:auto;
+  position: relative;
 }
-.swipe-btn-container{
+.swipe-title-container{
+  width: 100vw;
+  text-align: center;
+  margin: 15px 0 0 0;
+  position: absolute;
+  font-family: 'Overpass', sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.8);
+}
+.swipe-grams-container{
+  width: 100vw;
+  text-align: center;
+  margin: 65px 0 0 0;
+  position: absolute;
+  font-family: 'Overpass', sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.8);
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 3px;
+  justify-content: center;
 }
 .swipe-btn-container > p{
   margin: 0 2px;
 }
 .accordion-container{
   margin-bottom: 40px;
+}
+.reco-index-title{
+  position: absolute;
+  text-align: center;
+  width: 100vw;
+  margin-top: -35px;
+  font-size: 45px;
+  font-family: Caveat, sans-serif;
+  color: #115300
+}
+.space-words{
+  margin: 5px;
 }

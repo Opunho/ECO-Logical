@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
   # skip_before_action :authenticate_user!
   before_action :set_api_variables
   before_action :fetch_transactions
-  before_action :set_account
+  # before_action :set_account
   before_action :set_expenses
 
   def index
@@ -23,16 +23,17 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.external_id = id
     @expense.account = @account
-    @expense.creditor_id = @expense.emmission_data(params[:expense][:sub_category])
+    @expense.creditor_id = @expense.emmission_data(params[:sub_category])
     if @expense.save!
       create_emmission
-      redirect_to expenses_path
+      redirect_to dashboard_path
     else
       render :index
     end
   end
 
   def set_transactions
+    set_account unless current_user.accounts.first == @account
     @transactions.parsed_response["data"].each do |transaction|
       duplicate_checker = Expense.find_by(external_id: transaction["externalId"])
       if transaction["amount"].negative? && duplicate_checker == nil

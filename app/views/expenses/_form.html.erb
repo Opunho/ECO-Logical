@@ -1,9 +1,67 @@
-<%= simple_form_for @expense do |f| %>
-  <%= f.input :creditor_name, label: false, placeholder: "Paid to" %>
-  <%= f.input :sub_category, label: false, placeholder: "choose category",
-              collection: @sub_categories %>
-  <%= f.input :amount %>
-  <%= f.input :currency, label: false, placeholder: "3 letters for currency" %>
-  <%= f.input :date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container slider-one-active">
+  <div class="steps">
+    <div class="step step-one">
+      <div class="liner"></div>
+      <span>Paid To</span>
+    </div>
+    <div class="step step-two">
+      <div class="liner"></div>
+      <span>Information</span>
+    </div>
+    <div class="step step-three">
+      <div class="liner"></div>
+      <span>Create</span>
+    </div>
+  </div>
+  <div class="line">
+    <div class="dot-move"></div>
+    <div class="dot zero"></div>
+    <div class="dot center"></div>
+    <div class="dot full"></div>
+  </div>
+  <div class="slider-ctr">
+    <div class="slider">
+      <form class="slider-form slider-one">
+        <h2>Welcome for the first part of your journey</h2>
+        <label class="input">
+          <input type="text" class="creditor-name" placeholder="Your Bank?">
+        </label>
+        <label class="input">
+          <select id="sub-category" class="select sub-category">
+            <option value="">Choose A Category</option>
+              <% @sub_categories.each do |sub_category| %>
+                <option value="<%= sub_category %>"><%= sub_category %></option>
+              <% end %>
+          </select>
+        </label>
+        <label class="input">
+          <input type="date" class="select date-pick">
+        </label><br>
+        <button class="first next">Next Step</button>
+      </form>
+      <form class="slider-form slider-two form-2">
+        <h2>More Info</h2>
+        <div class="label-ctr">
+          <label class="account-number">
+            <input type="text" class="amount" placeholder="Amount">
+          </label>
+           <label class="account-number">
+             <input type="text" class="currency" placeholder="currency">
+           </label>
+        </div>
+        <button class="second next">Next Step</button>
+        <%= hidden_field_tag "current-user", current_user.id %>
+      </form>
+      <div class="slider-form slider-three">
+        <h2>New Transaction Review</h2>
+        <h4>Account: <%= current_user.accounts.first.account_number %></h4>
+        <h5 id="paid-to"></h5>
+        <h5 id="sub-category-show"></h5>
+        <h5 id="amount-show"></h5>
+        <h5 id="currency-show"></h5>
+        <h5 id="transaction-date"></h5>
+        <button class="third">Create Transaction</button>
+      </div>
+    </div>
+  </div>
+</div>
