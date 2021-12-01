@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   def show
+    @counter = 1
     @expense = Expense.new
     @categories = current_user.unique_category
     @accounts = current_user.accounts
