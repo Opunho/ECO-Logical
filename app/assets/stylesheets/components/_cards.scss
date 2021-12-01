@@ -203,6 +203,34 @@
 }
 }
 
+.card-finally {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 617px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 20px;
+  margin-bottom: 40px;
+    h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+  }
+  p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+    img {
+    height: 330px;
+    width: auto;
+    padding-bottom: 20px;
+}
+}
+
 .pledge-card-container{
   display: grid;
   grid-column-gap: 5px;
