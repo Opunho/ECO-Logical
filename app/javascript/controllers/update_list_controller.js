@@ -12,4 +12,16 @@ export default class extends Controller {
       this.descriptionTarget.outerHTML = data;
     })
   }
+  flip(event) {
+    console.log("hello")
+    event.preventDefault();
+    event.currentTarget.classList.add('trees')
+    event.currentTarget.classList.remove('greendash1')
+    event.currentTarget.querySelector('i').classList.remove('fa-burn')
+    event.currentTarget.querySelector('i').classList.add('fa-tree')
+    const poll = event.currentTarget.querySelector('p').innerHTML;
+    event.currentTarget.querySelector('p').innerHTML = (poll * 2)
+    event.currentTarget.querySelectorAll('p')[1].classList.add('d-none')
+  }
+
 }

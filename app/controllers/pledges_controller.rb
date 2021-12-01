@@ -6,7 +6,7 @@ class PledgesController < ApplicationController
   def index
     @pledges = Pledge.where(completed: false)
     @completed_pledges = Pledge.where(completed: true)
-    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams}.sum
+    @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams.to_f}.sum
     @pledge_selected = true
   end
 
@@ -17,7 +17,7 @@ class PledgesController < ApplicationController
     @pledge.user = current_user
     @pledge.completed = false
     if @pledge.save
-      redirect_to pledges_path
+      redirect_to recommendations_path
     else
       render "recommendations/index"
     end

@@ -19,13 +19,13 @@
 </div> <!--end of div-->
 
 <h2 class="latest-completed-pledges">Completed Actions</h2>
-<div class="typed-container"><%= "You offset #{@total_co2_achieved} and counting" %><span class="typed" id="pledge-co2"></span></div>
+<div class="typed-container"><%= "You offset #{@total_co2_achieved/1000} CO2 KGs (#{(@total_co2_achieved/500000).to_f.ceil(2)} trees) and counting" %><span class="typed" id="pledge-co2"></span></div>
 
 <div id="otherSwipe" class="swipe">
     <div class="swipe-wrap">
     <!--first card-->
     <% @completed_pledges.each do |pledge| %>
-      <div class="swipe-container">
+      <div class="swipe-container-complete">
        <h5><%= pledge.recommendation.category %></h5>
         <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image"></div>
          <div>
@@ -33,7 +33,7 @@
              <p><strong><%= pledge.recommendation.title %></strong></p>
              <div class="swipe-btn-container">
               <p>Offset: </p>
-              <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams %>>0</p>
+              <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
               <p> CO2 grams</p>
              </div>
            </div>
