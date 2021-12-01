@@ -1,0 +1,24 @@
+<div class="homepage-container">
+  <div class="video-wrapper">
+    <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4",id: "cover-video", autoplay: true, loop: true, width: "480vw") %>
+  </div>
+  <div class="homepage-content">
+    <h1>Eco-Logical</h1>
+    <div class="card-glass">
+      <%= link_to "Join the cause", new_account_path, id: "join-button", class: "join-the-cause" %>
+      <%= link_to "Already a member?", new_account_path if user_signed_in?  %>
+    </div>
+    <div class="card-white about">
+      <h2>About</h2>
+      <p>us</p>
+    </div>
+     <div class="card-white how-it-works">
+      <h2>How it works</h2>
+      <p>now</p>
+    </div>
+     <div class="card-white testimonials">
+      <h2>Testimonials</h2>
+      <p>blah</p>
+    </div>
+  </div>
+</div>
