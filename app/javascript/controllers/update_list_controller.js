@@ -21,7 +21,11 @@ export default class extends Controller {
       event.currentTarget.querySelector('i').classList.remove('fa-burn')
       event.currentTarget.querySelector('i').classList.add('fa-tree')
       const poll = event.currentTarget.querySelector('p').innerHTML;
-      event.currentTarget.querySelector('p').innerHTML=(poll * 2)
+      if(event.currentTarget.querySelectorAll('p')[1].innerHTML === 'Tco2') {
+        event.currentTarget.querySelector('p').innerHTML=(poll * 2)
+      } else {
+        event.currentTarget.querySelector('p').innerHTML=(poll * 0.002)
+      }
       event.currentTarget.querySelectorAll('p')[1].classList.add('d-none')
     }
     else {
@@ -31,7 +35,11 @@ export default class extends Controller {
       event.currentTarget.querySelector('i').classList.add('fa-burn')
       event.currentTarget.querySelector('i').classList.remove('fa-tree')
       const poll = event.currentTarget.querySelector('p').innerHTML;
-      event.currentTarget.querySelector('p').innerHTML=(poll / 2)
+      if(event.currentTarget.querySelectorAll('p')[1].innerHTML === 'Tco2') {
+        event.currentTarget.querySelector('p').innerHTML=(poll / 2)
+      } else {
+        event.currentTarget.querySelector('p').innerHTML=(poll / 0.002)
+      }
       event.currentTarget.querySelectorAll('p')[1].classList.remove('d-none')
     }
   }
