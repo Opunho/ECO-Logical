@@ -10,8 +10,9 @@
           <i class="fas fa-money-bill-wave"></i>
           <p><%= current_user.total_expenses_per_category([cat, time]).ceil(2) %> EUR</p>
         </div>
-        <div class="greendash1" data-update-list-target="card<%= @counter %>" data-action="click->update-list#flip" >
-          <% final_calc = (current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category([cat, time]).to_f)/1000 %>
+        <div class="greendash1" data-update-list-target="card<%= @counter %>"
+             data-action="click->update-list#flip">
+          <% final_calc = (current_user.total_emmissions_per_category(cat).to_f * current_user.total_expenses_per_category([cat, time]).to_f) / 1000 %>
           <i class="fas fa-burn"></i>
           <% if final_calc > 1000 %>
             <% final_calc /= 1000 %>
