@@ -8,7 +8,8 @@
       <div class="d-flex dprop">
         <div class="greendash1money">
           <i class="fas fa-money-bill-wave"></i>
-          <p><%= current_user.total_expenses_per_category([cat, time]).ceil(2) %> EUR</p>
+          <% money = current_user.total_expenses_per_category([cat, time]) %>
+          <p><%= money.round() %> EUR</p>
         </div>
         <div class="greendash1" data-update-list-target="card<%= @counter %>"
              data-action="click->update-list#flip">
@@ -17,12 +18,12 @@
           <% if final_calc > 1000 %>
             <% final_calc /= 1000 %>
             <div class="d-flex">
-              <p><%= final_calc.ceil(2) %>  </p>
+              <p><%= final_calc.round() %>  </p>
               <p class="card-info">Tco2</p>
             </div>
           <% else %>
           <div class="d-flex">
-            <p class="whole"><%= final_calc.ceil(2) %></p>
+            <p class="whole"><%= final_calc.round() %></p>
             <p class="card-info"> CO2 Kg</p>
           </div>
           <% end %>

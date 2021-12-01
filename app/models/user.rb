@@ -18,7 +18,7 @@ class User < ApplicationRecord
   end
 
   def unique_category
-    categories = emmissions.collect(&:main_category).uniq
+    categories = emmissions.collect(&:sub_category).uniq
     categories.reject { |item| item.nil? }
   end
 
@@ -27,13 +27,13 @@ class User < ApplicationRecord
   end
 
   def total_emmissions_per_category(cat)
-    Emmission.where(main_category: cat).collect(&:co2_grams).sum(&:to_i)
+    Emmission.where(sub_category: cat).collect(&:co2_grams).sum(&:to_i)
   end
 
   def total_expenses_per_category(array)
     case array[1]
     when "all"
-      Emmission.where(main_category: array[0]).map do |emmission|
+      Emmission.where(sub_category: array[0]).map do |emmission|
         emmission.expense.amount
       end.sum
     else
