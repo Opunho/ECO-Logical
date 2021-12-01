@@ -30,10 +30,10 @@
       <div class="container" data-update-list-target="charts">
         <div class="chart">
           <div class="show1" id="chartOne">
-            <%= pie_chart @emmission_chart, donut: true, legend: "left" %>
+            <%= pie_chart @emmission_chart, donut: true, legend: "left", colors: ["#FF4500", "#86eab8", "#f4f40b", "#17824d", "#FF0000", "#25cf7a"] %>
           </div>
           <div class="hide1" id="chartTwo">
-            <%= pie_chart @expenses_chart, donut: true, legend: "right" %>
+            <%= pie_chart @expenses_chart, donut: true, legend: "right", colors: ["#FF4500", "#86eab8", "#f4f40b", "#17824d", "#FF0000", "#25cf7a"] %>
           </div>
           <p id="btn" class="green-me-up"><i>Switch to green</i></p>
         </div>
