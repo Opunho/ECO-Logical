@@ -2,11 +2,9 @@
   <div class="card">
       <div class="card-header" id="headingOne">
         <p class="mb-0">
-          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-<%= recommendation.id %>" aria-expanded="true" aria-controls="collapseOne">
-            <div clas="swipe-btn-container">
-              <p><%= "#{recommendation.title} = #{recommendation.co2_grams} CO2 Grams" %></p>
-              <p><i class="fas fa-chevron-down"></i></p>
-            </div>
+          <button class="btn btn-link btn-block text-left reco-show-btn-container" type="button" data-toggle="collapse" data-target="#collapse-<%= recommendation.id %>" aria-expanded="true" aria-controls="collapseOne">
+              <%= "#{recommendation.title} = #{recommendation.co2_grams/1000} CO2 KGs" %>
+              <p>Read more: <i class="fas fa-chevron-down"></i></p>
           </button>
         </p>
       </div>
