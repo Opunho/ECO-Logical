@@ -114,7 +114,37 @@
   }
 }
 
-.card-white-howto {
+.card-step1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 480px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-top: 10px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    margin-top: 5px;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+  img {
+    height: 320px;
+    width: auto;
+    padding-bottom: 20px;
+  }
+}
+
+.card-step2 {
   background-color: white;
   height: 470px;
   border-radius: 20px;
@@ -132,6 +162,35 @@
     color: #25cf7a;
     padding-top: 20px;
   }
+  img {
+    height: 200px;
+    width: auto;
+    align-items: center;
+}
+}
+
+.card-step3 {
+  background-color: white;
+  height: 470px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+  img {
+    height: 200px;
+    width: auto;
+}
 }
 
 .pledge-card-container{
