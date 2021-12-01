@@ -9,11 +9,6 @@
   display: none;
 }
 
-
-
-
-
-
 input:focus,
 select:focus,
 button:focus {
@@ -316,12 +311,12 @@ label.radio input:checked + .emot {
 
 label.radio input:checked + .emot,
 label.radio input:checked + .emot .mouth {
-	border-color: #5892fc;
+	border-color: #25CF7A;
 }
 
 label.radio input:checked + .emot:before,
 label.radio input:checked + .emot:after {
-	background: #5892fc;
+	background: #25CF7A;
 }
 
 label.radio .emot {
