@@ -1,17 +1,17 @@
-<div class="container ">
-
-  <div class=" text-center dashboard-h1 ">
-    <h3>Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h3><br>
-
-    <p> <%= current_user.unique_account[0] %></p>
-
-   <%= link_to "Update Transactions", fetch_expenses_path, class:""%>
-  </div>
-</div><br>
 <div class="dashboard-h2">
   <div data-update-list-target="description">
-    <h3 style="text-align:center">Your green account  </h3>
-   <p><i class="fas fa-money-bill-wave"></i>  Expenses : <%= @total_expenses.ceil(2) %> EUR </p>
+  <div class=" text-center ">
+    <h3 style="font-family:Caveat, sans-serif">Welcome <%= current_user.first_name %> <%= current_user.last_name %>.</h3><br>
+    <p> <%= current_user.unique_account[0] %></p>
+
+  </div>
+   <!-- <h3 style="text-align:center">Your green account  </h3>-->
+   <div class="d-flex">
+    <p><i class="fas fa-money-bill-wave"></i>  Expenses : <%= @total_expenses.ceil(2) %> EUR </p>
+        <%= link_to  fetch_expenses_path,  type: 'submit', class: "",style:"margin-left:10px" do %>
+        <i class="fas fa-sync-alt"></i>
+        <% end %>
+    </div>
    <p><i class="fas fa-burn"></i> Emmissions: <%= ((@total_emmissions)/1000).ceil(2) %> CO2 kg</p>
    <p> <i class="fas fa-leaf"></i> Offset: <%= (current_user.pledge_impact)/1000 %> CO2 Kg</p>
    <p> <i class="fas fa-globe-europe"></i> Net Emmissions: <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>

@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
   # skip_before_action :authenticate_user!
   before_action :set_api_variables
   before_action :fetch_transactions
-  # before_action :set_account
+  before_action :set_account
   before_action :set_expenses
 
   def index
@@ -108,7 +108,7 @@ class ExpensesController < ApplicationController
     @account = Account.new(name: current_user,
                            account_number: response.parsed_response["data"][0]["iban"])
     @account.user = current_user
-    @account.save!
+    @account.save! unless current_user.accounts.each { |account| account == @account }
   end
 
   def fetch_transactions
