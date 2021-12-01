@@ -31,7 +31,8 @@ Recommendation.create!(
   description: "Going carless for a year could save about 2.6 tons of carbon dioxide, according to 2017 study from researchers at Lund University and the University of British Columbia — that’s a little more than a roundtrip transatlantic flight. How can you stop using a car? Try taking a train, bus or better yet, ride a bike.",
   link_to_article: "https://www.nytimes.com/guides/year-of-living-better/how-to-reduce-your-carbon-footprint",
   co2_grams: 50000,
-  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638265759/cycling.jpg"
+  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638265759/cycling.jpg",
+  icon: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638371366/icons/bicycle_hc866i.png"
 )
 
 Recommendation.create!(
@@ -40,7 +41,8 @@ Recommendation.create!(
   description: "Flying leads to lots of carbon emissions. For an average household, flying comes at number 6 of in the top 10 list of activities that cause the most carbon emissions. However, if you frequently go on distant flights, flying quickly becomes number 1 on the list.",
   link_to_article: "https://flygrn.com/page/sustainable-air-travel",
   co2_grams: 70000,
-  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638265777/train.jpg"
+  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638265777/train.jpg",
+  icon: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638371366/icons/train_qfmjdd.png"
 )
 
 Recommendation.create!(
@@ -49,7 +51,8 @@ Recommendation.create!(
   description: "When we think of pollution, we think of big oil companies and smog from coal mines—but the truth is, the fast fashion industry is one of the central polluting industries in the world. Not only is clothing production harmful to our planet, but the process also kills thousands of farmers and producers each year due to chemicals and waste.",
   link_to_article: "https://www.thegoodtrade.com/features/eco-friendly-clothing-brands",
   co2_grams: 60000,
-  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638265784/ecomarket.jpg"
+  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638265784/ecomarket.jpg",
+  icon: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638371366/icons/t-shirt_srb9jj.png"
 )
 
 Recommendation.create!(
@@ -67,7 +70,8 @@ Recommendation.create!(
   description: "Natural gas consists of mainly methane and other hydrocarbons. It is formed naturally underground when the remains of plant and animal matter are exposed to heavy pressures under the Earth’s surface. Because it occurs naturally under the Earth’s surface, it must be extracted. During the extraction process, much of the gas is lost to the atmosphere. Methane is a greenhouse gas, meaning it has a negative effect on our environment through global warming. In fact, a 2015 report by the Environmental Defense Fund surmises that natural gas released during the extraction process may negate much of its clean-burning benefit over other fossil fuels.",
   link_to_article: "https://evergreenhomeheatingandenergy.com/blog/146142",
   co2_grams: 62500,
-  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638269945/blanket.jpg"
+  photo: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638269945/blanket.jpg",
+  icon: "https://res.cloudinary.com/dyjkajjgg/image/upload/v1638371366/icons/clothes-hanger_qgkdra.png"
 )
 
 Recommendation.create!(
