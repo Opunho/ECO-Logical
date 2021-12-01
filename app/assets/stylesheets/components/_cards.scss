@@ -146,27 +146,20 @@
 
 .card-step2 {
   background-color: white;
-  height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 480px;
   border-radius: 20px;
   width: 100%;
   margin-top: 40px;
   text-align: left;
-  padding-left: 20px;
-  padding-top: 20px;
-  h2 {
-    font-family: Caveat, sans-serif;
-    color: #25cf7a;
-  }
-  h3 {
-    font-family: Caveat, sans-serif;
-    color: #25cf7a;
-    padding-top: 20px;
-  }
+  padding-top: 10px;
   img {
-    height: 200px;
-    width: auto;
-    align-items: center;
-}
+
+  }
 }
 
 .card-step3 {
