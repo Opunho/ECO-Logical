@@ -1,3 +1,4 @@
+  <div data-controller="update-list">
    <div data-update-list-target="description">
     <div class="dashboard-h2">
       <div>
@@ -19,11 +20,11 @@
 
       <div>
         <div class=" d-flex hb32 months-dash ">
-          <%= link_to "30 Days", dashboard_path(scope: 1), "data-update-list-target": "filter",
+          <%= link_to "30 Days", dashboard_path(scope: 1),
                       "data-action": "click->update-list#update" %>
-          <%= link_to "3 Months", dashboard_path(scope: 3), "data-update-list-target": "three",
+          <%= link_to "3 Months", dashboard_path(scope: 3),
                       "data-action": "click->update-list#update" %>
-          <%= link_to "6 Months", dashboard_path(scope: 6), "data-update-list-target": "six",
+          <%= link_to "6 Months", dashboard_path(scope: 6),
                       "data-action": "click->update-list#update" %>
         </div>
       </div>
@@ -47,8 +48,10 @@
           <%= render "accordion", cat: cat, time: @time %>
         </div>
         <%= render "modals", cat: cat%>
+        <% @counter += 1 %>
       <% end %>
       <p>-----------------------</p>
       <br>
     </div>
    </div>
+</div>

@@ -40,3 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initCarousel();
   initForm();
 });
+
+import "controllers"
