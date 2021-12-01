@@ -114,7 +114,37 @@
   }
 }
 
-.card-white-howto {
+.card-step1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 480px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-top: 10px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    margin-top: 5px;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+  img {
+    height: 320px;
+    width: auto;
+    padding-bottom: 20px;
+  }
+}
+
+.card-step2 {
   background-color: white;
   height: 470px;
   border-radius: 20px;
@@ -132,4 +162,76 @@
     color: #25cf7a;
     padding-top: 20px;
   }
+  img {
+    height: 200px;
+    width: auto;
+    align-items: center;
+}
+}
+
+.card-step3 {
+  background-color: white;
+  height: 470px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+  img {
+    height: 200px;
+    width: auto;
+}
+}
+
+.pledge-card-container{
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pledge-card-photo {
+  overflow: hidden;
+  height: 90px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+  width: 45vw;
+  align-items:center;
+}
+
+.pledge-card-photo > img {
+  height: 90px;
+  width: 90px;
+  border-radius: 10px;
+}
+
+.pledge-card-photo > h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pledge-card-photo > p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.pledge-card-info{
+
 }
