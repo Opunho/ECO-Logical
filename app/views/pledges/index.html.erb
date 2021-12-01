@@ -7,6 +7,7 @@
     <% @pledges.each do |pledge| %>
       <% if pledge.nil? %>
         <%= "No pledges at the moment..." %>
+        <%= link_to "More Info", recommendations_path, class:"button-green" %>
       <% else %>
         <div class="swipe-container">
         <h5><%= pledge.recommendation.category %></h5>
@@ -27,7 +28,7 @@
             </div>
               <%= render "accordion_pledges", pledge: pledge %>
             </div>
-      <% end %>
+      <% end %> <!--end of if statement-->
       </div>
     <% end %>
   </div> <!--end of swipe-wrap-->
