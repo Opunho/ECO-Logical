@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :expenses, through: :accounts
   has_many :emmissions, through: :expenses
   has_many :pledges
+  has_many :recommendations, through: :pledges
 
   def user_total_emmissions
     emmissions.collect(&:co2_grams).sum(&:to_f)
@@ -15,6 +16,11 @@ class User < ApplicationRecord
 
   def user_total_expenses
     expenses.collect(&:amount).sum(&:to_f)
+  end
+
+  def unique_pledge
+    recommendations = recommendations.collect(&:title).uniq
+    recommendations.reject { |pledge| pledge.nil? }
   end
 
   def unique_category

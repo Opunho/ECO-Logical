@@ -4,6 +4,15 @@
     position: relative;
     width: auto;
   }
+
+.swipe-pledge {
+overflow:hidden;
+visibility: hidden;
+position: relative;
+width: auto;
+margin-bottom: 70px;
+height: 50vh;
+}
 .swipe-wrap {
       overflow: hidden;
       position: relative;
@@ -14,7 +23,7 @@
     float: left;
     position: relative;
     border-radius: 10px;
-    width: auto;
+    width: 10vw;
     align-items: center;
     padding-top: 50px;
   }
@@ -38,8 +47,8 @@
     background-position: center;
     border-radius: 10px;
     opacity: 1;
-    width:auto;
-    position: relative;
+    width:100vw;
+    // position: relative;
   }
   .swipe-title-container{
     width: 100vw;

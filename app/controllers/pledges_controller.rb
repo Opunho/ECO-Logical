@@ -16,8 +16,8 @@ class PledgesController < ApplicationController
     @pledge.recommendation = @recommendation
     @pledge.user = current_user
     @pledge.completed = false
-    if @pledge.save
-      redirect_to recommendations_path
+    if @pledge.save!
+      redirect_to pledges_path
     else
       render "recommendations/index"
     end

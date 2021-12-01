@@ -5,38 +5,67 @@
 <div class="pledge-card-container">
   <% @pledges.each do |pledge| %>
     <div class="pledge-card-photo">
-      <div class="pledge-card-infos">
-        <p><%= "#{pledge.recommendation.title} " %><strong>worth </strong><%= "#{pledge.recommendation.co2_grams/1000} CO2 KGs" %></p>
+     <img src=<%= pledge.recommendation.icon %> alt="icon">
+      <div class="pledge-card-info">
+        <p class="pledge-color"><strong><%= "#{pledge.recommendation.title} " %></strong></p>
+      <div class="pledge-card-carbons">
+        <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
+        <p><%= "CO2 KGs"%></p>
+      </div>
       </div>
       <% unless pledge.completed %>
         <div class="green-me-up-container">
           <button class="green-me-up"><%= link_to "Done!", complete_pledge_path(pledge), method: :patch %>
           </button>
+        <!-- Trigger/Open The Modal -->
+          <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638386182/icons/question-mark-on-a-circular-black-background_h0ekrj.png" alt="icon" id="myPledgeModalBtn">
+        <!-- The Modal -->
+          <div id="myPledgeModal" class="pledgeModalContainer">
+        <!-- Modal content -->
+            <div class="pledge-modal-content">
+              <div class="pledge-modal-header">
+                <span class="close">&times;</span>
+                <h2 class="myPledgeModalTitle"><%= "Pledge: #{pledge.recommendation.title}" %></h2>
+              </div>
+              <div class="pledge-modal-body">
+                <img src=<%= pledge.recommendation.photo %> alt="pic" class="myPledgeModalPic">
+                <div class="pledge-card-carbons-modal">
+                  <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
+                  <p><%= "CO2 KGs"%></p>
+                </div>
+                <p class="myModalDescription"><%= pledge.recommendation.description %></p>
+              </div>
+              <div class="pledge-modal-footer">
+                <button class="green-me-up-modal"><%= link_to "Done!", complete_pledge_path(pledge), method: :patch %>
+                </button>
+              </div>
+            </div>
+          </div>
+<!--end of modal-->
         </div>
       <% end %>
     </div>
-  <% end %> <!--end of each -->
+  <% end %> <!--end of each loop-->
 </div> <!--end of div-->
 
 <h2 class="latest-completed-pledges">Completed Actions</h2>
 <div class="typed-container"><%= "You offset #{@total_co2_achieved/1000} CO2 KGs (#{(@total_co2_achieved/500000).to_f.ceil(2)} trees) and counting" %><span class="typed" id="pledge-co2"></span></div>
 
-<div id="otherSwipe" class="swipe">
+<div id="otherSwipe" class="swipe-pledge">
     <div class="swipe-wrap">
     <!--first card-->
-    <% @completed_pledges.each do |pledge| %>
-      <div class="swipe-container-complete">
-       <h5><%= pledge.recommendation.category %></h5>
-        <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image"></div>
-         <div>
-           <div class="swipe-btn-container">
-             <p><strong><%= pledge.recommendation.title %></strong></p>
-             <div class="swipe-btn-container">
-              <p>Offset: </p>
-              <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
-              <p> CO2 grams</p>
-             </div>
-           </div>
+    <% @completed_pledges.uniq.each do |pledge| %>
+      <div class="swipe-container">
+          <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image">
+          <h5 class="reco-index-title"><%= pledge.recommendation.category %></h5>
+            <div>
+              <p class="swipe-title-container"><strong class=""><%= pledge.recommendation.title %></strong></p>
+            </div>
+              <div class="swipe-grams-container">
+                  <p class="space-words"><%= "Offset:" %></p>
+                  <p class="counterUp space-words" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
+                  <p class="space-words"><%= " CO2 KGs" %></p>
+              </div>
             <div class="swipe-btn-container">
               <% unless pledge.completed %>
                 <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
