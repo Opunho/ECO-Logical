@@ -1,6 +1,11 @@
 // Specific CSS for your home-page
 
-video {
+.video-wrapper {
+  z-index: -1;
+  position: absolute;
+}
+
+#cover-video {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -9,23 +14,20 @@ video {
   left: 0;
 }
 
-#join-button {
-  font-size: 27px;
-  color: white;
-  text-decoration: none;
-  align-items: center;
+.homepage-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 25px;
-  background-color: #25cf7a;
-  border-style: none;
-  border-radius: 20px;
-  padding: 14px;
-  padding-left: 30px;
-  padding-right: 30px;
+  text-align: center;
+  padding: 0 20px;
 }
 
-.join-the-cause {
-  margin-top: -66px;
+#banner-header {
+  color: white;
+  font-family: Caveat, sans-serif;
+  font-size: 86px;
+  margin-top: 50px;
 }
 
 .viewport-header {
@@ -62,126 +64,62 @@ video {
   font-weight: bold;
 }
 
-.homepage-background{
-  background-image: url("https://images.pexels.com/photos/1654255/pexels-photo-1654255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  height: 812px;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  background-position: center;
-  background-size: cover;
-  margin-top: -50px;
+// .homepage-background{
+//   background-image: url("https://images.pexels.com/photos/1654255/pexels-photo-1654255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+//   height: 812px;
+//   width: 100%;
+//   text-align: center;
+//   align-items: center;
+//   background-position: center;
+//   background-size: cover;
+//   margin-top: -50px;
 
-}
+// }
 
-#circle {
-  background: $eco-green;
-  border-radius: 50%;
-  width: 100%;
-  padding-top: 10px;
-  text-align: center;
-  color: white;
-  text-shadow: black;
-}
+// #circle {
+//   background: $eco-green;
+//   border-radius: 50%;
+//   width: 100%;
+//   padding-top: 10px;
+//   text-align: center;
+//   color: white;
+//   text-shadow: black;
+// }
 
-#h2center {
-  margin-top: 5px;
-}
 
 .homepage-container {
-  background-color: white;
-  position: absolute;
-  width: 330px;
-  height: 183px;
-  align-items: center;
-  margin-top: 459px;
-  display: flex;
-  justify-content: center;
-  border-radius: 20px;
-  align-items: center;
-  text-align: center;
-    background: rgba(255, 255, 255, 0.37);
-    backdrop-filter: blur(8.6px);
-    -webkit-backdrop-filter: blur(8.6px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.homepage-container-container {
-  justify-content: center;
-  display: flex;
-}
-
-.typed-home {
-  z-index: 10;
-  color: white;
-  font-size: large;
-  margin-top: 169px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.already-a-member {
-  margin-top: 125px;
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-  border-radius: 20px;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  height: 40px;
-}
-
-.sign-in-homepage {
-  margin-top: 44px;
-  font-size: 15px;
-  color: white;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-  border-style: solid;
-  border-radius: 20px;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-color: white;
-  border-width: 1px;
-  width: 185px;
-  height: 40px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.sign-in-homepage a{
-  color: white;
-}
-
-.button-container-homepage {
-  height: 0vh;
+  // background-color: white;
+  // position: absolute;
+  // width: 330px;
+  // height: 183px;
+  // align-items: center;
+  // margin-top: 459px;
+  // display: flex;
+  // justify-content: center;
+  // border-radius: 20px;
+  // align-items: center;
+  // text-align: center;
+  //   background: rgba(255, 255, 255, 0.37);
+  //   backdrop-filter: blur(8.6px);
+  //   -webkit-backdrop-filter: blur(8.6px);
+  //   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .homepage-title {
-  z-index: 10;
-  font-size: 86px;
-  color: white;
-  text-align: center;
-  margin-top: 77px;
-  font-family: Caveat, sans-serif;
+  // z-index: 10;
+  // font-size: 86px;
+  // color: white;
+  // text-align: center;
+  // margin-top: 77px;
+  // font-family: Caveat, sans-serif;
 }
 
 .about-container {
-  z-index: 10;
-  margin-top: 20px;
-  color: black;
-  background-color: white;
-  height: 200px;
-  width: 100%;
+  // z-index: 10;
+  // margin-top: 483px;
+  // color: black;
+  // background-color: white;
+  // height: 200px;
+  // width: 90%;
+  // border-radius: 20px;
 }
