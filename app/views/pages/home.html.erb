@@ -1,18 +1,40 @@
-<div class=" d-flex justify-content-center align-items-center">
-  <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4",id: "cover-video", autoplay: true, loop: true, width: "480vw") %>
-</div>
-
-<div class="homepage-container-container">
-  <div class="homepage-title">Eco-Logical</div>
-    <div class="homepage-container">
-        <div class="button-container-homepage">
-          <h1 class="join-the-cause">
-            <%= link_to "Join the cause", new_account_path, id: "join-button" %>
-          </h1>
-            <div><div class="sign-in-homepage"><%= link_to "Already a member?", new_account_path if user_signed_in?  %></div></div>
+<div class="homepage-container">
+  <div class="video-wrapper">
+    <%= video_tag("https://res.cloudinary.com/dyjkajjgg/video/upload/v1638189874/Ecological%20videos/ecological_rjj5qs.mp4",id: "cover-video", autoplay: true, loop: true, width: "480vw") %>
+  </div>
+  <div class="homepage-content">
+    <h1 id="banner-header">Eco-Logical</h1>
+    <div class="card-glass">
+      <%= link_to "Join the cause", new_account_path, class: "button-green" %>
+      <% if user_signed_in?  %>
+        <%= link_to "Already a member?", new_account_path, class: "button-ghost-white" %>
+      <% end %>
+    </div>
+    <div class="card-white about">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et, cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue vitae nunc. In facilisis vestibulum enim nec aliquet. Quisque ultricies gravida euismod.</p>
+    </div>
+     <div class="card-white-howto how-it-works">
+      <h2>How it works</h2>
+      <div class="step1">
+        <h3> Step 1</h3>
+        <p>Connect your bank account</p>
+        <img src="dashboard.png" alt="dashboard">
+      </div>
+      <div class="step2">
+        <h3> Step 2</h3>
+        <p>Input data</p>
+        <img src="pledges.png" alt="pledges">
+      </div>
+      <div class="step3">
+        <h3> Step 3</h3>
+        <p>Become eco-logical</p>
+        <img src="recommendations.png" alt="recommendations">
+      </div>
+    </div>
+     <div class="card-white testimonials">
+      <h2>Testimonials</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et, cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue vitae nunc. In facilisis vestibulum enim nec aliquet. Quisque ultricies gravida euismod.</p>
     </div>
   </div>
-</div>
-<div class="homepage-container-container">
-  <div class="about-container">About blahblahblah</div>
 </div>

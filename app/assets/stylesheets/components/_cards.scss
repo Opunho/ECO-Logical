@@ -84,3 +84,52 @@
   display: flex;
   justify-content: center;
 }
+
+.card-glass {
+  background: transparent;
+  border-radius: 20px;
+  margin-top: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-white {
+  background-color: white;
+  height: 300px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+}
+
+.card-white-howto {
+  background-color: white;
+  height: 470px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+}

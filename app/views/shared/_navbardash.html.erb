@@ -1,7 +1,7 @@
 <div  class="  navbar navbar-expand-sm navbar-light navbar-lewagon">
 
   <%= link_to recommendations_path, class: "navbar-brand" do %>
-  <i class="fab fa-pagelines"></i>
+       <i class="fas fa-seedling"></i>
     <%#= image_tag "app/assets/images/logo.png" %>
 
     <%#= cl_image_tag "qflbyl0yz7z8cw4wwnej" %>
@@ -15,7 +15,10 @@
   <% end %>
 
   <%= link_to pledges_path, class: "navbar-brand" do %>
-    <i class="fas fa-seedling"></i>
+    <div navbar-icon-counter>
+      <i class="fas fa-user"></i>
+      <span class="pledge-count23"><%= Pledge.all.where(completed:false).count%></span>
+    </div>
     <%#= image_tag "app/assets/images/logo.png" %>
 
     <%#= cl_image_tag "qflbyl0yz7z8cw4wwnej" %>
