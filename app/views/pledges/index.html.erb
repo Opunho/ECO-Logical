@@ -2,35 +2,25 @@
 
 
 <div id="mySwipe" class="swipe">
-    <div class="swipe-wrap">
     <!--first card-->
     <% @pledges.each do |pledge| %>
       <% if pledge.nil? %>
         <%= "No pledges at the moment..." %>
+        <%= link_to "More Info", recommendations_path, class:"button-green" %>
       <% else %>
-        <div class="swipe-container">
-        <h5><%= pledge.recommendation.category %></h5>
-          <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image"></div>
-          <div>
-            <div class="swipe-btn-container">
-              <p><strong><%= pledge.recommendation.title %></strong></p>
-              <div class="swipe-btn-container">
-                <p>Offset: </p>
-                <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams %>>0</p>
-                <p> CO2 grams</p>
-              </div>
-            </div>
-            <div class="swipe-btn-container">
-              <% unless pledge.completed %>
-                <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
+        <p><strong><%= pledge.recommendation.title %></strong></p>
+        <div>
+          <p>Offset: </p>
+          <p class="counterUp" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
+          <p> CO2 grams</p>
+        </div>
+          <% unless pledge.completed %>
+            <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
               <% end %>
-            </div>
-              <%= render "accordion_pledges", pledge: pledge %>
-            </div>
-      <% end %>
+          <%= render "accordion_pledges", pledge: pledge %>
+      <% end %> <!--end of if statement-->
       </div>
     <% end %>
-  </div> <!--end of swipe-wrap-->
 </div> <!--end of div-->
 
 <h2 class="latest-completed-pledges">Completed Actions</h2>

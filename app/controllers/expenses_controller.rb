@@ -33,7 +33,6 @@ class ExpensesController < ApplicationController
   end
 
   def set_transactions
-    set_account unless current_user.accounts.first == @account
     @transactions.parsed_response["data"].each do |transaction|
       duplicate_checker = Expense.find_by(external_id: transaction["externalId"])
       if transaction["amount"].negative? && duplicate_checker == nil

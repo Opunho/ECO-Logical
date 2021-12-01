@@ -34,8 +34,6 @@ import { initForm } from "../components/form";
 
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  // [...]
   loadDynamicBannerText();
   counterUp();
   switchChart();

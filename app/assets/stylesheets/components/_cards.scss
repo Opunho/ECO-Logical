@@ -86,10 +86,7 @@
 }
 
 .card-glass {
-  background: rgba(255, 255, 255, 0.37);
-  backdrop-filter: blur(8.6px);
-  -webkit-backdrop-filter: blur(8.6px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
   border-radius: 20px;
   margin-top: 250px;
   padding: 20px;
@@ -109,5 +106,30 @@
   h2 {
     font-family: Caveat, sans-serif;
     color: #25cf7a;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
+  }
+}
+
+.card-white-howto {
+  background-color: white;
+  height: 470px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  h2 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+  }
+  h3 {
+    font-family: Caveat, sans-serif;
+    color: #25cf7a;
+    padding-top: 20px;
   }
 }
