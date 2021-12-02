@@ -55,8 +55,7 @@ const initForm = () => {
       paidTo.innerHTML = `Paid To: ${creditorName}`
       showSubCategory.innerHTML = `For: ${subCategory}`
       showAmount.innerHTML = `Amount: ${amount} ${currency}`
-      transactionDate.innerHTML = `In: ${transactionDate}`
-      console.log(showSubCategory)
+      transactionDate.innerHTML = `In: ${pickDate}`
     };
     const data = {
       amount: amount,
