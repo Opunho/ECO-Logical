@@ -1,13 +1,13 @@
-  <div class="homepage-content" data-homepage-target="homepage">
+<div class="homepage-content" data-homepage-target="homepage">
     <h1 id="banner-header">Eco-Logical</h1>
     <div class="card-glass">
-      <%= link_to "Join the cause", new_user_registration_path, class: "button-green" %>
+      <%= link_to "Join The Cause", new_user_registration_path, class: "button-green" %>
       <% if user_signed_in?  %>
       <p class="button-ghost-white" data-action="load@window->homepage#listen">Already A Member?</p>
       <%#= link_to "Already a member?", new_account_path, class: "button-ghost-white", "data-action": "load@window->homepage#listen" %>
       <% end %>
     </div>
-    <div class="card-white about">
+    <div class="card-about">
       <h2>About</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et,
         cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue

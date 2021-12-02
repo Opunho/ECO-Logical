@@ -12,7 +12,6 @@
 }
 
 .dashboard-h1 {
-
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.6px);
   -webkit-backdrop-filter: blur(8.6px);
@@ -132,17 +131,23 @@
 }
 
 .greendash1 {
-  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  70%);
+  background-image: linear-gradient(to right,  #1e8d3f 0%, #1aca72  70%);
   color: white;
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
   padding: 5px;
   width: 120px;
+  box-shadow: .3rem .3rem .6rem var(--greyLight-2);
+  box-shadow: -.2rem -.2rem .5rem var(--white);
+}
+
+.greendash1 > i {
+  -webkit-text-fill-color: white;
 }
 
 .white-icon {
-  color: white
+  color: white;
 }
 
 .dprop {
@@ -166,7 +171,7 @@
 }
 
 .greendash1money > p, i {
-  background: -webkit-linear-gradient(#000000 0%, #0f9b0f  70%);
+  background: -webkit-linear-gradient( #1e8d3f 0%, #1aca72  70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -18,9 +18,9 @@ class Emmission < ApplicationRecord
   def self.filter_by_category(time, category)
     case time
     when 1
-      joins(:expense).where(main_category: category).one_month_ago(time)
+      joins(:expense).where(sub_category: category).one_month_ago(time)
     else
-      joins(:expense).where(main_category: category).many_months_ago(time)
+      joins(:expense).where(sub_category: category).many_months_ago(time)
     end
   end
 
