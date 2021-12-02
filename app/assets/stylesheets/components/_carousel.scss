@@ -1,86 +1,109 @@
-.swipe {
-  overflow:hidden;
-  visibility: hidden;
-  position: relative;
-  width: auto;
+  .swipe {
+    overflow:hidden;
+    visibility: hidden;
+    position: relative;
+    width: auto;
+  }
+
+.swipe-pledge {
+overflow:hidden;
+visibility: hidden;
+position: relative;
+width: auto;
+margin-bottom: 70px;
+height: 50vh;
 }
 .swipe-wrap {
-  overflow: hidden;
-  position: relative;
-  align-items:center;
-  margin-bottom: 5px;
-}
-.swipe-wrap > .swipe-container {
-  float: left;
-  position: relative;
-  border-radius: 10px;
-  width: auto;
-  align-items: center;
-  padding-top: 50px;
-}
-.swipe-image{
-  height: 50vh;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  opacity: 1;
-  width:auto;
-  position: relative;
-}
-.swipe-title-container{
-  width: 100vw;
-  text-align: center;
-  margin: 20px 0 0 0;
-  position: absolute;
-  font-family: 'Overpass', sans-serif;
-  font-weight: bolder;
-  font-size: 30px;
-  color: white;
-  text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.8);
-}
-.swipe-grams-container{
-  width: 100vw;
-  text-align: center;
-  margin: 65px 0 0 0;
-  position: absolute;
-  font-family: 'Overpass', sans-serif;
-  font-weight: bolder;
-  font-size: 24px;
-  color: white;
-  text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.5);
-  display: flex;
-  justify-content: center;
-}
-.swipe-btn-container{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  margin: 310px 0 0 0;
-  width:100vw;
-  align-items: center;
-}
-.accordion-container{
-  margin-bottom: 40px;
-}
-.reco-index-title{
-  position: absolute;
-  text-align: center;
-  width: 100vw;
-  margin-top: -48px;
-  font-size: 45px;
-  font-family: Caveat, sans-serif;
-  color: rgba($color: #000000, $alpha: 0.9);
-  text-shadow: 1px 2px 2px rgba($color: #FFFFFF, $alpha: 0.2);
-}
-.space-words{
-  margin: 5px;
-}
-.swipe-btn-show-container{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  margin-top: 10px;
-  padding-bottom: 85px;
-  width:100vw;
-  align-items: center;
-}
+      overflow: hidden;
+      position: relative;
+      align-items:center;
+      margin-bottom: 5px;
+    }
+  .swipe-wrap > .swipe-container {
+    float: left;
+    position: relative;
+    border-radius: 10px;
+    width: 10vw;
+    align-items: center;
+    padding-top: 50px;
+  }
+.swipe-wrap-complete {
+      overflow: hidden;
+      position: relative;
+      align-items:center;
+      margin-bottom: 5px;
+    }
+  .swipe-wrap > .swipe-container-complete {
+    float: left;
+    position: relative;
+    border-radius: 10px;
+    height: 70vh;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .swipe-image{
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    opacity: 1;
+    width:100vw;
+    // position: relative;
+  }
+  .swipe-title-container{
+    width: 100vw;
+    text-align: center;
+    margin: 20px 0 0 0;
+    position: absolute;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.8);
+  }
+  .swipe-grams-container{
+    width: 100vw;
+    text-align: center;
+    margin: 65px 0 0 0;
+    position: absolute;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bolder;
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+  }
+  .swipe-btn-container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin: 310px 0 0 0;
+    width:100vw;
+    align-items: center;
+  }
+  .accordion-container{
+    margin-bottom: 40px;
+  }
+  .reco-index-title{
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    margin-top: -48px;
+    font-size: 45px;
+    font-family: Caveat, sans-serif;
+    color: rgba($color: #000000, $alpha: 0.9);
+    text-shadow: 1px 2px 2px rgba($color: #FFFFFF, $alpha: 0.2);
+  }
+  .space-words{
+    margin: 5px;
+  }
+  .swipe-btn-show-container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 10px;
+    padding-bottom: 85px;
+    width:100vw;
+    align-items: center;
+  }

@@ -11,7 +11,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <% @emmissions.where(main_category: cat).each do |emmission| %>
+        <% @emmissions.where(sub_category: cat).each do |emmission| %>
         <h5><em><%= emmission.expense.creditor_name %></em></h5>
         <p><%= emmission.expense.amount %> EUR</p>
         <% calc_result =  (emmission.co2_grams.to_f * emmission.expense.amount.to_f) / 1000 %>

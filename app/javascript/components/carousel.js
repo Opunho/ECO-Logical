@@ -20,7 +20,7 @@ const initCarousel = () => {
     // auto: 3000,
     draggable: true,
     autoRestart: false,
-    continuous: false,
+    continuous: true,
     disableScroll: true,
     stopPropagation: true,
     callback: function (_index, _swiping) { },
