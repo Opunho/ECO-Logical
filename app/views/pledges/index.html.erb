@@ -51,29 +51,56 @@
 <h2 class="latest-completed-pledges">Completed Actions</h2>
 <div class="typed-container"><%= "You offset #{@total_co2_achieved/1000} CO2 KGs (#{(@total_co2_achieved/500000).to_f.ceil(2)} trees) and counting" %><span class="typed" id="pledge-co2"></span></div>
 
-<div id="otherSwipe" class="swipe-pledge">
-    <div class="swipe-wrap">
-    <!--first card-->
-    <% @completed_pledges.uniq.each do |pledge| %>
-      <div class="swipe-container">
-          <div style="background-image: url(<%= pledge.recommendation.photo %>);" class="swipe-image">
-          <h5 class="reco-index-title"><%= pledge.recommendation.category %></h5>
-            <div>
-              <p class="swipe-title-container"><strong class=""><%= pledge.recommendation.title %></strong></p>
-            </div>
-              <div class="swipe-grams-container">
-                  <p class="space-words"><%= "Offset:" %></p>
-                  <p class="counterUp space-words" akhi=<%= pledge.recommendation.co2_grams/1000 %>>0</p>
-                  <p class="space-words"><%= " CO2 KGs" %></p>
+<div class="pledge-card-container-complete">
+  <% @unique_pledge.each do |key,value| %>
+    <div class="pledge-card-photo">
+     <img src=<%= Recommendation.find(key).icon %> alt="icon">
+      <div class="pledge-card-info">
+        <p class="pledge-color"><strong><%= "#{Recommendation.find(key).title} " %></strong></p>
+      <div class="pledge-card-carbons">
+        <p class="counterUp" akhi=<%= Recommendation.find(key).co2_grams * value/1000 %>>0</p>
+        <p><%= "CO2 KGs"%></p>
+      </div>
+      </div>
+      <div>
+        <h3><i class="fas fa-times"></i><%= " #{value}" %></h3>
+      </div>
+      <% unless Pledge.find_by(recommendation_id:key).completed %>
+        <div class="green-me-up-container">
+          <button class="green-me-up"><%= link_to "Done!", complete_pledge_path(pledge), method: :patch %>
+          </button>
+      <% end %>
+        <!-- Trigger/Open The Modal -->
+        <div class="green-me-up-container-pledge-complete">
+          <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638386182/icons/question-mark-on-a-circular-black-background_h0ekrj.png" alt="icon" id="myPledgeModalBtn">
+        <div>
+        <!-- The Modal -->
+          <div id="myPledgeModal" class="pledgeModalContainer">
+        <!-- Modal content -->
+            <div class="pledge-modal-content">
+              <div class="pledge-modal-header">
+                <span class="close">&times;</span>
+                <h2 class="myPledgeModalTitle"><%= "Pledge: #{Recommendation.find(key).title}" %></h2>
               </div>
-            <div class="swipe-btn-container">
-              <% unless pledge.completed %>
-                <div class="green-me-up-container"><button class="green-me-up"><%= link_to "I did this, green me up!", complete_pledge_path(pledge), method: :patch %></button></div>
+              <div class="pledge-modal-body">
+                <img src=<%= Recommendation.find(key).photo %> alt="pic" class="myPledgeModalPic">
+                <div class="pledge-card-carbons-modal">
+                  <p class="counterUp" akhi=<%= Recommendation.find(key).co2_grams/1000 %>>0</p>
+                  <p><%= "CO2 KGs"%></p>
+                </div>
+                <p class="myModalDescription"><%= Recommendation.find(key).description %></p>
+              </div>
+              <% unless Pledge.find_by(recommendation_id:key).completed %>
+              <div class="pledge-modal-footer">
+                <button class="green-me-up-modal"><%= link_to "Done!", complete_pledge_path(pledge), method: :patch %>
+                </button>
               <% end %>
+              </div>
             </div>
-            <%= render "accordion_pledges", pledge: pledge %>
           </div>
+<!--end of modal-->
         </div>
-    <% end %>
-    </div> <!--end of swipe-wrap-->
-  </div> <!--end of div-->
+
+    </div>
+  <% end %> <!--end of each loop-->
+</div> <!--end of div-->

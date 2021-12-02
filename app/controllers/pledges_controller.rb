@@ -8,6 +8,7 @@ class PledgesController < ApplicationController
     @completed_pledges = Pledge.where(completed: true)
     @total_co2_achieved = @completed_pledges.map{|pledge| pledge.recommendation.co2_grams.to_f}.sum
     @pledge_selected = true
+    @unique_pledge = Pledge.unique_complete
   end
 
   def create
