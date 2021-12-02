@@ -40,7 +40,9 @@
             <button class="second next">Next Step</button>
           </form>
           <div class="slider-form slider-three">
+          <% if current_user %>
             <h2>Hello, <%= current_user.first_name %></span></h2>
+          <% end %>
             <p class="your-bank"></p>
             <p class="account-number-p"></p>
             <h3>After Reviewing your information please click to import your data!
