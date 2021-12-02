@@ -1,28 +1,43 @@
   <div data-controller="update-list">
    <div data-update-list-target="description">
+    <div class=" text-center dashboard-banner">
+      <h3>Welcome <%= current_user.first_name %>.</h3>
+      <p> <%= current_user.unique_account[0] %></p>
+    </div>
     <div class="dashboard-h2">
       <div>
-          <div class=" text-center ">
-            <h3>Welcome <%= current_user.first_name %>.</h3>
-            <p> <%= current_user.unique_account[0] %></p>
+          <div class="info-container">
+            <div class="d-flex info-block">
+              <i class="fas fa-money-bill-wave icon1"></i>
+              <p class="title text-green"><%= @total_expenses.ceil(2) %> EUR </p>
+              <p class="title">Expenses </p>
+              <%# <%= link_to  fetch_expenses_path,  type: 'submit', class: "",style:"margin-left:10px" do %>
+              <%# <i class="fas fa-sync-alt"></i> %>
+              <%# <% end %>
+            </div>
+              <div class="d-flex info-block">
+                <i class="fas fa-burn icon2"></i>
+                <p class="title text-green"><%= ((@total_emmissions)/1000).ceil(2) %> CO2 kg</p>
+                <p class="title">Emmissions </p>
+              </div>
+              <div class="d-flex info-block">
+                <i class="fas fa-leaf"></i>
+                <p class="title text-green"><%= (current_user.pledge_impact)/1000 %> CO2 Kg</p>
+                <p class="title">Offset </p>
+              </div>
+              <div class="d-flex info-block">
+              <i class="fas fa-globe-europe"></i>
+              <p class="title text-green"> <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
+              <p class="title">Net Emmissions</p>
+              </div>
+            </div>
           </div>
-        <div class="d-flex">
-          <p><i class="fas fa-money-bill-wave"></i>  Expenses : <%= @total_expenses.ceil(2) %> EUR </p>
-          <%= link_to  fetch_expenses_path,  type: 'submit', class: "",style:"margin-left:10px" do %>
-          <i class="fas fa-sync-alt"></i>
-          <% end %>
-         </div>
-        <p><i class="fas fa-burn"></i> Emmissions: <%= ((@total_emmissions)/1000).ceil(2) %> CO2 kg</p>
-        <p> <i class="fas fa-leaf"></i> Offset: <%= (current_user.pledge_impact)/1000 %> CO2 Kg</p>
-        <p> <i class="fas fa-globe-europe"></i> Net Emmissions:
-          <%= @total_emmissions.ceil(2) - current_user.pledge_impact  %></p>
-      </div>
 
       <div>
         <div class=" d-flex hb32 months-dash ">
-          <%= link_to "30 Days", dashboard_path(scope: 1) %>
-          <%= link_to "3 Months", dashboard_path(scope: 3) %>
-          <%= link_to "6 Months", dashboard_path(scope: 6) %>
+          <%= link_to "30 Days", dashboard_path(scope: 1), class: "title-filter" %>
+          <%= link_to "3 Months", dashboard_path(scope: 3), class: "title-filter" %>
+          <%= link_to "6 Months", dashboard_path(scope: 6), class: "title-filter"%>
         </div>
       </div>
       <div class="container" data-update-list-target="charts">
@@ -41,7 +56,9 @@
     </div>
     <div class="container ">
       <br>
-      <%= link_to "Create new transaction", new_expense_path, class:"btn-dash"%>
+        <a href="/expenses/new" class="float">
+          <i class="fa fa-plus my-float"></i>
+        </a>
       <% @categories.each do |cat| %>
         <div class="dashboard-h3 ">
           <%= render "accordion", cat: cat, time: @time %>

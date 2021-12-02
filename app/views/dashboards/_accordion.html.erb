@@ -2,7 +2,7 @@
   <div class="" id="headingOne">
     <h2 class="mb-0">
       <button type="button" class="text-card-dash btn btn-link btn-block text-left" data-toggle="modal" data-target="#Modal-<%= cat.split.first %>">
-          <h2><strong><%= cat %></strong></h2>
+          <h2 class="card-header-dash"><strong><%= cat %></strong></h2>
       </button>
     </h2>
       <div class="d-flex dprop">
@@ -18,13 +18,13 @@
           <% if final_calc > 1000 %>
             <% final_calc /= 1000 %>
             <div class="d-flex mp1234" >
-              <p><%= final_calc.round() %>  </p>
-              <p class="card-info">Tco2</p>
+              <p class="title"><%= final_calc.round() %>  </p>
+              <p class="card-info title">Tco2</p>
             </div>
           <% else %>
           <div class="d-flex mp1234">
-            <p class="whole"><%= final_calc.round() %></p>
-            <p class="card-info"> CO2 Kg</p>
+            <p class="whole title"><%= final_calc.round() %></p>
+            <p class="card-info title"> CO2 Kg</p>
           </div>
           <% end %>
         </div>
