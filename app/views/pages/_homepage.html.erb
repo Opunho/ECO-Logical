@@ -4,7 +4,6 @@
       <%= link_to "Join The Cause", new_user_registration_path, class: "button-green" %>
       <% if user_signed_in?  %>
       <p class="button-ghost-white" data-action="load@window->homepage#listen">Already A Member?</p>
-      <%#= link_to "Already a member?", new_account_path, class: "button-ghost-white", "data-action": "load@window->homepage#listen" %>
       <% end %>
     </div>
     <div class="card-about">

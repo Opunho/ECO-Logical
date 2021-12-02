@@ -1,8 +1,11 @@
   <div data-controller="update-list">
    <div data-update-list-target="description">
-    <div class=" text-center dashboard-banner">
-      <h3>Welcome <%= current_user.first_name %>.</h3>
+    <div class="text-center dashboard-banner">
+      <h3>Welcome <%= current_user.first_name %></h3>
       <p> <%= current_user.unique_account[0] %></p>
+      <%= link_to fetch_expenses_path do %>
+        <i class="fas fa-cloud-download-alt"></i>
+      <% end %>
     </div>
     <div class="dashboard-h2">
       <div>
@@ -11,9 +14,6 @@
               <i class="fas fa-money-bill-wave icon1"></i>
               <p class="title text-green"><%= @total_expenses.ceil(2) %> EUR </p>
               <p class="title">Expenses </p>
-              <%# <%= link_to  fetch_expenses_path, many many many changes  type: 'submit', class: "",style:"margin-left:10px" do %>
-              <%# <i class="fas fa-sync-alt"></i> %>
-              <%# <% end %>
             </div>
               <div class="d-flex info-block">
                 <i class="fas fa-burn icon2"></i>
@@ -35,22 +35,22 @@
 
       <div>
         <div class=" d-flex hb32 months-dash ">
-          <%= link_to "30 Days", dashboard_path(scope: 1), class: "title-filter" %>
-          <%= link_to "3 Months", dashboard_path(scope: 3), class: "title-filter" %>
-          <%= link_to "6 Months", dashboard_path(scope: 6), class: "title-filter"%>
+          <%= link_to "30 Days", dashboard_path(scope: 1), id: "month", class: "title-filter", "data-action": "click->update-list#filter" %>
+          <%= link_to "3 Months", dashboard_path(scope: 3), id: "three", class: "title-filter", "data-action": "click->update-list#filter" %>
+          <%= link_to "6 Months", dashboard_path(scope: 6), id: "six", class: "title-filter", "data-action": "click->update-list#filter"%>
         </div>
       </div>
       <div class="container" data-update-list-target="charts">
         <div class="chart" style="text-align: center">
           <div class="show1" id="chartOne">
-            <h5 class="header-chart"> Emmissions CO2 KGs</h5>
+            <h5 class="header-chart title">CO2 KGs</h5>
             <%= pie_chart @emmission_chart, donut: true, legend: "left", colors: ["#3cdc8c", "#93ecbf", "#e9fbf2", "#1b9759", "#0c4126", "#bef3d9"] %>
           </div>
           <div class="hide1" id="chartTwo">
-            <h5 class="header-chart1"> Expenses €</h5>
+            <h5 class="header-chart1 title"> Expenses €</h5>
             <%= pie_chart @expenses_chart, donut: true, legend: "right", colors: ["#3cdc8c", "#93ecbf", "#e9fbf2", "#1b9759", "#0c4126", "#bef3d9"] %>
           </div>
-          <p id="btn" class=""><i class="green-me-up-btn-dash">Change View</i></p>
+          <p id="btn" class=""><i class="green-me-up-btn-dash title">Change View</i></p>
         </div>
       </div>
     </div>

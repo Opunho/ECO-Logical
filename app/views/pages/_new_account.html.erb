@@ -10,7 +10,7 @@
       <div class="slider-ctr">
         <div class="slider">
           <form class="slider-form slider-one">
-            <h4>Welcome for the first part of your journey</h4>
+            <h4>Connect Eco-logical To Your Bank</h4>
             <div class="">
               <label class="input">
                 <input type="text" class="name" placeholder="Your Bank?">
@@ -19,7 +19,7 @@
               <button class="first next button-green23">Next Step</button>
           </form>
           <form class="slider-form slider-two form-1">
-            <h4>Please provide you account number</h4>
+            <h4>Please Provide Your Account Number</h4>
             <div class="label-ctr">
               <label class="account-number">
                 <input type="text" class="number" placeholder="Account Number">
@@ -29,11 +29,10 @@
           </form>
           <% if current_user %>
           <div class="slider-form slider-three">
-            <h4>Hello, <%= current_user.first_name %></span></h4>
+            <h4>Hello <%= current_user.first_name %>, </span></h4>
             <p class="your-bank"></p>
             <p class="account-number-p"></p>
-            <h4>After Reviewing your information please click to import your data!
-            </h4>
+            <h4>Review Your Data And Click Import</h4>
             <div class="importbtnfix">
               <%= link_to "Import!", fetch_expenses_path, class:" button-green96"%>
             </div>
