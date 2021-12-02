@@ -170,6 +170,15 @@
   width: 120px;
 }
 
+.dashboard-h3::before {
+  content: "";
+  position: absolute;
+  top: 0;right: 0;
+  border-bottom: 80px solid white;
+  border-right: 80px solid #F3F3F3;
+  width: 0;
+}
+
 .greendash1money > p, i {
   background: -webkit-linear-gradient( #1e8d3f 0%, #1aca72  70%);
   -webkit-background-clip: text;
