@@ -130,13 +130,8 @@
   padding: 20px;
 }
 
-$shadow: .3rem .3rem .6rem var(--greyLight-2),
--.2rem -.2rem .5rem var(--white);
-$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
-inset -.2rem -.2rem .5rem var(--white);
-
 .greendash1 {
-  background-image: linear-gradient(to right, #123601 0%, #0f9b0f  70%);
+  background-image: linear-gradient(to right,  #1e8d3f 0%, #1aca72  70%);
   color: white;
   font-weight: bold;
   border-radius: 20px;
@@ -172,7 +167,7 @@ inset -.2rem -.2rem .5rem var(--white);
 }
 
 .greendash1money > p, i {
-  background: -webkit-linear-gradient(#000000 0%, #0f9b0f  70%);
+  background: -webkit-linear-gradient( #1e8d3f 0%, #1aca72  70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
