@@ -71,8 +71,11 @@
 }
 
 .myPledgeModalTitle{
-  font-family: Caveat, sans-serif;
-  color: #25CF7A;
+  font-family: Overpass, sans-serif;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #1e8d3f 0%, #1aca72  70%);
+  margin-top:25px;
 }
 .pledge-modal-header{
   text-align: center;
@@ -96,18 +99,21 @@
 .pledge-card-carbons-modal{
   display:flex;
   justify-content: center;
-  margin-top:10px;
+  margin-top:30px;
   margin-bottom:-20px;
+  font-family: overpass, sans-serif;
 
 }
 .pledge-card-carbons-modal > p {
   margin-right:3px;
   font-size: 20px;
+  font-family: overpass, sans-serif;
 }
 .myModalDescription{
   padding:15px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 1.5;
 }
 
 .dashboardModalBreakdown{

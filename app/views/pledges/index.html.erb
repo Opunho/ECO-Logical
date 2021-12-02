@@ -2,7 +2,7 @@
 <% content_for :meta_description, "Dare to change you behavior and achieve your ecological ambitions." %>
 <% content_for :meta_image, image_path("cover.png") %>
 
-<h1 class="latest-completed-pledges">Pledged Actions</h1>
+<h1 class="latest-completed-pledges">Pledges</h1>
 
 
 
@@ -39,9 +39,6 @@
                 </div>
                 <p class="myModalDescription"><%= pledge.recommendation.description %></p>
               </div>
-              <div class="pledge-modal-footer">
-                <button class="green-me-up-modal"><%= link_to "Done!", complete_pledge_path(pledge), method: :patch %>
-                </button>
               </div>
             </div>
           </div>
@@ -52,8 +49,18 @@
   <% end %> <!--end of each loop-->
 </div> <!--end of div-->
 
-<h2 class="latest-completed-pledges">Completed Actions</h2>
-<div class="typed-container"><%= "You offset #{@total_co2_achieved/1000} CO2 KGs (#{(@total_co2_achieved/500000).to_f.ceil(2)} trees) and counting" %><span class="typed" id="pledge-co2"></span></div>
+<h2 class="latest-completed-pledges">Achievements</h2>
+<div class="typed-container">
+  <p><%= "You offset" %></p>
+  <div class="completed-trees">
+    <div class="pledge-card-carbons-completed">
+        <p class="counterUp" akhi=<%= @total_co2_achieved/1000 %>>0</p>
+        <p><%= "CO2 KGs"%></p>
+      </div>
+      <span><i class="fas white-icon fa-tree"></i><%= " #{(@total_co2_achieved/500000).to_f.ceil(2)} trees" %></span>
+  </div>
+  <p><%= "and counting" %><span class="typed" id="pledge-co2"></span></p>
+</div>
 
 <div class="pledge-card-container-complete">
   <% @unique_pledge.each do |key,value| %>

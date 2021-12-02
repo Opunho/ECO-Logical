@@ -50,6 +50,27 @@ height: 50vh;
     width:100vw;
     // position: relative;
   }
+  .swipe-image-index{
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    opacity: 1;
+    width:100vw;
+    // position: relative;
+    &:before {
+    content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right,#002f4b,transparent);
+        opacity: .6;
+        margin-top:50px;
+        border-radius:10px;
+  }
+}
   .swipe-title-container{
     width: 100vw;
     text-align: center;

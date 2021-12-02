@@ -259,6 +259,7 @@
   text-align: center;
   border-radius: 10px;
   margin: 10px;
+  margin-top:20px;
   width: auto;
   justify-content: space-between;
 }
@@ -285,9 +286,12 @@
   width: 220px;
 }
 .pledge-card-info > .pledge-color{
-  color: #25CF7A;
-  font-family: Caveat, sans-serif;
-  font-size: 40px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #1e8d3f 0%, #1aca72  70%);
+  font-family: Ovepass, sans-serif;
+  font-size: 30px;
+  padding-top: 20px;
 }
 .pledge-card-carbons{
   display:flex;
@@ -298,7 +302,27 @@
   margin-right:3px;
   font-size: 20px;
 }
+.pledge-card-carbons-completed{
+  font-size:55px;
+  font-family: overpass,sans-serif;
+  font-weight:bolder;
+  display:flex;
+  justify-content: center;
+  margin-top:5px;
+  color: rgba($color: #FFFFFF, $alpha: 1);
+  position:relative;
+  line-height: 0.8;
+  margin-top:15px;
+  margin-bottom:0px;
+}
 
+.pledge-card-carbons-completed>p{
+  margin-right:8px;
+}
+
+.complete-trees{
+  margin-top:-10px;
+}
 .new-form-card {
   display: flex;
   flex-direction: column;

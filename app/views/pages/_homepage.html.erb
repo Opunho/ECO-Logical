@@ -1,39 +1,35 @@
 <div class="homepage-content" data-homepage-target="homepage">
     <h1 id="banner-header">Eco-Logical</h1>
     <div class="card-glass">
-      <%= link_to "Join The Cause", new_user_registration_path, class: "button-green" %>
+      <%= link_to "Join the Cause", new_user_registration_path, class: "button-green" %>
       <% if user_signed_in?  %>
-      <p class="button-ghost-white" data-action="load@window->homepage#listen">Already A Member?</p>
+      <p class="button-ghost-white" data-action="load@window->homepage#listen">Already a Member?</p>
       <% end %>
     </div>
     <div class="card-about">
       <h2>About</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et,
-        cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue
-        vitae nunc. In facilisis vestibulum enim nec aliquet. Quisque ultricies gravida euismod.</p>
+      <p>At Eco-Logical we believe that the we should all be able to enjoy the finer things in life while minimizing our ecological impact. Eco-Logical uses cutting-edge technology to provide realtime data and calculates the related emmissions impact. With real behaviour as a starting point, we then provide recommendations and actions on how those emmissions can be offset.</p>
     </div>
     <div class="container-howto">
       <div class="card-step1">
-        <h2>How it works</h2>
+        <h2>How It Works</h2>
         <h3> Step 1</h3>
         <p>Connect your bank account</p>
-        <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638358281/Dashboard.png" alt="Phone">
+        <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638483893/Ecological%20videos/eco-pic1_jkvj46.jpg" alt="Phone">
       </div>
       <div class="card-step2">
         <h3> Step 2</h3>
-        <p>Input data</p>
-        <%= cl_image_tag("https://res.cloudinary.com/dyjkajjgg/image/upload/v1638358281/Pledges.png") %>
+        <p>Track your impact</p>
+        <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638483893/Ecological%20videos/eco_pic2_sexgoq.jpg" alt="Phone">
       </div>
       <div class="card-step3">
         <h3> Step 3</h3>
-        <p>Become eco-logical</p>
-        <%= cl_image_tag("https://res.cloudinary.com/dyjkajjgg/image/upload/v1638358281/Recommendations.png") %>
+        <p>Offset Your Emmissions</p>
+       <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638483893/Ecological%20videos/eco_pic3_yjpwjl.jpg" alt="Phone">
       </div>
       <div class="card-finally">
-        <h2>Finally</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et,
-          cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue
-          vitae nunc. In facilisis vestibulum enim nec aliquet. Quisque ultricies gravida euismod.</p>
-        <%= cl_image_tag("https://res.cloudinary.com/dyjkajjgg/image/upload/v1638358281/Recommendations.png") %>
+        <h2>Become Eco-Logical</h2>
+        <p>In three simple steps you will get closer to getting yourself better. And get the support you need to can achieve your ecological ambitions by tracking your emmissions and take action on how you can offset your impact. Join us in this movement, become Eco-Logical!</p>
+        <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638483893/Ecological%20videos/eco_pic4_diqgpa.jpg" alt="Phone">
       </div>
     </div>
