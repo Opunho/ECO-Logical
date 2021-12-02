@@ -44,7 +44,7 @@
 }
 
 .dashboard-h3{
-  background: rgba(255, 255, 255, 0.37);
+  background: linear-gradient(to right,  #1e8d3f 0%, #1aca72  70%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.6px);
@@ -173,9 +173,9 @@
 .dashboard-h3::before {
   content: "";
   position: absolute;
-  top: 0;right: 0;
-  border-bottom: 80px solid white;
-  border-right: 80px solid #F3F3F3;
+  top: -1px;right: -1px;
+  border-bottom: 50px solid white;
+  border-right: 50px solid #EAEAEA;
   width: 0;
 }
 
