@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show]
 
-  resources :accounts, only: [:new, :create] do
+  resources :accounts, only: [:create] do
     resources :expenses, only: [:create]
   end
 
