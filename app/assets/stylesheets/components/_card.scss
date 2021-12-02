@@ -123,7 +123,7 @@
 }
 
 .greendash{
-  background-color: #25cf7a;
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  70%);
   color: white;
   font-weight: bold;
   height: full;
@@ -132,15 +132,17 @@
 }
 
 .greendash1 {
-  background-color: #25cf7a;
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  70%);
   color: white;
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
   padding: 5px;
   width: 120px;
+}
 
-
+.white-icon {
+  color: white
 }
 
 .dprop {
@@ -160,8 +162,13 @@
   border-radius: 20px;
   text-align: center;
   padding: 5px;
-  border: 3px solid #25cf7a;
   width: 120px;
+}
+
+.greendash1money > p, i {
+  background: -webkit-linear-gradient(#000000 0%, #0f9b0f  70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .modal13 {

@@ -1,9 +1,9 @@
 .button-green {
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  51%, #000000  100%);
   font-size: 27px;
   color: white;
   text-decoration: none;
   margin-bottom: 25px;
-  background-color: #25cf7a;
   border-style: none;
   border-radius: 20px;
   padding: 14px 30px;
@@ -38,7 +38,7 @@
   padding: 6.32079px 12.6416px;
   width: 179px;
   height: 42px;
-  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  51%, #000000  100%);
   border-radius: 11.8515px;
   border-style: none;
   transition-duration: 0.3s;
@@ -46,10 +46,6 @@
   font-style: normal;
   font-size: 23.703px;
   line-height: 29px;
-}
-
-.button-submit:hover {
-  background: #099D02;
 }
 
 .button-know-more {
@@ -89,7 +85,7 @@ input[type=submit] {
   padding: 8px 16px;
   width: 98px;
   height: 24px;
-  background: #099D02;
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  51%, #000000  100%);
   border-radius: 15px;
   border-style: none;
   transition-duration: 0.3s;
@@ -101,10 +97,6 @@ input[type=submit] {
   line-height: 15px;
   text-align: center;
   justify-content: center;
-}
-
-.button-goback:hover {
-  background: linear-gradient(272.02deg, #B0D76C -22.12%, #7FC859 157.14%);
 }
 
 .button-main {
@@ -126,7 +118,7 @@ input[type=submit] {
 
 .btn-dash {
   width: fit-content;
-  background-color: #25cf7a;
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  70%);
   color: white;
   border-radius: 15px;
   padding: 10px;
@@ -168,7 +160,7 @@ input[type=submit] {
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  background-color: #25cf7a;
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f  100%);
   border-style: none;
   border-radius: 20px;
   padding: 10px;
