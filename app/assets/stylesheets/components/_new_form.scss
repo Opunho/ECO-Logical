@@ -37,7 +37,7 @@ button:active,
 
 .steps {
 	margin-bottom: 10px;
-	position: relative;
+	// position: relative;
 	height: 25px;
 }
 
@@ -78,19 +78,19 @@ button:active,
 	transition: .3s all ease;
 }
 
-.step-one {
-	left: 0;
-}
+// .step-one {
+// 	left: 0;
+// }
 
-.step-two {
-	left: 50%;
-	clip: rect(0, 0px, 25px, 0px);
-}
+// .step-two {
+// 	left: 50%;
+// 	clip: rect(0, 0px, 25px, 0px);
+// }
 
-.step-three {
-	left: 100%;
-	clip: rect(0, 0px, 25px, 0px);
-}
+// .step-three {
+// 	left: 100%;
+// 	clip: rect(0, 0px, 25px, 0px);
+// }
 
 .line {
 	width: 100%;
@@ -164,6 +164,7 @@ button:active,
 	-webkit-transform: translate(0px) scale(1);
 	-ms-transform: translate(0px) scale(1);
 	transform: translate(0px) scale(1);
+  display: block;
 }
 
 .container.slider-one-active .slider-two,
@@ -190,6 +191,7 @@ button:active,
 .slider-one,
 .slider-two,
 .slider-three {
+  width: 95%;
 	-webkit-transition: .3s all ease;
 	transition: .3s all ease;
 }
@@ -200,13 +202,17 @@ button:active,
 	text-align: center;
 }
 
-.slider-form h2 {
+.slider-form h2  {
 	font-size: 1.5rem;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	margin-bottom: 50px;
 	color: #999;
 	position: relative;
+  width: 95%;
+}
+.slider-form h4{
+  width: 88%;
 }
 
 .slider-form h2 .yourname {
@@ -238,7 +244,7 @@ button:active,
 	border: 1px solid transparent;
 	color: #777;
 	border-radius: 50px;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 	font-size: 1rem;
 	font-family: 'Roboto', sans-serif;
 	position: relative;
@@ -268,9 +274,9 @@ button:active,
 
 /*  emot */
 
-.label-ctr {
-	margin-bottom: 50px;
-}
+// .label-ctr {
+// 	margin-bottom: 50px;
+// }
 
 label.radio {
 	height: 55px;
@@ -291,12 +297,12 @@ label.radio {
   background:#cccccc;
   border:1px solid #cccccc;
 }
-.select,
-.max-1{
+.select, .max-1{
   width:250px;
   height:40px;
   border:0px;
   outline:none;
+  padding: 10px;
 }
 
 label.radio input {
@@ -406,10 +412,16 @@ label.radio .emot .mouth.sad {
 .container.full .line .dot-move {
 	left: 100%;
 	-webkit-animation: .3s anim 1;
+	background: #0f9b0f ;
 }
 
-.container.full .line .dot.full {
-	background: #5892fc;
+.container.full .line .dot.full,
+.container.full .line .dot.zero,
+.container.full .line .dot.center {
+	background: #0f9b0f ;
+}
+.dot{
+  background: #0f9b0f !important;
 }
 
 .container.full .slider {

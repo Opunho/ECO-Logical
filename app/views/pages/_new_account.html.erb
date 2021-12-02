@@ -1,20 +1,6 @@
-<div class="container-howto d-none" data-homepage-target="newAccount">
+<div class="container-howto d-none" style="overflow:hidden;" data-homepage-target="newAccount">
   <div class="new-form-card">
     <div class="container slider-one-active">
-      <div class="steps">
-        <div class="step step-one">
-          <div class="liner"></div>
-          <span>Bank</span>
-        </div>
-        <div class="step step-two">
-          <div class="liner"></div>
-          <span>Account</span>
-        </div>
-        <div class="step step-three">
-          <div class="liner"></div>
-          <span>Import</span>
-        </div>
-      </div>
       <div class="line">
         <div class="dot-move"></div>
         <div class="dot zero"></div>
@@ -24,28 +10,32 @@
       <div class="slider-ctr">
         <div class="slider">
           <form class="slider-form slider-one">
-            <h2>Welcome for the first part of your journey</h2>
-            <label class="input">
-              <input type="text" class="name" placeholder="Your Bank?">
-            </label>
-            <button class="first next">Next Step</button>
+            <h4>Welcome for the first part of your journey</h4>
+            <div class="">
+              <label class="input">
+                <input type="text" class="name" placeholder="Your Bank?">
+              </label>
+            </div>
+              <button class="first next button-green23">Next Step</button>
           </form>
           <form class="slider-form slider-two form-1">
-            <h2>Please provide you account number</h2>
+            <h4>Please provide you account number</h4>
             <div class="label-ctr">
               <label class="account-number">
                 <input type="text" class="number" placeholder="Account Number">
               </label>
             </div>
-            <button class="second next">Next Step</button>
+            <button class="second next button-green23">Next Step</button>
           </form>
           <div class="slider-form slider-three">
-            <h2>Hello, <%= current_user.first_name %></span></h2>
+            <h4>Hello, <%= current_user.first_name %></span></h4>
             <p class="your-bank"></p>
             <p class="account-number-p"></p>
-            <h3>After Reviewing your information please click to import your data!
-            </h3>
-            <%= link_to "Import!", fetch_expenses_path%>
+            <h4>After Reviewing your information please click to import your data!
+            </h4>
+            <div class="importbtnfix">
+              <%= link_to "Import!", fetch_expenses_path, class:" button-green96"%>
+            </div>
           </div>
         </div>
       </div>

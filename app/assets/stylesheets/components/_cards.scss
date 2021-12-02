@@ -231,11 +231,7 @@
 }
 }
 
-.pledge-card-container{
-  // display: grid;
-  // grid-column-gap: 5px;
-  // grid-template-columns: 1fr;
-}
+
 
 .pledge-card-container-complete{
   margin-bottom: 70px;
@@ -292,15 +288,32 @@
 }
 
 .new-form-card {
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 480px;
   border-radius: 20px;
-  width: 100%;
-  margin-top: 40px;
-  text-align: left;
-  padding-top: 10px;
+  margin: 144px 10px;
+  padding: 10px 0;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(255, 255, 255, 0.47);
+  color: #076048;
+}
+
+.creditor-name12 {
+  width: 80% !important;
+}
+
+.sub1234 {
+  background-color: white !important;
+}
+
+.importbtnfix{
+  height: 50px;
+  margin-top: 25px;
 }
