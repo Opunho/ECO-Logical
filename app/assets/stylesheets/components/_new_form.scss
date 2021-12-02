@@ -35,6 +35,7 @@ button:active,
 //	transform: translate(-50%, -50%);
 //}
 
+
 .steps {
 	margin-bottom: 10px;
 	position: relative;
@@ -138,12 +139,12 @@ button:active,
 }
 
 .container.slider-one-active .dot.zero {
-	background: #5892fc;
+	background: #25CF7A;
 }
 
 .line .dot.center {
 	left: 50%;
-	background: #bbb
+	background: #bbb;
 }
 
 .line .dot.full {
@@ -254,7 +255,7 @@ button:active,
 .reset {
   display: inline-block;
   text-decoration: none;
-	background: #5892fc;
+	background: #25CF7A;
 	border: none;
 	color: white;
 	padding: 10px 25px;
@@ -384,7 +385,7 @@ label.radio .emot .mouth.sad {
 }
 
 .container.center .line .dot.center {
-	background: #5892fc;
+	background: #25CF7A;
 }
 
 .container.center .slider {
@@ -409,7 +410,7 @@ label.radio .emot .mouth.sad {
 }
 
 .container.full .line .dot.full {
-	background: #5892fc;
+	background: #25CF7A;
 }
 
 .container.full .slider {
@@ -426,4 +427,22 @@ label.radio .emot .mouth.sad {
 .container.full .step-one .liner,
 .container.full .step-two .liner {
 	width: 100%;
+}
+
+.import-button {
+  display: inline-block;
+  text-decoration: none;
+	background: #25CF7A;
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	font-size: 1rem;
+	border-radius: 3px;
+	cursor: pointer;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.import-button a{
+
 }
