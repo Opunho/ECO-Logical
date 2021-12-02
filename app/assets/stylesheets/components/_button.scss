@@ -174,11 +174,13 @@ input[type=submit] {
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-right:5px;
 }
 
 .green-me-up a{
   color: white;
   text-decoration: none;
+  font-family: Overpass, sans-serif;
 }
 
 .green-me-up a:visited {
@@ -187,9 +189,18 @@ input[type=submit] {
 }
 
 .green-me-up-container {
-  display: flex;
-  justify-content: center;
+  padding-right:10px;
+  // display: flex;
 }
+.green-me-up-container > img{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  margin-right: 1px;
+  margin-left:-345px;
+  margin-top:53px;
+}
+
 
 .green-me-up {
   font-size: 20px;
@@ -197,14 +208,28 @@ input[type=submit] {
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
   background-color: #25cf7a;
   border-style: none;
   border-radius: 20px;
   padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.green-me-up-modal {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #25cf7a;
+  border-style: none;
+  border-radius: 20px;
+  padding-top: 8px;
+  padding-bottom:8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 5px;
 }
 
 .go-to-pledges {

@@ -7,11 +7,11 @@ class Emmission < ApplicationRecord
   def self.populate_chart(time)
     case time
     when "all"
-      group(:sub_category).sum(:co2_grams)
+      group(:main_category).sum(:co2_grams)
     when 1
-      joins(:expense).group(:sub_category).one_month_ago(time).sum(:co2_grams)
+      joins(:expense).group(:main_category).one_month_ago(time).sum(:co2_grams)
     else
-      joins(:expense).group(:sub_category).many_months_ago(time).sum(:co2_grams)
+      joins(:expense).group(:main_category).many_months_ago(time).sum(:co2_grams)
     end
   end
 
@@ -129,7 +129,7 @@ class Emmission < ApplicationRecord
       },
       {
         carbon: 148.14,
-        mcc: 8351,
+        mcc: 8315,
         category: {
           mainCategory: "Government Services",
           subCategory: "Public Services",
@@ -164,8 +164,8 @@ class Emmission < ApplicationRecord
         }
       },
       {
-        carbonEmissionInGrams: 253.40,
-        mcc: "3640",
+        carbon: 253.40,
+        mcc: 3640,
         category: {
           mainCategory: "Lesure & Entertainment",
           subCategory: "Hotels & Vacation ",

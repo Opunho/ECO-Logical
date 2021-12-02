@@ -9,12 +9,12 @@ class Expense < ApplicationRecord
   def self.populate_chart(time)
     case time
     when "all"
-      Expense.joins(:emmission).group("emmissions.sub_category").sum(:amount)
+      Expense.joins(:emmission).group("emmissions.main_category").sum(:amount)
     when 1
-      Expense.joins(:emmission).group("emmissions.sub_category")
+      Expense.joins(:emmission).group("emmissions.main_category")
              .one_month_ago(time).sum(:amount)
     else
-      Expense.joins(:emmission).group("emmissions.sub_category")
+      Expense.joins(:emmission).group("emmissions.main_category")
              .many_months_ago(time).sum(:amount)
     end
   end

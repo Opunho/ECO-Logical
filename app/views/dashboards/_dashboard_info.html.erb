@@ -20,12 +20,9 @@
 
       <div>
         <div class=" d-flex hb32 months-dash ">
-          <%= link_to "30 Days", dashboard_path(scope: 1),
-                      "data-action": "click->update-list#update" %>
-          <%= link_to "3 Months", dashboard_path(scope: 3),
-                      "data-action": "click->update-list#update" %>
-          <%= link_to "6 Months", dashboard_path(scope: 6),
-                      "data-action": "click->update-list#update" %>
+          <%= link_to "30 Days", dashboard_path(scope: 1) %>
+          <%= link_to "3 Months", dashboard_path(scope: 3) %>
+          <%= link_to "6 Months", dashboard_path(scope: 6) %>
         </div>
       </div>
       <div class="container" data-update-list-target="charts">

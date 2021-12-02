@@ -232,28 +232,31 @@
 }
 
 .pledge-card-container{
-  display: grid;
-  grid-column-gap: 5px;
-  grid-template-columns: 1fr 1fr;
+  // display: grid;
+  // grid-column-gap: 5px;
+  // grid-template-columns: 1fr;
 }
 
 .pledge-card-photo {
   overflow: hidden;
-  height: 90px;
-  background: white;
+  height: 140px;
+  background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  text-align: center;
   border-radius: 10px;
   margin: 10px;
-  width: 45vw;
-  align-items:center;
+  width: auto;
+  justify-content: space-between;
 }
 
 .pledge-card-photo > img {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
   border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 32px;
 }
 
 .pledge-card-photo > h2 {
@@ -262,14 +265,23 @@
   margin: 0;
 }
 
-.pledge-card-photo > p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
 .pledge-card-info{
-
+  padding: 10px;
+  font-size: 24px;
+  line-height: 1;
+  align-items: center;
+}
+.pledge-card-info > .pledge-color{
+  color: #25CF7A;
+  font-family: Caveat, sans-serif;
+  font-size: 40px;
+}
+.pledge-card-carbons{
+  display:flex;
+  justify-content: center;
+  margin-top:5px;
+}
+.pledge-card-carbons > p {
+  margin-right:3px;
+  font-size: 20px;
 }
