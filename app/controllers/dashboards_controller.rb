@@ -2,9 +2,9 @@ class DashboardsController < ApplicationController
   def show
     @counter = 1
     @expense = Expense.new
-    @categories = current_user.unique_category
     @accounts = current_user.accounts
     params[:scope].present? ? @time = params[:scope].to_i : @time = "all"
+    @categories = current_user.unique_category
     @expenses_chart = Expense.populate_chart(@time)
     @total_expenses = user_total_expenses(@time)
     @total_emmissions = user_total_emmissions(@time)
