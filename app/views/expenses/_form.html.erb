@@ -1,3 +1,4 @@
+
 <div class="container slider-one-active">
   <div class="steps">
     <div class="step step-one">
@@ -22,20 +23,20 @@
   <div class="slider-ctr">
     <div class="slider">
       <form class="slider-form slider-one">
-        <h2>New Transaction Wizard</h2>
-          <input type="text" class="creditor-name" placeholder="Paid To">
+        <h4>New Transaction </h4>
+          <input type="text" class="creditor-name creditor-name12" placeholder="Paid To">
         <label class="input">
-          <select id="sub-category" class="select sub-category">
-            <option value="">Choose A Category</option>
+          <select id="sub-category" class="select sub-category sub1234">
+            <option value="">Category</option>
               <% @sub_categories.each do |sub_category| %>
                 <option value="<%= sub_category %>"><%= sub_category %></option>
               <% end %>
           </select>
         </label>
         <label class="input">
-          <input type="date" class="select date-pick">
+          <input type="date" class="select date-pick sub1234">
         </label><br>
-        <button class="first next">Next Step</button>
+        <button class="first next button-green96">Next Step</button>
       </form>
       <form class="slider-form slider-two form-2">
         <h2>More Info</h2>
@@ -47,7 +48,7 @@
              <input type="text" class="currency" placeholder="currency">
            </label>
         </div>
-        <button class="second next">Next Step</button>
+        <button class="second next button-green96">Next Step</button>
         <%= hidden_field_tag "current-user", current_user.id %>
       </form>
       <div class="slider-form slider-three">
@@ -58,7 +59,7 @@
         <h5 id="amount-show"></h5>
         <h5 id="currency-show"></h5>
         <h5 id="transaction-date"></h5>
-        <button class="third">Create Transaction</button>
+        <button class="third button-green96">Create Transaction</button>
       </div>
     </div>
   </div>
