@@ -171,9 +171,12 @@
   content: "";
   position: absolute;
   top: -1px;right: -1px;
-  border-bottom: 50px solid white;
+  border-bottom: 50px solid #f7f5f5;
   border-right: 50px solid #EAEAEA;
   width: 0;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .modal13 {

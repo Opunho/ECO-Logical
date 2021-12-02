@@ -41,7 +41,9 @@
     </div>
     <div class="container ">
       <br>
-      <%= link_to "Create new transaction", new_expense_path, class:"btn-dash"%>
+        <a href="/expenses/new" class="float">
+          <i class="fa fa-plus my-float"></i>
+        </a>
       <% @categories.each do |cat| %>
         <div class="dashboard-h3 ">
           <%= render "accordion", cat: cat, time: @time %>
