@@ -4,7 +4,7 @@
     <div class=" modal13 modal-content">
       <div class="modal-header">
         <strong>
-          <h4><%= "Breakdown of #{cat}" %></h4>
+          <h4 class="dashboardModalBreakdown"><%= "Breakdown of #{cat}" %></h4>
         </strong>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -12,13 +12,14 @@
       </div>
       <div class="modal-body">
         <% @emmissions.where(sub_category: cat).each do |emmission| %>
-        <h5><em><%= emmission.expense.creditor_name %></em></h5>
+        <h5><strong><%= emmission.expense.creditor_name %></strong></h5>
+        <br>
         <p><i class="fas fa-money-bill-wave"></i> <%= emmission.expense.amount %> EUR</p>
         <% calc_result =  (emmission.co2_grams.to_f * emmission.expense.amount.to_f) / 1000 %>
-        <p>Expense Emission:</p>
+        <%# <p>Expense Emission:</p> %>
         <p><i class="fas fa-fire"></i> <%= calc_result.ceil(2) %></p>
         <p><i class="fas fa-calendar-alt"></i> <%= emmission.expense.date %></p>
-        <p>-----------------------</p>
+        <p class="modal-bottom-line"></p>
 
         <% end %>
       </div>

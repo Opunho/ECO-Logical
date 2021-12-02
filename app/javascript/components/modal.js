@@ -8,7 +8,7 @@ const initModal = () => {
 
   // Get the <span> element that closes the modal
   const spans = document.querySelectorAll(".close");
-
+  if (modals){
   // When the user clicks on the button, open the modal
   buttons.forEach(button => {
     button.addEventListener('click', event => {
@@ -34,6 +34,6 @@ const initModal = () => {
   //     modal.style.display = "none";
   //   }
   // }
-}
+}}
 
 export { initModal }
