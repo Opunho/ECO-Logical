@@ -9,7 +9,7 @@
         <div class="greendash1money">
           <i class="fas fa-money-bill-wave "></i>
           <% money = current_user.total_expenses_per_category([cat, time]) %>
-          <p><%= money.round() %> EUR</p>
+          <p class="title"><%= money.round() %> EUR</p>
         </div>
         <div class="greendash1" data-update-list-target="card<%= @counter %>"
              data-action="click->update-list#flip">

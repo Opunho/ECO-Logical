@@ -43,4 +43,14 @@ export default class extends Controller {
       event.currentTarget.querySelectorAll('p')[1].classList.remove('d-none')
     }
   }
+
+  // filter(event) {
+  //   const monthButton = document.getElementById("month")
+  //   const threeButton = document.getElementById("three")
+  //   const sixButton = document.getElementById("six")
+  //   const mado = () => {
+  //     monthButton.classList.add("active-filter")
+  //   }
+  //   window.addEventListener("DOMContentLoaded", mado())
+  // }
 }
