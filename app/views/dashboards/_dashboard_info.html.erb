@@ -1,7 +1,7 @@
   <div data-controller="update-list">
    <div data-update-list-target="description">
     <div class="text-center dashboard-banner">
-      <h3>Welcome <%= current_user.first_name %></h3>
+      <h3><%= link_to "Welcome", "/"%> <%= current_user.first_name %></h3>
       <p> <%= current_user.unique_account[0] %></p>
       <%= link_to fetch_expenses_path do %>
         <i class="fas fa-cloud-download-alt"></i>
