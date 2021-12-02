@@ -290,3 +290,17 @@
   margin-right:3px;
   font-size: 20px;
 }
+
+.new-form-card {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 480px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  padding-top: 10px;
+}
