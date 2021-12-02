@@ -18,9 +18,9 @@
           <button class="green-me-up"><%= link_to "Done!", complete_pledge_path(pledge), method: :patch %>
           </button>
         <!-- Trigger/Open The Modal -->
-          <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638386182/icons/question-mark-on-a-circular-black-background_h0ekrj.png" alt="icon" id="myPledgeModalBtn">
+          <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638386182/icons/question-mark-on-a-circular-black-background_h0ekrj.png" alt="icon" id="myPledgeModalBtn" data-id="<%=pledge.recommendation.id%>">
         <!-- The Modal -->
-          <div id="myPledgeModal" class="pledgeModalContainer">
+          <div id="myPledgeModal-<%=pledge.recommendation.id%>" data-id="<%=pledge.recommendation.id%>" class="pledgeModalContainer">
         <!-- Modal content -->
             <div class="pledge-modal-content">
               <div class="pledge-modal-header">
@@ -72,10 +72,10 @@
       <% end %>
         <!-- Trigger/Open The Modal -->
         <div class="green-me-up-container-pledge-complete">
-          <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638386182/icons/question-mark-on-a-circular-black-background_h0ekrj.png" alt="icon" id="myPledgeModalBtn">
+          <img src="https://res.cloudinary.com/dyjkajjgg/image/upload/v1638386182/icons/question-mark-on-a-circular-black-background_h0ekrj.png" alt="icon" id="myPledgeModalBtn" data-id="00<%=Pledge.find_by(recommendation_id:key).id%>">
         <div>
         <!-- The Modal -->
-          <div id="myPledgeModal" class="pledgeModalContainer">
+          <div id="myPledgeModal-00<%=Pledge.find_by(recommendation_id:key).id%>" class="pledgeModalContainer">
         <!-- Modal content -->
             <div class="pledge-modal-content">
               <div class="pledge-modal-header">
