@@ -1,4 +1,4 @@
 meta_product_name: "Eco-Logical"
 meta_title: "Eco-Logical - The way to lead your life"
 meta_description: "We believe it logical that a better ecological future can also mean a better economical one. Get real-time feedback on your expenses to help you reach your ecological ambitions."
-meta_image: "eco_logical_cover.jpg" # should exist in `app/assets/images/`
+meta_image: "cover.png" # should exist in `app/assets/images/`
