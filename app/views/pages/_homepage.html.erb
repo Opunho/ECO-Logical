@@ -1,0 +1,40 @@
+  <div class="homepage-content" data-homepage-target="homepage">
+    <h1 id="banner-header">Eco-Logical</h1>
+    <div class="card-glass">
+      <%= link_to "Join the cause", new_account_path, class: "button-green" %>
+      <% if user_signed_in?  %>
+      <p class="button-ghost-white" data-action="load@window->homepage#listen">Already A Member?</p>
+      <%#= link_to "Already a member?", new_account_path, class: "button-ghost-white", "data-action": "load@window->homepage#listen" %>
+      <% end %>
+    </div>
+    <div class="card-white about">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et,
+        cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue
+        vitae nunc. In facilisis vestibulum enim nec aliquet. Quisque ultricies gravida euismod.</p>
+    </div>
+    <div class="container-howto">
+      <div class="card-step1">
+        <h2>How it works</h2>
+        <h3> Step 1</h3>
+        <p>Connect your bank account</p>
+        <%= cl_image_tag("Dashboard") %>
+      </div>
+      <div class="card-step2">
+        <h3> Step 2</h3>
+        <p>Input data</p>
+        <%= cl_image_tag("Pledges") %>
+      </div>
+      <div class="card-step3">
+        <h3> Step 3</h3>
+        <p>Become eco-logical</p>
+        <%= cl_image_tag("Recommendations") %>
+      </div>
+      <div class="card-finally">
+        <h2>Finally</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac neque eleifend, scelerisque justo et,
+          cursus enim. Proin pulvinar, est eget venenatis efficitur, dolor ante pretium tortor, vel porttitor nisl augue
+          vitae nunc. In facilisis vestibulum enim nec aliquet. Quisque ultricies gravida euismod.</p>
+        <%= cl_image_tag("Recommendations") %>
+      </div>
+    </div>
