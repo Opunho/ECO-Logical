@@ -30,6 +30,7 @@ import { counterUp } from "../components/counterup"
 import { switchChart } from "../components/switchchart";
 import { initCarousel } from "../components/carousel";
 import { initForm } from "../components/form";
+import { initModal } from "../components/modal";
 
 
 
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   switchChart();
   initCarousel();
   initForm();
+  initModal();
 });
 
 import "controllers"
