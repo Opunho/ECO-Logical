@@ -17,7 +17,7 @@
             </div>
               <div class="d-flex info-block">
                 <i class="fas fa-burn icon2"></i>
-                <p class="title text-green"><%= ((@total_emmissions)/1000).ceil(2) %> TCO2</p>
+                <p class="title text-green"><%= ((@total_emmissions)/10000).ceil(2) %> TCO2</p>
                 <p class="title">Emmissions </p>
               </div>
               <div class="d-flex info-block">
@@ -27,7 +27,7 @@
               </div>
               <div class="d-flex info-block">
               <i class="fas fa-globe-europe"></i>
-              <% calc_net = (@total_emmissions/1000) - (current_user.pledge_impact/1000000) %>
+              <% calc_net = (@total_emmissions/10000) - (current_user.pledge_impact/1000000) %>
               <p class="title text-green"> <%= calc_net.ceil(2) %> TCO2</p>
               <p class="title">Net Emmissions</p>
               </div>
