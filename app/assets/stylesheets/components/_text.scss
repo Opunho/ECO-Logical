@@ -47,9 +47,21 @@ color: #000000;
 
 .typed-container {
   margin-bottom: 10px;
-  color: #115300;
+  color: rgba($color: #FFFFFF, $alpha: 0.8);
   font-size: large;
-  margin-left: 42px;
+  padding: 25px;
+  background: linear-gradient(to right, #1e8d3f 0%, #1aca72 70%);
+  text-align:center;
+}
+
+.typed-container > p{
+  font-family: overpass, sans-serif;
+  font-size: 32px;
+}
+
+.completed-trees{
+  margin-bottom:25px;
+  margin-top:25px;
 }
 
 .card-container h1 {
@@ -98,11 +110,12 @@ color: #000000;
 .latest-completed-pledges {
   text-align: left;
   margin-bottom: 10px;
-	font-size: 35px;
+	font-size: 56px;
 	font-weight: bolder;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
+  // background-image:linear-gradient(to right, #1e8d3f 0%, #1aca72 70%);
 	background-image: url('https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   text-align: center;
   margin-top: 25px;
@@ -138,6 +151,12 @@ color: #000000;
   margin-top: 13px;
   line-height: 0.8;
   font-family: 'Overpass', sans-serif;
+}
+
+.offset-recommendations-subheader > strong{
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #1e8d3f 0%, #1aca72  70%);
 }
 
 .offset-recommendations-show {
