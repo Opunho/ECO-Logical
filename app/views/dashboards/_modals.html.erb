@@ -13,18 +13,18 @@
       <div class="modal-body">
         <% @emmissions.where(sub_category: cat).each do |emmission| %>
         <div class="modal-container">
-         <div class="d-flex modal-block">
+         <div class="d-flex info-block">
            <h5 class="title text-green"><%= emmission.expense.creditor_name %></h5>
          </div>
-         <div class="d-flex modal-block">
+         <div class="d-flex info-block">
           <i class="fas fa-calendar-alt"></i>
           <p><%= emmission.expense.date %></p>
          </div>
-         <div class="d-flex modal-block">
+         <div class="d-flex info-block">
           <i class="fas fa-money-bill-wave"></i>
           <p><%= emmission.expense.amount %> EUR</p>
          </div>
-         <div class="d-flex modal-block">
+         <div class="d-flex info-block">
           <% calc_result =  (emmission.co2_grams.to_f * emmission.expense.amount.to_f) / 1000 %>
           <i class="fas fa-fire"></i>
           <p><%= calc_result.ceil(2) %> Kg CO2</p>
